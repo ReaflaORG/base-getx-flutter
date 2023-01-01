@@ -147,6 +147,7 @@ class GetMaterialAppWidget extends GetMaterialApp {
     super.supportedLocales,
     super.fallbackLocale,
     super.debugShowCheckedModeBanner,
+    super.checkerboardRasterCacheImages,
     super.themeMode,
     super.theme,
     super.darkTheme,
@@ -217,6 +218,7 @@ class GetMaterialAppWidget extends GetMaterialApp {
     Locale fallbackLocale = const Locale('ko', 'KR'),
   }) {
     return GetMaterialAppWidget(
+      checkerboardRasterCacheImages: true,
       debugShowCheckedModeBanner: debugShowCheckedModeBanner,
       title: dotenv.env['APP_EN_NAME']!,
       initialRoute: '/splash',
