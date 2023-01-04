@@ -218,6 +218,7 @@ class GetMaterialAppWidget extends GetMaterialApp {
     Locale fallbackLocale = const Locale('ko', 'KR'),
   }) {
     return GetMaterialAppWidget(
+      /// https://blog.gskinner.com/archives/2022/09/flutter-rendering-optimization-tips.html
       checkerboardRasterCacheImages: true,
       debugShowCheckedModeBanner: debugShowCheckedModeBanner,
       title: dotenv.env['APP_EN_NAME']!,

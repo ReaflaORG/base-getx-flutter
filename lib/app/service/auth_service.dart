@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import '../global/global_toast_widget.dart';
+import '../global_widgets/global_toast_widget.dart';
 import '../models/base_response_model.dart';
 import '../models/user_model.dart';
 import '../provider/provider.dart';

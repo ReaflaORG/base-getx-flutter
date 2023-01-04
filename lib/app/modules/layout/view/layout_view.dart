@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../global/global_indicator.dart';
+import '../../../global_widgets/global_indicator.dart';
 import '../controller/layout_controller.dart';
 import '../widgets/bottom_navigation_bar_widget.dart';
 

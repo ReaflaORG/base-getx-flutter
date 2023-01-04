@@ -7,7 +7,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:logger/logger.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-import '../global/global_dialog_widget.dart';
+import '../global_widgets/global_dialog_widget.dart';
 import '../models/permission_model.dart';
 
 /// 권한 서비스

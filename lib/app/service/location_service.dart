@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:location/location.dart';
 import 'package:logger/logger.dart';
 
-import '../global/global_toast_widget.dart';
+import '../global_widgets/global_toast_widget.dart';
 
 /// 위치 조회 서비스
 class LocationService extends GetxService {

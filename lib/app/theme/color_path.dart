@@ -1,16 +1,12 @@
-// ignore_for_file: finalant_identifier_names, non_finalant_identifier_names, slash_for_doc_comments, non_constant_identifier_names, constant_identifier_names
-
 import '../utils/color_hex_convert.dart';
 
 /// 컬러 색상표
 ///
 /// 빈도수가 높은 컬러는 기본 설정으로 빼기 (의견)
 ///
-/// [참고링크]
-///
 /// https://material.io/resources/color/#!/?view.left=0&view.right=0&secondary.color=C5CAE9&primary.color=7d63fd&secondary.text.color=FAFAFA
 class ColorPath {
-  /// Primary ▼
+  // Primary ▼
 
   /// #2F7ABA
   ///
@@ -27,7 +23,7 @@ class ColorPath {
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/E3F2FD.jpg)
   static final PrimaryLightColor = Color('E3F2FD');
 
-  /// Secondary ▼
+  // Secondary ▼
 
   /// #04A8B4
   ///
@@ -54,7 +50,7 @@ class ColorPath {
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/FFDDD3.jpg)
   static final TertiaryLightColor = Color('FFDDD3');
 
-  /// Text ▼
+  // Text ▼
 
   /// #FFFFFF
   ///
@@ -81,7 +77,7 @@ class ColorPath {
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/9E9E9E.jpg)
   static final TextGrey4H9E9E9E = Color('9E9E9E');
 
-  /// Border ▼
+  // Border ▼
 
   /// #9E9E9E
   ///
@@ -93,7 +89,7 @@ class ColorPath {
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/ECEFF1.jpg)
   static final Border2HECEFF1 = Color('ECEFF1');
 
-  /// Background ▼
+  // Background ▼
 
   /// #FFFFFF
   ///
@@ -137,21 +133,21 @@ class ColorPath {
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/2196F3.jpg)
   static final FocusedColor = Color('2196F3');
 
-  /// * PlaceHolder ▼ ===============================
+  // PlaceHolder ▼
 
   /// #BDBDBD
   ///
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/BDBDBD.jpg)
   static final PlaceholderColor = Color('BDBDBD');
 
-  /// * Disabled ▼ ==================================
+  // Disabled ▼
 
   /// #BDBDBD
   ///
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/BDBDBD.jpg)
   static final DisabledColor = Color('BDBDBD');
 
-  // * Etc ▼ ========================================
+  // Etc ▼
 
   /// #383A3F
   ///
@@ -177,4 +173,19 @@ class ColorPath {
   ///
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/757575.jpg)
   static final GreyDarkColor = Color('757575');
+
+  /// #cccccc
+  ///
+  /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/cccccc.jpg)
+  static final GrayCCCColor = Color('CCCCCC');
+
+  /// #333333
+  ///
+  /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/333333.jpg)
+  static final Gray333Color = Color('333333');
+
+  /// #2F7ABA
+  ///
+  /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/2F7ABA.jpg)
+  static final Blue2F7ABAColor = Color('2F7ABA');
 }
