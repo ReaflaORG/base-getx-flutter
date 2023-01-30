@@ -25,14 +25,13 @@ void GlobalToastWidget(
   double opacity = 0.7,
   Color textColor = Colors.white,
 }) async {
-  Fluttertoast.cancel().then((value) {
-    Fluttertoast.showToast(
-      msg: message,
-      toastLength: toastLength,
-      gravity: gravity,
-      timeInSecForIosWeb: duration,
-      backgroundColor: backgroundColor.withOpacity(opacity),
-      textColor: textColor,
-    );
-  });
+  Fluttertoast.cancel();
+  Fluttertoast.showToast(
+    msg: message,
+    toastLength: toastLength,
+    gravity: gravity,
+    timeInSecForIosWeb: duration,
+    backgroundColor: backgroundColor.withOpacity(opacity),
+    textColor: textColor,
+  );
 }
