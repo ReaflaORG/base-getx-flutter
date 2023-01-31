@@ -72,7 +72,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.5.1-all.zip
 ```
 flutter.flutterCompileSdkVersion=33   
 flutter.flutterTargetSdkVersion=33   
-flutter.flutterMinSdkVersion=20   
+flutter.flutterMinSdkVersion=28   
 flutter.versionName=1.0.0   
 flutter.versionCode=1
 ```
