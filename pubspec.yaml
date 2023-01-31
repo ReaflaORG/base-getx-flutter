@@ -49,6 +49,7 @@ flutter_flags:
   - --dart-define=flutter.inspector.debugDescription=false
   - --enable-software-rendering=false
   - --dart-define=flutter.jank=none
+  - --enable-impeller
 
 flutter:
   uses-material-design: true
