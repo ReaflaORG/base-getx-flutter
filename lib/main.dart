@@ -1,8 +1,5 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,51 +19,49 @@ void main() async {
 }
 
 Future<void> initialize() async {
-  Future.value([
-    /// Widget Binding 초기화
-    WidgetsFlutterBinding.ensureInitialized(),
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      SchedulerBinding.instance.scheduleWarmUpFrame();
-    }),
+  /// Widget Binding 초기화
+  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    SchedulerBinding.instance.scheduleWarmUpFrame();
+  });
 
-    /// .env 초기화
-    await dotenv.load(),
+  /// .env 초기화
+  await dotenv.load();
 
-    /// Get Storage 초기화
-    await GetStorage.init(),
+  /// Get Storage 초기화
+  await GetStorage.init();
 
-    /// Timeago 언어 초기화
-    timeago.setLocaleMessages('ko', timeago.KoMessages()),
+  /// Timeago 언어 초기화
+  timeago.setLocaleMessages('ko', timeago.KoMessages());
 
-    /// 디바이스 가로모드 방지
-    SystemChome.setSystemChromeDeviceOrientation(
-      type: DeviceOrientationType.PreventLandscape,
-    ),
+  /// 디바이스 가로모드 방지
+  SystemChome.setSystemChromeDeviceOrientation(
+    type: DeviceOrientationType.PreventLandscape,
+  );
 
-    // 상단 상태 표시줄 색상 설정
-    SystemChome.setSystemChromeStatusBarColor(),
+  // 상단 상태 표시줄 색상 설정
+  SystemChome.setSystemChromeStatusBarColor();
 
-    // 파이어베이스 초기화
-    // await Firebase.initializeApp(),
+  // 파이어베이스 초기화
+  // await Firebase.initializeApp();
 
-    // 카카오 초기화
-    // KakaoSdk.init(nativeAppKey: dotenv.env['APP_KAKAO_NATIVE_APP_KEY']),
+  // 카카오 초기화
+  // KakaoSdk.init(nativeAppKey: dotenv.env['APP_KAKAO_NATIVE_APP_KEY']);
 
-    // 인증 서비스 초기화
-    // Get.put(AuthService(), permanent: true),
+  // 인증 서비스 초기화
+  // Get.put(AuthService(), permanent: true);
 
-    /// 데이터 서비스 초기화
-    // Get.put(DataService(), permanent: true),
+  /// 데이터 서비스 초기화
+  // Get.put(DataService(), permanent: true);
 
-    /// 권한 서비스 초기화
-    Get.put(PermissionService(), permanent: true),
+  /// 권한 서비스 초기화
+  Get.put(PermissionService(), permanent: true);
 
-    // 글로벌 서비스 초기화
-    Get.put(GlobalService(), permanent: true),
+  // 글로벌 서비스 초기화
+  Get.put(GlobalService(), permanent: true);
 
-    // 스크롤 서비스 초기화
-    // Get.put(ScrollService(), permanent: true),
-  ]);
+  // 스크롤 서비스 초기화
+  // Get.put(ScrollService(), permanent: true);
 }
 
 class MyApp extends StatelessWidget {

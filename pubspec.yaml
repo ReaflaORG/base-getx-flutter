@@ -37,6 +37,7 @@ dependencies:
   location: ^4.4.0
   device_info_plus: ^8.0.0
   flutter_spinkit: ^5.1.0
+  random_color: ^1.0.5
 
 dev_dependencies:
   flutter_test:

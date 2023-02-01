@@ -40,8 +40,8 @@ Version 1.2.1
 "android\build.gradle"
 
 ```
-ext.kotlin_version = '1.7.20'
-classpath 'com.android.tools.build:gradle:7.3.1'
+ext.kotlin_version = '1.8.0'
+classpath 'com.android.tools.build:gradle:7.4.0'
 ```
 
 ### gradle.properties

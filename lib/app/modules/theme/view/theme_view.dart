@@ -13,7 +13,7 @@ class ThemeView extends StatelessWidget {
       body: Center(
         child: Text(
           'ThemeView is working',
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
     );

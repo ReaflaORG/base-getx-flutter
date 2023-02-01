@@ -26,24 +26,23 @@ class Primary {
       primaryColor: ColorPath.PrimaryColor,
       primaryColorDark: ColorPath.PrimaryDarkColor,
       primaryColorLight: ColorPath.PrimaryLightColor,
-      backgroundColor: Colors.white,
-      bottomAppBarColor: Colors.white,
       dividerColor: Colors.grey.shade400,
       disabledColor: ColorPath.DisabledColor,
       // selectedRowColor: ColorPath.PrimaryColor as Color,
       unselectedWidgetColor: Colors.grey,
-      // hintColor: ColorPath.PrimaryColor as Color,
-      // errorColor: ColorPath.ErrorColor,
-      // toggleableActiveColor: ColorPath.PrimaryColor as Color,
-      // appBarTheme: appBarThemeData(),
-      colorScheme: ColorScheme.fromSwatch().copyWith(
-        primary: ColorPath.PrimaryColor,
-        secondary: ColorPath.SecondaryColor,
-      ),
       textTheme: textThemeData(),
       inputDecorationTheme: inputDecorationThemeData(),
       buttonTheme: buttonThemeData(),
       checkboxTheme: checkboxThemeData(),
+      bottomAppBarTheme: const BottomAppBarTheme(
+        color: Colors.white,
+      ),
+      colorScheme: ColorScheme.fromSwatch()
+          .copyWith(
+            primary: ColorPath.PrimaryColor,
+            secondary: ColorPath.SecondaryColor,
+          )
+          .copyWith(background: Colors.white),
     );
   }
 
@@ -54,48 +53,44 @@ class Primary {
       primaryColor: ColorPath.PrimaryColor,
       primaryColorDark: ColorPath.PrimaryDarkColor,
       primaryColorLight: ColorPath.PrimaryLightColor,
-      backgroundColor: Colors.white,
-      bottomAppBarColor: Colors.white,
       dividerColor: Colors.grey.shade400,
       disabledColor: ColorPath.DisabledColor,
       // selectedRowColor: ColorPath.PrimaryColor as Color,
       unselectedWidgetColor: Colors.grey,
-      // hintColor: ColorPath.PrimaryColor as Color,
-      // errorColor: ColorPath.ErrorColor,
-      // toggleableActiveColor: ColorPath.PrimaryColor as Color,
-      // appBarTheme: appBarThemeData(),
-      colorScheme: ColorScheme.fromSwatch().copyWith(
-        primary: ColorPath.PrimaryColor,
-        secondary: ColorPath.SecondaryColor,
-      ),
       textTheme: textThemeData(),
       inputDecorationTheme: inputDecorationThemeData(),
       buttonTheme: buttonThemeData(),
       checkboxTheme: checkboxThemeData(),
+      bottomAppBarTheme: const BottomAppBarTheme(
+        color: Colors.white,
+      ),
+      colorScheme: ColorScheme.fromSwatch()
+          .copyWith(
+            primary: ColorPath.PrimaryColor,
+            secondary: ColorPath.SecondaryColor,
+          )
+          .copyWith(background: Colors.white),
     );
     return ThemeData(
       brightness: Brightness.dark,
       primaryColor: ColorPath.PrimaryDarkColor,
       primaryColorDark: ColorPath.PrimaryDarkColor,
       primaryColorLight: ColorPath.PrimaryLightColor,
-      backgroundColor: ColorPath.PrimaryDarkColor,
-      bottomAppBarColor: ColorPath.PrimaryDarkColor,
       dividerColor: Colors.grey.shade400,
       disabledColor: ColorPath.DisabledColor,
       // selectedRowColor: ColorPath.PrimaryColor as Color,
       unselectedWidgetColor: Colors.grey,
-      // hintColor: ColorPath.PrimaryColor as Color,
-      // errorColor: ColorPath.ErrorColor,
-      // toggleableActiveColor: ColorPath.PrimaryColor as Color,
-      // appBarTheme: appBarThemeData(),
-      colorScheme: ColorScheme.fromSwatch().copyWith(
-        primary: ColorPath.PrimaryDarkColor,
-        secondary: ColorPath.SecondaryColor,
-      ),
       textTheme: textThemeData(),
       inputDecorationTheme: inputDecorationThemeData(),
       buttonTheme: buttonThemeData(),
       checkboxTheme: checkboxThemeData(),
+      bottomAppBarTheme: BottomAppBarTheme(color: ColorPath.PrimaryDarkColor),
+      colorScheme: ColorScheme.fromSwatch()
+          .copyWith(
+            primary: ColorPath.PrimaryDarkColor,
+            secondary: ColorPath.SecondaryColor,
+          )
+          .copyWith(background: ColorPath.PrimaryDarkColor),
     );
     // return Theme.of(context).copyWith(
     //   backgroundColor: Colors.white,
@@ -135,8 +130,6 @@ class Primary {
       splashColor: Colors.white,
       scaffoldBackgroundColor: Colors.white,
       primaryColor: ColorPath.PrimaryColor,
-      backgroundColor: Colors.white,
-      bottomAppBarColor: Colors.white,
       dividerColor: Colors.transparent,
       disabledColor: ColorPath.DisabledColor,
       // selectedRowColor: ColorPath.PrimaryColor as Color,
@@ -145,10 +138,6 @@ class Primary {
       // errorColor: ColorPath.ErrorColor,
       // toggleableActiveColor: ColorPath.PrimaryColor as Color,
       appBarTheme: appBarThemeData(),
-      colorScheme: ColorScheme.fromSwatch().copyWith(
-        primary: ColorPath.PrimaryColor,
-        secondary: ColorPath.SecondaryColor,
-      ),
       textTheme: textThemeData(),
       inputDecorationTheme: inputDecorationThemeData(),
       buttonTheme: buttonThemeData(),
@@ -159,6 +148,15 @@ class Primary {
       bottomSheetTheme: bottomSheetThemeData(),
       textSelectionTheme: textSelectionThemeData(),
       visualDensity: VisualDensity.adaptivePlatformDensity,
+      bottomAppBarTheme: const BottomAppBarTheme(
+        color: Colors.white,
+      ),
+      colorScheme: ColorScheme.fromSwatch()
+          .copyWith(
+            primary: ColorPath.PrimaryColor,
+            secondary: ColorPath.SecondaryColor,
+          )
+          .copyWith(background: Colors.white),
     );
   }
 }
@@ -178,19 +176,19 @@ AppBarTheme appBarThemeData() => AppBarTheme(
       ),
       toolbarHeight: 60,
       toolbarTextStyle: TextTheme(
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
           color: ColorPath.BlackColor,
           fontSize: 18,
           height: 1.1,
         ),
-      ).bodyText2,
+      ).bodyMedium,
       titleTextStyle: TextTheme(
-        headline6: TextStyle(
+        titleLarge: TextStyle(
           color: ColorPath.BlackColor,
           fontSize: 18,
           height: 1.1,
         ),
-      ).headline6,
+      ).titleLarge,
       systemOverlayStyle: SystemUiOverlayStyle.light,
     );
 
@@ -301,63 +299,63 @@ TextTheme textThemeData() => TextTheme(
       //   fontWeight: FontWeight.normal,
       //   height: 1.1,
       // ),
-      headline1: TextStyle(
+      displayLarge: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontSize: 18.0,
         fontWeight: FontWeight.normal,
         height: 1.1,
       ),
-      headline2: TextStyle(
+      displayMedium: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontSize: 60.0,
         fontWeight: FontWeight.normal,
         height: 1.1,
       ),
-      headline3: TextStyle(
+      displaySmall: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontSize: 48.0,
         fontWeight: FontWeight.normal,
         height: 1.1,
       ),
-      headline4: TextStyle(
+      headlineMedium: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontSize: 34.0,
         fontWeight: FontWeight.normal,
         height: 1.1,
       ),
-      headline5: TextStyle(
+      headlineSmall: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontSize: 24.0,
         fontWeight: FontWeight.normal,
         height: 1.1,
       ),
-      headline6: TextStyle(
+      titleLarge: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontSize: 20.0,
         fontWeight: FontWeight.normal,
         height: 1.1,
       ),
-      subtitle1: TextStyle(
+      titleMedium: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontSize: 16.0,
         fontWeight: FontWeight.normal,
         height: 1.1,
       ),
-      subtitle2: TextStyle(
+      titleSmall: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontSize: 14.0,
         fontWeight: FontWeight.normal,
         height: 1.1,
       ),
-      bodyText1: TextStyle(
+      bodyLarge: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontSize: Primary.PrimaryFontSize,
@@ -365,28 +363,27 @@ TextTheme textThemeData() => TextTheme(
         height: 1.1,
       ),
       // 텍스트 메인
-      bodyText2: TextStyle(
+      bodyMedium: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontSize: Primary.PrimaryFontSize,
         fontWeight: FontWeight.normal,
         height: 1.1,
       ),
-
-      caption: TextStyle(
+      bodySmall: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontWeight: FontWeight.normal,
         height: 1.1,
       ),
-      button: TextStyle(
+      labelLarge: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontSize: Primary.PrimaryFontSize,
         fontWeight: FontWeight.normal,
         height: 1.1,
       ),
-      overline: TextStyle(
+      labelSmall: TextStyle(
         fontFamily: Primary.FontFamily,
         color: ColorPath.BlackColor,
         fontWeight: FontWeight.normal,
@@ -395,94 +392,108 @@ TextTheme textThemeData() => TextTheme(
     );
 
 /// Button ▼ =====================================
-ButtonThemeData buttonThemeData() => ButtonThemeData(
-      buttonColor: ColorPath.BlackColor,
-      disabledColor: ColorPath.DisabledColor,
-      focusColor: ColorPath.BlackColor,
-      hoverColor: ColorPath.BlackColor,
-      highlightColor: ColorPath.BlackColor,
-      splashColor: ColorPath.BlackColor,
-    );
+ButtonThemeData buttonThemeData() {
+  return ButtonThemeData(
+    buttonColor: ColorPath.BlackColor,
+    disabledColor: ColorPath.DisabledColor,
+    focusColor: ColorPath.BlackColor,
+    hoverColor: ColorPath.BlackColor,
+    highlightColor: ColorPath.BlackColor,
+    splashColor: ColorPath.BlackColor,
+  );
+}
 
 /// ElevatedButton ▼ =============================
-ElevatedButtonThemeData elevatedButtonThemeData() => ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: ColorPath.PrimaryColor,
-        disabledForegroundColor: Colors.grey.withOpacity(0.38),
-        disabledBackgroundColor: Colors.grey.withOpacity(0.12),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(5),
-          ),
+ElevatedButtonThemeData elevatedButtonThemeData() {
+  return ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      backgroundColor: ColorPath.PrimaryColor,
+      disabledForegroundColor: Colors.grey.withOpacity(0.38),
+      disabledBackgroundColor: Colors.grey.withOpacity(0.12),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(5),
         ),
       ),
-    );
+    ),
+  );
+}
 
 /// OutlinedButton ▼ =============================
-OutlinedButtonThemeData outlinedButtonThemeData() => OutlinedButtonThemeData(
-      style: OutlinedButton.styleFrom(
-        backgroundColor: ColorPath.BackgroundWhite,
-        disabledForegroundColor: Colors.grey.withOpacity(0.38),
-        disabledBackgroundColor: Colors.grey.withOpacity(0.12),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(5),
-          ),
+OutlinedButtonThemeData outlinedButtonThemeData() {
+  return OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
+      backgroundColor: ColorPath.BackgroundWhite,
+      disabledForegroundColor: Colors.grey.withOpacity(0.38),
+      disabledBackgroundColor: Colors.grey.withOpacity(0.12),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(5),
         ),
       ),
-    );
+    ),
+  );
+}
 
 /// TextButton ▼ =================================
-TextButtonThemeData textButtonThemeData() => TextButtonThemeData(
-      style: TextButton.styleFrom(
-        foregroundColor: ColorPath.PrimaryColor,
-        disabledForegroundColor: Colors.grey.withOpacity(0.38),
-      ),
-    );
+TextButtonThemeData textButtonThemeData() {
+  return TextButtonThemeData(
+    style: TextButton.styleFrom(
+      foregroundColor: ColorPath.PrimaryColor,
+      disabledForegroundColor: Colors.grey.withOpacity(0.38),
+    ),
+  );
+}
 
 /// BottomSheet ▼ ================================
-BottomSheetThemeData bottomSheetThemeData() => const BottomSheetThemeData(
-      backgroundColor: Colors.white,
-      modalBackgroundColor: Colors.white,
-    );
+BottomSheetThemeData bottomSheetThemeData() {
+  return const BottomSheetThemeData(
+    backgroundColor: Colors.white,
+    modalBackgroundColor: Colors.white,
+  );
+}
 
 /// Checkbox ▼ ===================================
-CheckboxThemeData checkboxThemeData() => CheckboxThemeData(
-      fillColor: MaterialStateProperty.all(
-        ColorPath.PrimaryColor,
-      ),
-      checkColor: MaterialStateProperty.all(
-        Colors.white,
-      ),
-      overlayColor: MaterialStateProperty.all(
-        Colors.orange,
-      ),
-    );
+CheckboxThemeData checkboxThemeData() {
+  return CheckboxThemeData(
+    fillColor: MaterialStateProperty.all(
+      ColorPath.PrimaryColor,
+    ),
+    checkColor: MaterialStateProperty.all(
+      Colors.white,
+    ),
+    overlayColor: MaterialStateProperty.all(
+      Colors.orange,
+    ),
+  );
+}
 
 /// Chip ▼ =======================================
-ChipThemeData chipThemeData() => ChipThemeData(
-      backgroundColor: Colors.grey.shade300,
-      deleteIconColor: Colors.white,
-      disabledColor: Colors.grey,
-      selectedColor: ColorPath.PrimaryColor,
-      secondarySelectedColor: ColorPath.PrimaryColor,
-      // Color? shadowColor,
-      // Color? selectedShadowColor,
-      showCheckmark: true,
-      checkmarkColor: Colors.white,
-      labelPadding: EdgeInsets.zero,
-      padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-      // BorderSide? side,
-      // OutlinedBorder? shape,
-      labelStyle: const TextStyle(
-        color: Colors.white,
-        height: 1.1,
-      ),
-      secondaryLabelStyle: const TextStyle(
-        color: Colors.white,
-        height: 1.1,
-      ),
-      brightness: Brightness.light,
-      elevation: 0.0,
-      pressElevation: 0.0,
-    );
+ChipThemeData chipThemeData() {
+  return ChipThemeData(
+    backgroundColor: Colors.grey.shade300,
+    deleteIconColor: Colors.white,
+    disabledColor: Colors.grey,
+    selectedColor: ColorPath.PrimaryColor,
+    secondarySelectedColor: ColorPath.PrimaryColor,
+    // Color? shadowColor,
+    // Color? selectedShadowColor,
+    showCheckmark: true,
+    checkmarkColor: Colors.white,
+    labelPadding: EdgeInsets.zero,
+    padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+    // BorderSide? side,
+    // OutlinedBorder? shape,
+    labelStyle: const TextStyle(
+      color: Colors.white,
+      height: 1.1,
+    ),
+    secondaryLabelStyle: const TextStyle(
+      color: Colors.white,
+      height: 1.1,
+    ),
+    brightness: Brightness.light,
+    elevation: 0.0,
+    pressElevation: 0.0,
+  );
+}
