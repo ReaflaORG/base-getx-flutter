@@ -33,9 +33,9 @@ Version 1.2.2
 
 ---
 
-## Build
+## Build Option
 
-빌드 옵션
+코드 난독화(Code Ofdombulization)
 
 ```
 flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
@@ -44,6 +44,28 @@ flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
 코드 난독화(Code Ofdombulization)는 다음 사항을 수정하는앱의 바이너리는 인간이 이해하기 어렵게 만듭니다.
 난독화는 함수와 클래스 이름을 숨깁니다. 컴파일된 Dart 코드를 통해 공격자가 어려워집니다. 전용 앱을 리버스 엔지니어링할 수 있습니다.
 [더 알아보기](https://docs.flutter.dev/deployment/obfuscate)
+
+---
+
+## Skia Shader Language(SkSL)
+
+셰이더 컴파일 시작
+
+# 실행시
+
+```
+flutter run --profile --cache-sksl
+```
+
+# SKSL을 처음 실행하는 경우
+
+```
+flutter run --profile --cache-sksl --purge-persistent-cache
+```
+
+실행시킨 앱에서 데이터가 쌓일 수 있게 기능들을 모두 탭하여 확인합니다.
+같은 터미널에서 `shift + m`을 눌러 대문자 `M`을 누르게 되면
+해당 프로젝트 폴더에 `flutter_01.sksl` 이름 순으로 파일이 만들어 집니다.
 
 ---
 
