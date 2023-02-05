@@ -39,10 +39,11 @@ Version 1.2.2
 
 ```
 flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
+```
+
 코드 난독화(Code Ofdombulization)는 다음 사항을 수정하는앱의 바이너리는 인간이 이해하기 어렵게 만듭니다.
 난독화는 함수와 클래스 이름을 숨깁니다. 컴파일된 Dart 코드를 통해 공격자가 어려워집니다. 전용 앱을 리버스 엔지니어링할 수 있습니다.
 [더 알아보기](https://docs.flutter.dev/deployment/obfuscate)
-```
 
 ---
 
