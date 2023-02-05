@@ -77,7 +77,7 @@ flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
 
 ## Skia Shader Language(SkSL)
 
-셰이더 컴파일 시작
+💡 플러터 `3.7` 이후 `Impeller` 엔진이 정착되면, 사용 불가할 수 있음
 
 <br>
 
