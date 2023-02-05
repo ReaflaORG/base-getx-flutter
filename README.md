@@ -14,14 +14,14 @@ Version 1.2.2
 
 ### 다트 정보
 
-[Dart 3.0.0](https://dart.dev/get-dart/archive)  
-[DevTools 2.21.1](https://dart.dev/get-dart/archive)
+[Dart 2.19.1](https://dart.dev/get-dart/archive)  
+[DevTools 2.20.1](https://dart.dev/get-dart/archive)
 
 <br>
 
 ### 플러터 정보
 
-[Flutter 3.7.0(channel stable)](https://docs.flutter.dev/development/tools/sdk/releases)
+[Flutter 3.7.1(channel stable)](https://docs.flutter.dev/development/tools/sdk/releases)
 
 <br>
 
