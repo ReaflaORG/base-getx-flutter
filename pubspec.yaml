@@ -45,13 +45,6 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
 
-flutter_flags:
-  - --obfuscate
-  - --dart-define=flutter.inspector.debugDescription=false
-  - --enable-software-rendering=false
-  - --dart-define=flutter.jank=none
-  - --enable-impeller
-
 flutter:
   uses-material-design: true
 

@@ -6,45 +6,71 @@
 
 <br>
 
----
-
-<br>
-
-## 버전 정보
+### 프로젝트 버전 정보
 
 Version 1.2.2
 
 <br>
 
----
-
-<br>
-
-## 다트 정보
+### 다트 정보
 
 [Dart 3.0.0](https://dart.dev/get-dart/archive)  
 [DevTools 2.21.1](https://dart.dev/get-dart/archive)
 
 <br>
 
----
+### 플러터 정보
+
+[Flutter 3.7.0(channel stable)](https://docs.flutter.dev/development/tools/sdk/releases)
 
 <br>
 
-## 플러터 정보
-
-[Flutter 3.7(channel stable)](https://docs.flutter.dev/development/tools/sdk/releases)  
-※ 하위 버젼에서도 가능합니다.
-
-<br>
-
----
-
-<br>
-
-## 프레임워크
+### 상태관리 프레임워크
 
 [GetX](https://pub.dev/packages/get)
+
+<br>
+
+---
+
+<br>
+
+## VSCODE
+
+`.vscode/launch.json`
+
+<br>
+
+```
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "base",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define=flutter.inspector.debugDescription=false",
+        "--dart-define=flutter.jank=none",
+        // 현재 IOS에서만 사용가능
+        // "--enable-impeller"
+      ]
+    },
+    {
+      "name": "base (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "base (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}
+```
 
 <br>
 
@@ -64,8 +90,8 @@ Version 1.2.2
 flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
 ```
 
-코드 난독화(Code Ofdombulization)는 다음 사항을 수정하는 앱의 바이너리는 인간이 이해하기 어렵게 만듭니다.
-난독화는 함수와 클래스 이름을 숨깁니다. 컴파일된 Dart 코드를 통해 공격자가 어려워집니다. 전용 앱을 리버스 엔지니어링할 수 있습니다.
+코드 난독화(Code Ofdombulization)는 다음 사항을 수정하는 앱의 바이너리는 이해하기 어렵게 만듭니다.
+난독화는 함수와 클래스 이름을 숨기며, 컴파일된 Dart 코드를 통해 공격자가 어려워집니다. 전용 앱을 리버스 엔지니어링할 수 있습니다.
 [더 알아보기](https://docs.flutter.dev/deployment/obfuscate)
 
 <br>
@@ -161,14 +187,14 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.5-all.zip
 
 ### app\build.gradle
 
+`android\local.properties`
+
 <img src="https://postfiles.pstatic.net/MjAyMjA1MTRfMyAg/MDAxNjUyNTA5NDk4NjU0.fIImQ3l912o0KImUXQp0xQ6CpM2kPV28PK8c3Sxcb5og.nzsvnMoWbqZJcQOzOGI9D_9ubUa4nzh1ya6py6G6rfAg.PNG.phongdaegi/image.png?type=w773" width="100%" alt="디바이스 사용자 비율" />   
 2022년 기준 롤리팝(21) 혹은 마시멜로(23) 기준으로 설정해주면 됩니다.
 
 [더 알아보기](https://blog.naver.com/phongdaegi/222732273987)
 
 <br>
-
-`android\local.properties`
 
 ```
 flutter.flutterCompileSdkVersion=33
@@ -179,14 +205,6 @@ flutter.versionCode=1
 ```
 
 <br>
-
----
-
-<br>
-
-## 안드로이드 최적화
-
-### build.gradle
 
 #### 릴리즈 모드 옵션 추가
 
