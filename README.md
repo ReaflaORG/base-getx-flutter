@@ -9,20 +9,20 @@
 
 ## 버전 정보
 
-Version 1.2.1
+Version 1.2.2
 
 ---
 
 ## 다트 정보
 
-[Dart 2.18.2](https://dart.dev/get-dart/archive)  
-[DevTools 2.15.0](https://dart.dev/get-dart/archive)
+[Dart 3.0.0](https://dart.dev/get-dart/archive)  
+[DevTools 2.21.1](https://dart.dev/get-dart/archive)
 
 ---
 
 ## 플러터 정보
 
-[Flutter 3.3.5(channel stable)](https://docs.flutter.dev/development/tools/sdk/releases)  
+[Flutter 3.7(channel stable)](https://docs.flutter.dev/development/tools/sdk/releases)  
 ※ 하위 버젼에서도 가능합니다.
 
 ---
@@ -40,8 +40,8 @@ Version 1.2.1
 "android\build.gradle"
 
 ```
-ext.kotlin_version = '1.8.0'
-classpath 'com.android.tools.build:gradle:7.4.0'
+ext.kotlin_version = '1.7.10'
+classpath 'com.android.tools.build:gradle:7.2.0'
 ```
 
 ### gradle.properties
@@ -60,7 +60,7 @@ org.gradle.jvmargs=-Xmx1536M -XX:+UseParallelGC
 "android\gradle\wrapper\gradle-wrapper.properties"
 
 ```
-distributionUrl=https\://services.gradle.org/distributions/gradle-7.5.1-all.zip
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.5-all.zip
 ```
 
 ### app\build.gradle
@@ -157,6 +157,17 @@ CTRL + SHIFT + F5 단축키로
 name
 description
 publish_to
+```
+
+---
+
+## Build
+
+빌드 옵션
+
+```
+`--obfuscate`
+코드 난독화(Code Ofdombulization)는 다음 사항을 수정하는앱의 바이너리는 인간이 이해하기 어렵게 만듭니다. 난독화는 함수와 클래스 이름을 숨깁니다.컴파일된 Dart 코드를 통해 공격자가 어려워집니다.전용 앱을 리버스 엔지니어링할 수 있습니다.
 ```
 
 ---
