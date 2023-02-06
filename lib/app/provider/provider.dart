@@ -21,20 +21,25 @@ class Provider with DioMixin implements Dio {
         headers['Authorization'] = 'Bearer ${AuthService.to.accessToken.value}';
       }
 
+      if (token != null) {
+        headers['Authorization'] = 'Bearer $token';
+      }
+
       final Dio dio = Dio(
         BaseOptions(
-            baseUrl: "${dotenv.env["APP_SERVER_API"]}/$url",
-            // contentType: Headers.jsonContentType,
-            // responseType: ResponseType.json,
-            maxRedirects: 5,
-            connectTimeout: 60000,
-            sendTimeout: 60 * 1000,
-            receiveTimeout: 60 * 1000,
-            followRedirects: false,
-            validateStatus: (status) {
-              return status! < 500;
-            },
-            headers: headers),
+          baseUrl: "${dotenv.env["APP_SERVER_URL"]}/$url",
+          // contentType: Headers.jsonContentType,
+          // responseType: ResponseType.json,
+          maxRedirects: 5,
+          connectTimeout: 60000,
+          sendTimeout: 60 * 1000,
+          receiveTimeout: 60 * 1000,
+          followRedirects: false,
+          validateStatus: (status) {
+            return status! <= 500;
+          },
+          headers: headers,
+        ),
       );
       late Response<Map<String, dynamic>> response;
 
@@ -51,7 +56,7 @@ class Provider with DioMixin implements Dio {
       ));
 
       if (kDebugMode) {
-        Logger().d(requestModel);
+        // Logger().d(requestModel);
       }
 
       switch (method.toUpperCase()) {
@@ -78,9 +83,9 @@ class Provider with DioMixin implements Dio {
         // Logger().d(response.statusCode);
         // // Logger().d(response.data);
       }
-      return BaseResponseModel.fromJson(
+      return AuthBaseResponseModel.fromJson(
         statusCode: response.statusCode!,
-        data: response.data!,
+        data: response.data,
       );
     } on DioError catch (e) {
       throw Exception(e);

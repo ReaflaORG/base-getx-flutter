@@ -158,10 +158,8 @@ class PermissionService extends GetxService {
   /// 권한 허용
   Future<dynamic> handlePermissionGranted() async {
     if (isPermissionSuccess.value) {
-      await Future.value([
-        GetStorage().write('initialize_permission', true),
-        Get.offAllNamed('/layout'),
-      ]);
+      GetStorage().write('initialize_permission', true);
+      Get.offAllNamed('/layout');
     }
   }
 

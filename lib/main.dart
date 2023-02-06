@@ -11,6 +11,7 @@ import 'app/routes/app_pages.dart';
 import 'app/service/global_service.dart';
 import 'app/service/permission_service.dart';
 import 'app/theme/theme.dart';
+import 'app/utils/http_overrides.dart';
 import 'app/utils/system_chrome.dart';
 
 void main() async {
@@ -24,6 +25,11 @@ Future<void> initialize() async {
   WidgetsBinding.instance.addPostFrameCallback((_) {
     SchedulerBinding.instance.scheduleWarmUpFrame();
   });
+
+  // Http 초기화 (디버그 모드일 경우)
+  if (kDebugMode) {
+    HttpOverrides.global = MyHttpOverrides();
+  }
 
   /// .env 초기화
   await dotenv.load();
