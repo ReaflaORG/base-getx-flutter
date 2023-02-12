@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -216,9 +217,10 @@ Future<void> handleOnForegroundMessageSettings({
         RemoteMessage message,
       ) async {
         final AndroidNotification? android = message.notification?.android;
+        final AppleNotification? apple = message.notification?.apple;
+
         Logger().d('''
-[Android]
-android : $android
+[AOS]
 channelId : ${android?.channelId}
 clickAction : ${android?.clickAction}
 color : ${android?.color}
@@ -231,6 +233,33 @@ sound : ${android?.sound}
 tag : ${android?.tag}
 ticker : ${android?.ticker}
 visibility : ${android?.visibility}
+
+[IOS]
+badge : ${apple?.badge}
+imageUrl : ${apple?.imageUrl}
+sound : ${apple?.sound}
+subtitle : ${apple?.subtitle}
+subtitleLocArgs : ${apple?.subtitleLocArgs}
+subtitleLocKey : ${apple?.subtitleLocKey}
+
+[default]
+data : ${message.data}
+category : ${message.category}
+collapseKey : ${message.collapseKey}
+contentAvailable : ${message.contentAvailable}
+from : ${message.from}
+messageId : ${message.messageId}
+messageType : ${message.messageType}
+mutableContent : ${message.mutableContent}
+
+[notification]
+title : ${message.notification?.title}
+titleLocArgs : ${message.notification?.titleLocArgs}
+titleLocKey : ${message.notification?.titleLocKey}
+body : ${message.notification?.body}
+bodyLocArgs : ${message.notification?.bodyLocArgs}
+bodyLocKey : ${message.notification?.bodyLocKey}
+web : ${message.notification?.web}
 ''');
 
         // 메세지가 온 경우에만 체크
@@ -245,11 +274,20 @@ visibility : ${android?.visibility}
               message.notification!.body,
               NotificationDetails(
                 android: AndroidNotificationDetails(
+                  // 채널 아이디
                   channel.id.toString(),
+                  // 채널 이름
                   channel.name.toString(),
+                  // 채널 설명
                   channelDescription: channel.description.toString(),
-                  icon: '@mipmap/ic_launcher',
+                  // 알림 중요도
                   importance: Importance.high,
+                  // 아이콘
+                  icon: android?.smallIcon ?? '@mipmap/ic_launcher',
+                  // 아이콘 색상
+                  color: Color(int.parse(android?.color ?? '0XFF000000')),
+                  // 푸시 알림음
+                  // sound: const RawResourceAndroidNotificationSound('default'),
                 ),
                 iOS: const DarwinNotificationDetails(
                   presentAlert: true,
@@ -261,20 +299,16 @@ visibility : ${android?.visibility}
           }
 
           /// 포그라운드 상태에서 알림 메세지를 사용자가 눌렀을때
-          Future.wait([
-            () async {
-              await handleOnForegroundMessage(message: message);
-              flutterLocalNotificationsPlugin.initialize(
-                initializationSettings,
-                onDidReceiveNotificationResponse: (details) {
-                  // ignore: unnecessary_null_comparison
-                  if (details != null) {
-                    handleOnForegroundMessageOpenedApp(message: message);
-                  }
-                },
-              );
-            }(),
-          ]);
+          await handleOnForegroundMessage(message: message);
+          flutterLocalNotificationsPlugin.initialize(
+            initializationSettings,
+            onDidReceiveNotificationResponse: (details) {
+              // ignore: unnecessary_null_comparison
+              if (details != null) {
+                handleOnForegroundMessageOpenedApp(message: message);
+              }
+            },
+          );
         }
       },
     );

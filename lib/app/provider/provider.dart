@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:logger/logger.dart';
 
 import '../data/fake_user_data.dart';
 import '../models/base_response_model.dart';
@@ -21,9 +20,9 @@ class Provider with DioMixin implements Dio {
         headers['Authorization'] = 'Bearer ${AuthService.to.accessToken.value}';
       }
 
-      if (token != null) {
-        headers['Authorization'] = 'Bearer $token';
-      }
+      // if (token != null) {
+      //   headers['Authorization'] = 'Bearer $token';
+      // }
 
       final Dio dio = Dio(
         BaseOptions(
@@ -83,7 +82,7 @@ class Provider with DioMixin implements Dio {
         // Logger().d(response.statusCode);
         // // Logger().d(response.data);
       }
-      return AuthBaseResponseModel.fromJson(
+      return BaseResponseModel.fromJson(
         statusCode: response.statusCode!,
         data: response.data,
       );
