@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "base",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define=flutter.inspector.debugDescription=false",
+        "--dart-define=flutter.jank=none",
+        "--enable-impeller"
+      ]
+    },
+    {
+      "name": "base (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "base (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}

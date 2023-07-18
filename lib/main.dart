@@ -1,125 +1,256 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
-void main() {
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:timeago/timeago.dart' as timeago;
+
+import 'app/routes/app_pages.dart';
+import 'app/service/global_service.dart';
+import 'app/service/in_app_purchase_service.dart';
+import 'app/service/permission_service.dart';
+import 'app/theme/theme.dart';
+import 'app/utils/http_overrides.dart';
+import 'app/utils/system_chrome.dart';
+
+void main() async {
+  await initialize();
   runApp(const MyApp());
+}
+
+Future<void> initialize() async {
+  /// Widget Binding 초기화
+  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    SchedulerBinding.instance.scheduleWarmUpFrame();
+  });
+
+  // Http 초기화 (디버그 모드일 경우)
+  if (kDebugMode) {
+    HttpOverrides.global = MyHttpOverrides();
+  }
+
+  /// .env 초기화
+  await dotenv.load();
+
+  /// Get Storage 초기화
+  await GetStorage.init();
+
+  /// Timeago 언어 초기화
+  timeago.setLocaleMessages('ko', timeago.KoMessages());
+
+  /// 디바이스 가로모드 방지
+  SystemChome.setSystemChromeDeviceOrientation(
+    type: DeviceOrientationType.PreventLandscape,
+  );
+
+  // 상단 상태 표시줄 색상 설정
+  SystemChome.setSystemChromeStatusBarColor();
+
+  // 파이어베이스 초기화
+  // await Firebase.initializeApp();
+
+  // 카카오 초기화
+  // KakaoSdk.init(nativeAppKey: dotenv.env['APP_KAKAO_NATIVE_APP_KEY']);
+
+  // 인증 서비스 초기화
+  // Get.put(AuthService(), permanent: true);
+
+  /// 데이터 서비스 초기화
+  // Get.put(DataService(), permanent: true);
+
+  /// 권한 서비스 초기화
+  Get.put(PermissionService(), permanent: true);
+
+  // 글로벌 서비스 초기화
+  Get.put(GlobalService(), permanent: true);
+
+  // 파이어베이스 클라우드 메시징 서비스 초기화
+  // Get.put(FirebaseCloudMessagingService(), permanent: true);
+
+  // 인앱 결제 서비스 초기화
+  Get.put(InAppPurchaseService(), permanent: true);
+
+  // 스크롤 서비스 초기화
+  // Get.put(ScrollService(), permanent: true);
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return ScreenUtilWidget.init(
+      builder: (BuildContext context, Widget? child) {
+        return GetMaterialAppWidget.init(
+          context: context,
+          debugShowCheckedModeBanner: false,
+          title: dotenv.env['APP_EN_NAME']!,
+          initialRoute: '/splash',
+          getPages: AppPages.routes,
+          supportedLocales: const [
+            Locale('ko', 'KR'),
+          ],
+          fallbackLocale: const Locale('ko', 'KR'),
+        );
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class ScreenUtilWidget extends ScreenUtilInit {
+  const ScreenUtilWidget({
+    super.key,
+    super.designSize,
+    super.minTextAdapt,
+    super.splitScreenMode,
+    super.useInheritedMediaQuery,
+    super.child,
+    required super.builder,
+  });
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  /// 스크린 유틸 위젯
+  ///
+  /// [designSize] Size : 디자인 사이즈
+  ///
+  /// [minTextAdapt] bool : 텍스트 크기 자동 조절
+  ///
+  /// [splitScreenMode] bool : 스플릿 스크린 모드
+  ///
+  /// [useInheritedMediaQuery] bool : 상속된 미디어 쿼리 사용
+  ///
+  /// [child] Widget? : 자식 위젯
+  ///
+  /// [builder] Widget Function(BuildContext, Widget?) : 빌더
+  factory ScreenUtilWidget.init({
+    Size designSize = const Size(360, 640),
+    bool allowFontScaling = true,
+    bool minTextAdapt = true,
+    bool splitScreenMode = true,
+    bool useInheritedMediaQuery = true,
+    Widget? child,
+    required Widget Function(BuildContext, Widget?) builder,
+  }) {
+    return ScreenUtilWidget(
+      designSize: designSize,
+      minTextAdapt: minTextAdapt,
+      splitScreenMode: splitScreenMode,
+      useInheritedMediaQuery: useInheritedMediaQuery,
+      builder: builder,
+      child: child,
+    );
+  }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class GetMaterialAppWidget extends GetMaterialApp {
+  const GetMaterialAppWidget({
+    super.key,
+    super.title,
+    super.initialRoute,
+    super.getPages,
+    super.builder,
+    super.localizationsDelegates,
+    super.supportedLocales,
+    super.fallbackLocale,
+    super.debugShowCheckedModeBanner,
+    super.checkerboardRasterCacheImages,
+    super.themeMode,
+    super.theme,
+    super.darkTheme,
+    super.locale,
+    super.translations,
+    super.translationsKeys,
+    super.localeResolutionCallback,
+    super.localeListResolutionCallback,
+    super.navigatorObservers,
+    super.navigatorKey,
+    super.initialBinding,
+    super.defaultTransition,
+    super.defaultGlobalState,
+  });
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+  /// GetMaterialApp 위젯
+  ///
+  /// [title] String : 앱 이름
+  ///
+  /// [initialRoute] String : 초기 라우트
+  ///
+  /// [getPages] List<GetPage> : 라우트
+  ///
+  /// [builder] Widget Function(BuildContext, Widget?) : 빌더
+  ///
+  /// [localizationsDelegates] List<LocalizationsDelegate> : 지역화 위임
+  ///
+  /// [supportedLocales] List<Locale> : 지원하는 언어
+  ///
+  /// [fallbackLocale] Locale : 기본 언어
+  ///
+  /// [debugShowCheckedModeBanner] bool : 디버그 배너 표시
+  ///
+  /// [themeMode] ThemeMode : 테마 모드
+  ///
+  /// [theme] ThemeData : 테마
+  ///
+  /// [darkTheme] ThemeData : 다크 테마
+  ///
+  /// [locale] Locale : 언어
+  ///
+  /// [translations] Translations : 번역
+  ///
+  /// [translationsKeys] TranslationKeys : 번역 키
+  ///
+  /// [localeResolutionCallback] Locale Function(Locale?, Iterable<Locale>)? : 언어 해상 콜백
+  ///
+  /// [localeListResolutionCallback] LocaleListResolutionCallback? : 언어 리스트 해상 콜백
+  ///
+  /// [navigatorObservers] List<NavigatorObserver> : 네비게이터 옵저버
+  ///
+  /// [navigatorKey] GlobalKey<NavigatorState>? : 네비게이터 키
+  ///
+  /// [initialBinding] BindingsBuilder? : 초기 바인딩
+  ///
+  /// [defaultTransition] Transition : 기본 전환
+  ///
+  /// [defaultGlobalState] bool : 기본 전역 상태
+  factory GetMaterialAppWidget.init({
+    required BuildContext context,
+    bool debugShowCheckedModeBanner = false,
+    String title = '',
+    String initialRoute = '/splash',
+    required List<GetPage> getPages,
+    List<Locale> supportedLocales = const <Locale>[
+      Locale('ko', 'KR'),
+    ],
+    Locale fallbackLocale = const Locale('ko', 'KR'),
+  }) {
+    return GetMaterialAppWidget(
+      /// https://blog.gskinner.com/archives/2022/09/flutter-rendering-optimization-tips.html
+      checkerboardRasterCacheImages: true,
+      debugShowCheckedModeBanner: debugShowCheckedModeBanner,
+      title: dotenv.env['APP_EN_NAME']!,
+      initialRoute: '/splash',
+      getPages: AppPages.routes,
+      builder: (BuildContext context, Widget? child) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+          child: child!,
+        );
+      },
+      localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: supportedLocales,
+      fallbackLocale: fallbackLocale,
+      themeMode: GlobalService.to.themeMode.value,
+      theme: theme(),
+      darkTheme: darkTheme(context: context),
     );
   }
 }
