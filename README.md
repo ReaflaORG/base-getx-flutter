@@ -12,16 +12,16 @@ Version 1.3.2
 
 <br>
 
-### 다트 정보
+### 플러터 정보
 
-[Dart 2.19.1](https://dart.dev/get-dart/archive)  
-[DevTools 2.20.1](https://dart.dev/get-dart/archive)
+[Flutter 3.10.6(channel stable)](https://docs.flutter.dev/development/tools/sdk/releases)
 
 <br>
 
-### 플러터 정보
+### 다트 정보
 
-[Flutter 3.7.1(channel stable)](https://docs.flutter.dev/development/tools/sdk/releases)
+[Dart 3.0.6](https://dart.dev/get-dart/archive)  
+[DevTools 2.23.1](https://dart.dev/get-dart/archive)
 
 <br>
 
@@ -52,8 +52,7 @@ Version 1.3.2
       "args": [
         "--dart-define=flutter.inspector.debugDescription=false",
         "--dart-define=flutter.jank=none",
-        // 현재 IOS에서만 사용가능
-        // "--enable-impeller"
+        "--enable-impeller"
       ]
     },
     {
