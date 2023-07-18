@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../theme/color_path.dart';
-import '../theme/text_path.dart';
+import '../theme/color_paths.dart';
+import '../theme/text_paths.dart';
 
 /// 글로벌 앱바 위젯
 ///
@@ -81,7 +81,7 @@ class GlobalAppBarWidget extends StatelessWidget
         title: Text(
           title,
           style: TextPath.Heading2F18W600.copyWith(
-            color: ColorPath.TextGrey1H212121,
+            color: ColorPath.TextGrey1,
           ),
           textAlign: TextAlign.left,
         ),

@@ -17,6 +17,16 @@ class ColorPath {
   ///
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/468CC0.jpg)
   static final PrimaryColor = Color('468CC0');
+  static final PrimaryColor50 = Color('F2F7FC');
+  static final PrimaryColor100 = Color('D9E6F0');
+  static final PrimaryColor200 = Color('B0CEE0');
+  static final PrimaryColor300 = Color('87B5D1');
+  static final PrimaryColor400 = Color('699EC3');
+  static final PrimaryColor500 = Color('468CC0');
+  static final PrimaryColor600 = Color('3E7BB1');
+  static final PrimaryColor700 = Color('3569A1');
+  static final PrimaryColor800 = Color('2C5792');
+  static final PrimaryColor900 = Color('234481');
 
   /// #E3F2FD
   ///
@@ -57,37 +67,22 @@ class ColorPath {
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/FFFFFF.jpg)
   static final TextWhite = Color('FFFFFF');
 
-  /// #212121
-  ///
-  /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/212121.jpg)
-  static final TextGrey1H212121 = Color('212121');
-
   /// #424242
   ///
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/424242.jpg)
-  static final TextGrey2H424242 = Color('424242');
+  static final TextGrey1 = Color('505866');
 
   /// #616161
   ///
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/616161.jpg)
-  static final TextGrey3H616161 = Color('616161');
-
-  /// #9E9E9E
-  ///
-  /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/9E9E9E.jpg)
-  static final TextGrey4H9E9E9E = Color('9E9E9E');
+  static final TextGrey2 = Color('B1B8C0');
 
   // Border ▼
 
   /// #9E9E9E
   ///
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/9E9E9E.jpg)
-  static final Border1H9E9E9E = Color('9E9E9E');
-
-  /// #ECEFF1
-  ///
-  /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/ECEFF1.jpg)
-  static final Border2HECEFF1 = Color('ECEFF1');
+  static final Border = Color('f3f4f6');
 
   // Background ▼
 
@@ -149,10 +144,10 @@ class ColorPath {
 
   // Etc ▼
 
-  /// #383A3F
+  /// #1A1E27
   ///
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/383A3F.jpg)
-  static final BlackColor = Color('383A3F');
+  static final BlackColor = Color('1A1E27');
 
   /// #424242
   ///

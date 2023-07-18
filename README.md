@@ -52,7 +52,8 @@ Version 1.3.2
       "args": [
         "--dart-define=flutter.inspector.debugDescription=false",
         "--dart-define=flutter.jank=none",
-        "--enable-impeller"
+        // 현재 IOS에서는 기본 적용 되어 있음.
+        // "--enable-impeller"
       ]
     },
     {

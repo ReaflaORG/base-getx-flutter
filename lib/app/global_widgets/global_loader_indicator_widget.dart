@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import '../theme/color_path.dart';
+import '../theme/color_paths.dart';
 
 /// 글로벌 로더 인디케이터 위젯
 class GlobalLoaderIndicatorWidget extends StatelessWidget {

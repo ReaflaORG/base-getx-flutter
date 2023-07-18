@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import '../theme/color_path.dart';
+import '../theme/color_paths.dart';
 
 /// 글로벌 Circular Progress 인디케이터 위젯
 ///

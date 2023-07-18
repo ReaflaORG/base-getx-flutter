@@ -46,28 +46,6 @@ class PermissionService extends GetxService {
       isRequired: false,
       isExpanded: false,
     ),
-    // PermissionModel(
-    //   title: '카메라 및 앨범',
-    //   icon: Icon(
-    //     Icons.camera_alt_rounded,
-    //     size: 32,
-    //     color: Colors.grey.shade700,
-    //   ),
-    //   description: '프로필 이미지 업로드에 사용',
-    //   isRequired: true,
-    //   isExpanded: false,
-    // ),
-    // PermissionModel(
-    //   title: '마이크',
-    //   icon: Icon(
-    //     Icons.mic_rounded,
-    //     size: 32,
-    //     color: Colors.grey.shade700,
-    //   ),
-    //   description: '프로필 동영상 업로드시 녹화에 사용',
-    //   isRequired: true,
-    //   isExpanded: false,
-    // ),
   ].obs;
 
   // Variable ▼

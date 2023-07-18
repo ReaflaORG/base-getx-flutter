@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../global_widgets/global_divier_widget.dart';
 import '../../../models/permission_model.dart';
 import '../../../service/permission_service.dart';
-import '../../../theme/color_path.dart';
-import '../../../theme/text_path.dart';
+import '../../../theme/color_paths.dart';
+import '../../../theme/text_paths.dart';
 import '../controller/permission_controller.dart';
 
 class PermissionView extends GetView<PermissionController> {
@@ -20,67 +21,63 @@ class PermissionView extends GetView<PermissionController> {
           padding: const EdgeInsets.all(40),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
+            mainAxisSize: MainAxisSize.max,
             children: [
-              SizedBox(
-                width: double.infinity,
-                // height: 52.w,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 8,
-                        horizontal: 4,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 4,
+                    ),
+                    width: 36.w,
+                    height: 38.67.w,
+                    decoration: BoxDecoration(
+                      color: ColorPath.GreyLightColor,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(5.r),
                       ),
-                      width: 36.w,
-                      height: 38.67.w,
-                      decoration: BoxDecoration(
-                        color: ColorPath.GreyColor,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(5.r),
-                        ),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(5.r),
                       ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(5.r),
-                        ),
-                        child: SizedBox(
-                          width: 28.w,
-                          height: 22.67.w,
-                          child: Image.asset(
-                            'assets/images/logo/logo.png',
-                            // fit: BoxFit.contain,
-                          ),
+                      child: SizedBox(
+                        width: 28.w,
+                        height: 22.67.w,
+                        child: Image.asset(
+                          'assets/images/logo/logo_black.png',
+                          // fit: BoxFit.contain,
                         ),
                       ),
                     ),
-                    SizedBox(width: 14.w),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '앱 접근권한 안내',
-                          style: TextPath.Heading3F16W600.copyWith(
-                            height: 1.20.w,
-                          ),
+                  ),
+                  SizedBox(width: 14.w),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '앱 접근권한 안내',
+                        style: TextPath.Heading3F16W600.copyWith(
+                          height: 1.20.w,
                         ),
-                        SizedBox(height: 2.w),
-                        Text(
-                          '파킨슨 앱 이용 시 다음 권한들을 사용하오니\r\n허용해 주시기 바랍니다.',
-                          style: TextPath.TextF12W500.copyWith(
-                            color: ColorPath.TextGrey3H616161,
-                            height: 1.15.w,
-                          ),
+                      ),
+                      SizedBox(height: 2.w),
+                      Text(
+                        '${dotenv.env['APP_KO_NAME']} 앱 이용 시 다음 권한들을 사용하오니. 허용해 주시기 바랍니다.',
+                        style: TextPath.TextF12W500.copyWith(
+                          color: ColorPath.TextGrey1,
+                          height: 1.15.w,
+                          overflow: TextOverflow.visible,
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
               GlobalDividerWidget.basic(),
               const RequiredPermissionsWidget(),
@@ -130,7 +127,7 @@ class RequiredPermissionsWidget extends GetView<PermissionController> {
               Text(
                 '필수 접근 권한',
                 style: TextPath.TextF14W600.copyWith(
-                  color: ColorPath.TextGrey1H212121,
+                  color: ColorPath.TextGrey1,
                 ),
               ),
               SizedBox(height: 25.w),
@@ -165,7 +162,7 @@ class OptionPermissionsWidget extends GetView<PermissionController> {
               Text(
                 '선택 접근 권한',
                 style: TextPath.TextF14W600.copyWith(
-                  color: ColorPath.TextGrey1H212121,
+                  color: ColorPath.TextGrey1,
                 ),
               ),
               SizedBox(height: 25.w),
@@ -236,7 +233,7 @@ class PermissionContentWidget extends StatelessWidget {
               Text(
                 permissionList[index].description,
                 style: TextPath.TextF12W400.copyWith(
-                  color: ColorPath.TextGrey2H424242,
+                  color: ColorPath.TextGrey1,
                 ),
               ),
             ],

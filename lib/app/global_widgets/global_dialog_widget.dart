@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../service/permission_service.dart';
-import '../theme/color_path.dart';
+import '../theme/color_paths.dart';
 
 Future<dynamic> GlobalWillPopScopeDialogWidget({String? type}) =>
     Get.bottomSheet(
@@ -289,6 +289,11 @@ Future<dynamic> GlobalPermissionModalBottomSheetWidget({
           const RouteSettings(name: 'PermissionModalBottomSheetWidget'),
     );
 
+/// 앱 업데이트 모달
+///
+/// [cancelOnPressed] : 취소 함수
+///
+/// [okOnPressed] : 업데이트 함수
 Future<dynamic> GlobalAppVersionUpgradeModalWidget({
   Future<void> Function()? cancelOnPressed,
   Future<void> Function()? okOnPressed,
@@ -296,9 +301,10 @@ Future<dynamic> GlobalAppVersionUpgradeModalWidget({
     Get.dialog(
       WillPopScope(
         onWillPop: () => Future(() => false),
-        child: CupertinoAlertDialog(
+        child: AlertDialog(
           title: const Text('앱 업데이트'),
           content: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(height: 10.h),
               SizedBox(

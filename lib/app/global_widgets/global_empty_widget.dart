@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../theme/color_path.dart';
+import '../theme/color_paths.dart';
 
 /// 글로벌 빈 위젯
 /// `.w`, `.sp` 를 사용하기 위해 `final`을 사용하지 않음

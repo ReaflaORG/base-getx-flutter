@@ -6,9 +6,10 @@
       "request": "launch",
       "type": "dart",
       "args": [
+        // Flutter Inspector 디버그 설명 비활성화
         "--dart-define=flutter.inspector.debugDescription=false",
-        "--dart-define=flutter.jank=none",
-        "--enable-impeller"
+        // 앱 내의 성능 문제를 확인하는 Jank 기록 비활성화
+        "--dart-define=flutter.jank=none"
       ]
     },
     {

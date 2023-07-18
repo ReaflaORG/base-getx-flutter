@@ -3,6 +3,21 @@
     <!-- 인터넷 통신 권한 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- 위치 권한 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!-- 카메라 권한 -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- 파일 쓰기 권한 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 파일 읽기 권한 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- 녹음 권한 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <application
         android:label="base_getx_flutter"
         android:name="${applicationName}"

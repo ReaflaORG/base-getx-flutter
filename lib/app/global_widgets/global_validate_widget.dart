@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../theme/color_path.dart';
+import '../theme/color_paths.dart';
 
 /// 글로벌 벨리데이트 텍스트 위젯
 class GlobalValidateTextWidget extends StatelessWidget {

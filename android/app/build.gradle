@@ -88,6 +88,11 @@ android {
         }
     }
 
+    lintOptions {
+        // 보이게 하고 싶지 않은 경고 이름을 입력
+        disable 'some-warning'
+    }
+
     splits {
         // TODO: 화면 밀도나 ABI(Application Binary Interface)에 따라 여러 개의 APK를 빌드하는 작업에는 시간이 걸립니다.
         // 아래의 두개의 옵션을 비활성화 하면 시간을 줄일 수 있다.

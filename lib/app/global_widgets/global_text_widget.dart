@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../theme/color_path.dart';
-import '../theme/text_path.dart';
+import '../theme/color_paths.dart';
+import '../theme/text_paths.dart';
 
 /// 글로벌 디바이더 위젯
 class GlobalTextWidget extends Text {

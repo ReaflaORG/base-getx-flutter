@@ -54,8 +54,8 @@ class AppPages {
       page: () => const PermissionView(),
       binding: PermissionBinding(),
       transition: Transition.native,
-      // transitionDuration: const Duration(milliseconds: 800),
-      // curve: Curves.easeIn,
+      transitionDuration: const Duration(milliseconds: 800),
+      curve: Curves.easeIn,
       popGesture: false,
     ),
     GetPage(

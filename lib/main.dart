@@ -230,7 +230,7 @@ class GetMaterialAppWidget extends GetMaterialApp {
   }) {
     return GetMaterialAppWidget(
       /// https://blog.gskinner.com/archives/2022/09/flutter-rendering-optimization-tips.html
-      checkerboardRasterCacheImages: true,
+      // checkerboardRasterCacheImages: true,
       debugShowCheckedModeBanner: debugShowCheckedModeBanner,
       title: dotenv.env['APP_EN_NAME']!,
       initialRoute: '/splash',
@@ -249,7 +249,7 @@ class GetMaterialAppWidget extends GetMaterialApp {
       supportedLocales: supportedLocales,
       fallbackLocale: fallbackLocale,
       themeMode: GlobalService.to.themeMode.value,
-      theme: theme(),
+      theme: theme(context: context),
       darkTheme: darkTheme(context: context),
     );
   }
