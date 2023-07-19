@@ -180,19 +180,19 @@ FilledButtonThemeData filledButtonThemeData() {
 TextButtonThemeData textButtonThemeData() {
   return TextButtonThemeData(
     style: TextButton.styleFrom(
-      padding: const EdgeInsets.all(15).r,
-      minimumSize: Size(53.w, 53.w),
+      // padding: const EdgeInsets.all(15).r,
+      // minimumSize: Size(53.w, 53.w),
       foregroundColor: ColorPath.PrimaryColor,
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       // disabledForegroundColor: ColorPath.Border,
-      disabledBackgroundColor: ColorPath.PrimaryColor.withOpacity(0.3),
-      alignment: Alignment.center,
+      // disabledBackgroundColor: ColorPath.PrimaryColor.withOpacity(0.3),
+      // alignment: Alignment.center,
       splashFactory: InkRipple.splashFactory,
-      shape: RoundedRectangleBorder(
-        borderRadius: const BorderRadius.all(
-          Radius.circular(15),
-        ).r,
-      ),
+      // shape: RoundedRectangleBorder(
+      //   borderRadius: const BorderRadius.all(
+      //     Radius.circular(15),
+      //   ).r,
+      // ),
     ),
   );
 }
@@ -201,19 +201,19 @@ TextButtonThemeData textButtonThemeData() {
 IconButtonThemeData iconButtonThemeData() {
   return IconButtonThemeData(
     style: IconButton.styleFrom(
-      padding: const EdgeInsets.all(15).r,
-      minimumSize: Size(53.w, 53.w),
+      // padding: const EdgeInsets.all(15).r,
+      // minimumSize: Size(53.w, 53.w),
       foregroundColor: ColorPath.PrimaryColor,
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       // disabledForegroundColor: ColorPath.Border,
-      disabledBackgroundColor: ColorPath.PrimaryColor.withOpacity(0.3),
-      alignment: Alignment.center,
+      // disabledBackgroundColor: ColorPath.PrimaryColor.withOpacity(0.3),
+      // alignment: Alignment.center,
       splashFactory: InkRipple.splashFactory,
-      shape: RoundedRectangleBorder(
-        borderRadius: const BorderRadius.all(
-          Radius.circular(15),
-        ).r,
-      ),
+      // shape: RoundedRectangleBorder(
+      //   borderRadius: const BorderRadius.all(
+      //     Radius.circular(15),
+      //   ).r,
+      // ),
     ),
   );
 }
@@ -341,9 +341,7 @@ PopupMenuThemeData popupMenuThemeData() {
       color: ColorPath.BlackColor,
     ),
     labelTextStyle: MaterialStateProperty.all(
-      TextPath.TextF14W500.copyWith(
-        color: ColorPath.BlackColor,
-      ),
+      TextPath.TextF14W500,
     ),
   );
 }

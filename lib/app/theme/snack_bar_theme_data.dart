@@ -39,7 +39,7 @@ SnackBarThemeData snackBarThemeData() => SnackBarThemeData(
       actionOverflowThreshold: 1,
       // insetPadding: const EdgeInsets.all(16).r,
       // width: 1.sw,
-      backgroundColor: Colors.black.withOpacity(0.8),
+      backgroundColor: Colors.black.withOpacity(0.9),
       // backgroundColor: ColorPath.PrimaryColor.withOpacity(0.8),
       actionTextColor: Colors.white,
       actionBackgroundColor: Colors.transparent,

@@ -72,8 +72,8 @@ InputDecorationTheme inputDecorationTheme() {
     helperMaxLines: 1,
     errorMaxLines: 2,
     filled: false,
-    isDense: true,
-    isCollapsed: true,
+    isDense: false,
+    isCollapsed: false,
     // alignLabelWithHint: false,
     // contentPadding: const EdgeInsets.symmetric(
     //         horizontal: 16,
@@ -130,6 +130,7 @@ InputDecorationTheme inputDecorationTheme() {
         width: 2.w,
       ),
     ),
+    // * UnderlineInputBorder의 경우 SearchBar 위젯에도 영향이 간다.
     focusedBorder: UnderlineInputBorder(
       borderSide: BorderSide(
         color: ColorPath.PrimaryColor,

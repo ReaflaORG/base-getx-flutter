@@ -26,7 +26,7 @@ import 'color_paths.dart';
 ///
 /// [EdgeInsetsGeometry?] actionsPadding: 액션 버튼의 여백입니다.
 DialogTheme dialogThemeData() => DialogTheme(
-      alignment: Alignment.centerLeft,
+      alignment: Alignment.center,
       actionsPadding: const EdgeInsets.all(15).r,
       iconColor: ColorPath.BlackColor,
       backgroundColor: Colors.white,

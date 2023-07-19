@@ -48,7 +48,7 @@ ListTileThemeData listTileThemeData() => ListTileThemeData(
       horizontalTitleGap: 16.w,
       minVerticalPadding: 8.w,
       // minLeadingWidth: 20.w,
-      tileColor: ColorPath.Border,
+      // tileColor: ColorPath.Border,
       selectedTileColor: ColorPath.PrimaryColor,
       selectedColor: Colors.white,
       iconColor: ColorPath.TextGrey1,

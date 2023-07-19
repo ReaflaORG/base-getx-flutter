@@ -23,9 +23,44 @@ class SplashController extends GetxController {
   // 애니메이션 효과
   Rx<Cubic> AnimatedCurves = Curves.easeIn.obs;
 
+  Rx<TextEditingController> iconController = TextEditingController().obs;
+  Rx<String> selectedValue = "USA".obs;
   Rx<bool> isChecked = false.obs;
   Rx<double> slide = 0.0.obs;
   Rx<bool> gender = false.obs;
+  Rx<SearchController> searchController = SearchController().obs;
+  Rx<TimeOfDay> selectedTime = TimeOfDay.now().obs;
+  Rx<int> selectedNav = 0.obs;
+
+  Future<void> selectTime(BuildContext context) async {
+    final TimeOfDay? pickedTime = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+      cancelText: '취소',
+      confirmText: '확인',
+      helpText: '시간 선택',
+      // builder: (BuildContext context, Widget? child) {
+      //   return Theme(
+      //     data: ThemeData.light(
+      //       useMaterial3: true,
+      //     ).copyWith(
+      //       colorScheme: ColorScheme.light(
+      //         primary: Colors.black,
+      //         onPrimary: Colors.white,
+      //         surface: Colors.white,
+      //         onSurface: Colors.black,
+      //       ),
+      //       dialogBackgroundColor: Colors.white,
+      //     ),
+      //     child: child!,
+      //   );
+      // },
+    );
+
+    if (pickedTime != null && pickedTime != selectedTime) {
+      selectedTime.value = pickedTime;
+    }
+  }
 
   // Function ▼
 
