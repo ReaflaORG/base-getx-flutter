@@ -23,6 +23,8 @@ class SplashController extends GetxController {
   // 애니메이션 효과
   Rx<Cubic> AnimatedCurves = Curves.easeIn.obs;
 
+  Rx<bool> isChecked = false.obs;
+  Rx<double> slide = 0.0.obs;
   Rx<bool> gender = false.obs;
 
   // Function ▼

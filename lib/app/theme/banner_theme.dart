@@ -1,3 +1,4 @@
+import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,8 +30,5 @@ MaterialBannerThemeData materialBannerThemeData() => MaterialBannerThemeData(
       // dividerColor: Colors.white,
       backgroundColor: ColorPath.PrimaryColor.withOpacity(0.1),
       surfaceTintColor: ColorPath.PrimaryColor,
-      contentTextStyle: TextStyle(
-        color: ColorPath.BlackColor,
-        fontSize: 16.sp,
-      ),
+      contentTextStyle: TextPath.TextF16W500,
     );

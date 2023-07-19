@@ -1,12 +1,10 @@
 // ignore_for_file: avoid_classes_with_only_static_members, prefer_const_constructors, slash_for_doc_comments, non_constant_identifier_names
 
+import 'package:base_getx_flutter/app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
-
-/// Primary FontFamily ▼
-const FontFamily = 'Pretendard';
 
 /// 텍스트 스타일
 ///
@@ -44,8 +42,9 @@ class TextPath {
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// Heading
@@ -62,8 +61,9 @@ class TextPath {
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// Heading
@@ -80,8 +80,9 @@ class TextPath {
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// Heading
@@ -98,8 +99,9 @@ class TextPath {
     fontWeight: FontWeight.bold,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -114,8 +116,9 @@ class TextPath {
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   // fontFamily: Pretendard
@@ -130,8 +133,9 @@ class TextPath {
     fontWeight: FontWeight.w200,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -146,8 +150,9 @@ class TextPath {
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -162,8 +167,9 @@ class TextPath {
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -178,8 +184,9 @@ class TextPath {
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -194,8 +201,9 @@ class TextPath {
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -210,8 +218,9 @@ class TextPath {
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -226,8 +235,9 @@ class TextPath {
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -242,8 +252,9 @@ class TextPath {
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 21 / 13,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 21 / 13,
   );
 
   /// fontFamily: Pretendard
@@ -258,8 +269,9 @@ class TextPath {
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -274,8 +286,9 @@ class TextPath {
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -290,8 +303,9 @@ class TextPath {
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -306,8 +320,9 @@ class TextPath {
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 24 / 14,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 24 / 14,
   );
 
   /// fontFamily: Pretendard
@@ -322,8 +337,9 @@ class TextPath {
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -338,8 +354,9 @@ class TextPath {
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -354,8 +371,9 @@ class TextPath {
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 24 / 16,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 24 / 16,
   );
 
   /// fontFamily: Pretendard
@@ -370,8 +388,9 @@ class TextPath {
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -386,8 +405,9 @@ class TextPath {
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -402,8 +422,26 @@ class TextPath {
     fontWeight: FontWeight.w700,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
+  );
+
+  /// fontFamily: Pretendard
+  ///
+  /// fontSize: 18
+  ///
+  /// fontWeight: Regular 500
+  static TextStyle TextF18W500 = TextStyle(
+    color: ColorPath.BlackColor,
+    fontFamily: FontFamily,
+    fontSize: 18.0.sp,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.normal,
+    decoration: TextDecoration.none,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -418,8 +456,9 @@ class TextPath {
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -434,8 +473,9 @@ class TextPath {
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -450,8 +490,9 @@ class TextPath {
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 
   /// fontFamily: Pretendard
@@ -466,7 +507,8 @@ class TextPath {
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.none,
-    height: 1.3,
-    letterSpacing: 0,
+    letterSpacing: TextLetterSpacing,
+    wordSpacing: TextWordSpacing,
+    // height: 1.3,
   );
 }

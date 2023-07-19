@@ -1,3 +1,4 @@
+import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,20 +30,12 @@ DialogTheme dialogThemeData() => DialogTheme(
       actionsPadding: const EdgeInsets.all(15).r,
       iconColor: ColorPath.BlackColor,
       backgroundColor: Colors.white,
-      surfaceTintColor: ColorPath.PrimaryColor,
-      titleTextStyle: TextStyle(
-        color: ColorPath.BlackColor,
-        fontSize: 18.sp,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      contentTextStyle: TextStyle(
-        color: ColorPath.BlackColor,
-        fontSize: 16.sp,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
+      surfaceTintColor: Colors.white,
+      titleTextStyle: TextPath.TextF18W600,
+      contentTextStyle: TextPath.TextF16W400.copyWith(
+        color: ColorPath.TextGrey1,
       ),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.r),
+        borderRadius: BorderRadius.circular(15).r,
       ),
     );

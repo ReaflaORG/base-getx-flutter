@@ -20,11 +20,11 @@ import 'color_paths.dart';
 ///
 /// [MaterialStateProperty<Icon?>?] thumbIcon: 슬라이더의 썸(thumb) 아이콘입니다.
 SwitchThemeData switchThemeData() => SwitchThemeData(
-      thumbColor: MaterialStateProperty.all<Color>(ColorPath.PrimaryColor),
+      thumbColor: MaterialStateProperty.all<Color>(Colors.white),
       trackColor: MaterialStateProperty.all<Color>(ColorPath.PrimaryColor),
-      // trackOutlineColor:
-      //     MaterialStateProperty.all<Color>(ColorPath.PrimaryColor),
+      trackOutlineColor:
+          MaterialStateProperty.all<Color>(ColorPath.PrimaryLightColor),
       // overlayColor: MaterialStateProperty.all<Color>(ColorPath.PrimaryColor),
       // splashRadius: 0.0,
-      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      materialTapTargetSize: MaterialTapTargetSize.padded,
     );

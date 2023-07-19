@@ -1,3 +1,4 @@
+import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -53,12 +54,6 @@ AppBarTheme appBarThemeData() => AppBarTheme(
         color: ColorPath.BlackColor,
         size: 26.sp,
       ),
-      titleTextStyle: TextStyle(
-        color: ColorPath.BlackColor,
-        fontSize: 18.sp,
-      ),
-      toolbarTextStyle: TextStyle(
-        color: ColorPath.BlackColor,
-        fontSize: 18.sp,
-      ),
+      titleTextStyle: TextPath.TextF18W600,
+      toolbarTextStyle: TextPath.TextF18W500,
     );

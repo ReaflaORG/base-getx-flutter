@@ -1,12 +1,5 @@
 import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-/// 폰트 컬러
-const fontColor = 0XFF202632;
-
-/// 폰트 사이즈 (기본 16 사이즈)
-final fontSize = 16.sp;
 
 /// Text Theme ▼
 ///
@@ -40,124 +33,19 @@ final fontSize = 16.sp;
 ///
 /// [TextStyle?] labelSmall: 소형 레이블 스타일입니다.
 TextTheme textThemeData() => TextTheme(
-      displayLarge: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w600,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      displayMedium: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w500,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      displaySmall: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      headlineLarge: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w600,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      headlineMedium: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w500,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      headlineSmall: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      titleLarge: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w600,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      titleMedium: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w500,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      titleSmall: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      bodyLarge: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w600,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      bodyMedium: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w500,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      bodySmall: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      labelLarge: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w600,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      labelMedium: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w500,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
-      labelSmall: TextStyle(
-        fontFamily: FontFamily,
-        color: const Color(fontColor),
-        fontSize: fontSize,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.25,
-        wordSpacing: 1.0,
-      ),
+      displayLarge: TextPath.TextF16W600,
+      displayMedium: TextPath.TextF16W500,
+      displaySmall: TextPath.TextF16W400,
+      headlineLarge: TextPath.TextF16W600,
+      headlineMedium: TextPath.TextF16W500,
+      headlineSmall: TextPath.TextF16W400,
+      titleLarge: TextPath.TextF16W600,
+      titleMedium: TextPath.TextF16W500,
+      titleSmall: TextPath.TextF16W400,
+      bodyLarge: TextPath.TextF16W600,
+      bodyMedium: TextPath.TextF16W500,
+      bodySmall: TextPath.TextF16W400,
+      labelLarge: TextPath.TextF16W600,
+      labelMedium: TextPath.TextF16W500,
+      labelSmall: TextPath.TextF16W400,
     );

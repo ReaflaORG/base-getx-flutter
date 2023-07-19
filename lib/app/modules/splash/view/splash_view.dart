@@ -99,38 +99,193 @@ class AppUpdateWidget extends GetView<SplashController> {
               Text(
                 "${dotenv.env["APP_KO_NAME"]}을 원활하게 이용하기 위해서 최신 버전으로 업데이트할 것을 권장합니다. 이전 버전은 지원되지 않으니, 업데이트를 진행해야 계속할 수 있습니다.",
               ),
-              Obx(
-                () => Switch(
-                  value: controller.gender.value,
-                  onChanged: (value) {
-                    controller.gender.value = value;
-                  },
-                  activeColor: Colors.blue,
-                  activeTrackColor: Colors.lightBlue,
-                  inactiveThumbColor: Colors.grey,
-                  inactiveTrackColor: Colors.grey.shade300,
-                  materialTapTargetSize: MaterialTapTargetSize.padded,
-                ),
-              ),
-              // AlertDialog(
-              //   title: Text('Dialog Title'),
-              //   content: Text('Dialog Content'),
+
+              // Obx(
+              //   () => Switch(
+              //     value: controller.gender.value,
+              //     onChanged: (value) {
+              //       controller.gender.value = value;
+              //     },
+              //     // activeColor: Colors.blue,
+              //     // activeTrackColor: Colors.lightBlue,
+              //     // inactiveThumbColor: Colors.grey,
+              //     // inactiveTrackColor: Colors.grey.shade300,
+              //     // materialTapTargetSize: MaterialTapTargetSize.padded,
+              //   ),
+              // ),
+              // Obx(
+              //   () => Slider(
+              //     value: controller.slide.value,
+              //     onChanged: (newValue) {
+              //       controller.slide.value = newValue;
+              //     },
+              //     min: 0.0,
+              //     max: 100.0,
+              //     divisions: 100,
+              //     label: '${controller.slide.value.toInt()}',
+              //   ),
+              // ),
+              // MaterialBanner(
+              //   content: Text('Banner'),
+              //   leading: CircleAvatar(
+              //     child: Icon(Icons.info),
+              //     backgroundColor: Colors.white,
+              //   ),
               //   actions: [
-              //     OutlinedButton(
-              //       child: Text('Cancel'),
-              //       onPressed: () {
-              //         Navigator.of(context).pop();
-              //       },
+              //     TextButton(
+              //       child: Text('Action 1'),
+              //       onPressed: () {},
               //     ),
-              //     OutlinedButton(
-              //       child: Text('OK'),
-              //       onPressed: () {
-              //         // Perform OK action
-              //         Navigator.of(context).pop();
-              //       },
+              //     TextButton(
+              //       child: Text('Action 2'),
+              //       onPressed: () {},
               //     ),
               //   ],
               // ),
+              // Banner(
+              //   message: 'Banner',
+              //   location: BannerLocation.topEnd,
+              //   child: Container(
+              //     width: double.infinity,
+              //     height: 50.h,
+              //     color: Colors.white,
+              //     child: Text(
+              //       '앱 업데이트',
+              //       style: TextPath.Heading1.copyWith(),
+              //     ),
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: 100.w,
+              //   child: DefaultTabController(
+              //     length: 3, // Number of tabs
+              //     child: Scaffold(
+              //       appBar: AppBar(
+              //         title: Text('TabBar Example'),
+              //         bottom: TabBar(
+              //           tabs: [
+              //             Tab(
+              //               // icon: Icon(Icons.home),
+              //               text: 'Home',
+              //             ),
+              //             Tab(
+              //               // icon: Icon(Icons.favorite),
+              //               text: 'Favorites',
+              //             ),
+              //             Tab(
+              //               // icon: Icon(Icons.settings),
+              //               text: 'Settingsssssssssssss',
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //       body: TabBarView(
+              //         children: [
+              //           // Content for the Home tab
+              //           Center(
+              //             child: Text('Home'),
+              //           ),
+              //           // Content for the Favorites tab
+              //           Center(
+              //             child: Text('Favorites'),
+              //           ),
+              //           // Content for the Settings tab
+              //           Center(
+              //             child: Text('Settings'),
+              //           ),
+              //         ],
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              // FilledButton(
+              //   child: Text('Alert Dialog test'),
+              //   onPressed: () {
+              //     showDialog(
+              //         context: context,
+              //         barrierDismissible: false, // 바깥 영역 터치시 닫을지 여부
+              //         builder: (BuildContext context) {
+              //           return AlertDialog(
+              //             title: Text('팝업 메시지'),
+              //             content: SingleChildScrollView(
+              //               child: ListBody(
+              //                 children: <Widget>[
+              //                   Text('Alert Dialog 테스트'),
+              //                   Text('ok 버튼 클릭하세요'),
+              //                 ],
+              //               ),
+              //             ),
+              //             actions: <Widget>[
+              //               TextButton(
+              //                 child: Text('ok'),
+              //                 onPressed: () {
+              //                   Navigator.of(context).pop();
+              //                 },
+              //               ),
+              //               TextButton(
+              //                 child: Text('cancel'),
+              //                 onPressed: () {
+              //                   Navigator.of(context).pop();
+              //                 },
+              //               ),
+              //             ],
+              //           );
+              //         });
+              //   },
+              // ),
+              // Obx(
+              //   () => Checkbox(
+              //     value: controller.isChecked.value,
+              //     onChanged: (bool? value) {
+              //       controller.isChecked.value = value ?? false;
+              //     },
+              //   ),
+              // ),
+              ElevatedButton(
+                child: Text('Show SnackBar'),
+                onPressed: () {
+                  final snackBar = SnackBar(
+                    content: Text('This is a SnackBar'),
+                    duration: Duration(seconds: 10),
+                    action: SnackBarAction(
+                      label: 'Undo',
+                      onPressed: () {
+                        // Undo logic
+                      },
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text('John Doe'),
+                subtitle: Text('johndoe@example.com'),
+                trailing: Icon(Icons.arrow_forward),
+                onTap: () {
+                  // Handle ListTile tap event
+                },
+              ),
+              ListTile(
+                selected: false,
+                leading: Icon(Icons.person),
+                title: Text('John Doe'),
+                subtitle: Text('johndoe@example.com'),
+                trailing: Icon(Icons.arrow_forward),
+                onTap: () {
+                  // Handle ListTile tap event
+                },
+              ),
+              ListTile(
+                selected: true,
+                leading: Icon(Icons.person),
+                title: Text('John Doe'),
+                subtitle: Text('johndoe@example.com'),
+                trailing: Icon(Icons.arrow_forward),
+                onTap: () {
+                  // Handle ListTile tap event
+                },
+              )
             ],
           ),
         ),
