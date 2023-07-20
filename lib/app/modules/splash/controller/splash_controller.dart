@@ -32,6 +32,15 @@ class SplashController extends GetxController {
   Rx<TimeOfDay> selectedTime = TimeOfDay.now().obs;
   Rx<int> selectedNav = 0.obs;
 
+  Future<void> handleRefresh() async {
+    isChecked.value = !isChecked.value;
+    // 새로고침 작업 수행
+    await Future.delayed(const Duration(seconds: 10));
+
+    // 새로고침 작업 완료
+    isChecked.value = !isChecked.value;
+  }
+
   Future<void> selectTime(BuildContext context) async {
     final TimeOfDay? pickedTime = await showTimePicker(
       context: context,

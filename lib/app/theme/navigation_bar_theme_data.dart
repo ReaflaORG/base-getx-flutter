@@ -6,6 +6,10 @@ import 'color_paths.dart';
 
 /// NavigationBarThemeData ▼
 ///
+/// NavigationBar는 일반적으로 화면 상단에 위치하는 네비게이션 바를 의미합니다.
+/// 일반적으로 App Bar라고도 불리며, 앱의 제목, 액션 버튼, 뒤로 가기 버튼 등을 포함할 수 있습니다.
+/// 사용자에게 현재 화면이나 앱의 상태를 알려주는 역할을 합니다. 주로 AppBar 위젯을 사용하여 구현됩니다.
+///
 /// [double?] height: 네비게이션 바의 높이를 지정합니다.
 ///
 /// [Color?] backgroundColor: 네비게이션 바의 배경색을 지정합니다.

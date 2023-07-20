@@ -3,6 +3,7 @@
 import 'package:base_getx_flutter/app/theme/divider_theme_data.dart';
 import 'package:base_getx_flutter/app/theme/primary_icon_theme_data.dart';
 import 'package:base_getx_flutter/app/theme/primary_text_theme_data.dart';
+import 'package:base_getx_flutter/app/theme/progress_indicator_theme_data.dart';
 import 'package:base_getx_flutter/app/theme/radio_theme_data.dart';
 import 'package:base_getx_flutter/app/theme/scrollbar_theme_data.dart';
 import 'package:base_getx_flutter/app/theme/search_bar_theme_data.dart';
@@ -22,13 +23,14 @@ import 'app_bar_theme_data.dart';
 import 'badge_theme_data.dart';
 import 'banner_theme.dart';
 import 'bottom_app_bar_theme_data.dart';
+import 'bottom_navigation_bar_theme_data.dart';
 import 'bottom_sheet_theme.dart';
 import 'button_themes.dart';
 import 'card_theme.dart';
 import 'checkbox_theme_data.dart';
 import 'chip_theme.dart';
 import 'color_paths.dart';
-import 'color_schemes.g.dart';
+import 'color_scheme.dart';
 import 'data_table_theme_data.dart';
 import 'date_picker_theme_data.dart';
 import 'dialog_theme_data.dart';
@@ -66,8 +68,7 @@ ThemeData theme({
     ThemeData(
       useMaterial3: true,
       fontFamily: FontFamily,
-      // colorScheme: colorSchemeData(),
-      colorScheme: lightColorScheme,
+      colorScheme: lightColorScheme(),
       appBarTheme: appBarThemeData(),
       textTheme: textThemeData(),
       inputDecorationTheme: inputDecorationTheme(),
@@ -99,11 +100,11 @@ ThemeData theme({
       bottomAppBarTheme: bottomAppBarThemeData(),
       dropdownMenuTheme: dropdownMenuThemeData(),
       expansionTileTheme: expansionTileThemeData(),
-      navigationBarTheme: navigationBarThemeData(),
       textSelectionTheme: textSelectionThemeData(),
-      // navigationDrawerTheme: ,
-      progressIndicatorTheme: const ProgressIndicatorThemeData(),
-      // bottomNavigationBarTheme: bottomNavigationBarThemeData(),
+      progressIndicatorTheme: progressIndicatorThemeData(),
+      navigationBarTheme: navigationBarThemeData(),
+      bottomNavigationBarTheme: bottomNavigationBarThemeData(),
+      navigationDrawerTheme: const NavigationDrawerThemeData(),
       pageTransitionsTheme: const PageTransitionsTheme(
         builders: {
           TargetPlatform.android: ZoomPageTransitionsBuilder(),

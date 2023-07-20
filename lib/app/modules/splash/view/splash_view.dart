@@ -59,39 +59,69 @@ class NavigationBarWidget extends GetView<SplashController> {
           appBar: AppBar(
             title: Text('Navigation Bar Example'),
           ),
-          body: Center(
-            //   child: SelectableText(
-            //     'Selected: ${controller.selectedNav.value}',
-            //     style: TextPath.TextF12W400.copyWith(
-            //       color: ColorPath.TextGrey1,
-            //     ),
-            //   ),
-            // ),
-            child: Center(
-              child: LinearProgressIndicator(),
+          body: RefreshIndicator(
+            onRefresh: controller.handleRefresh,
+            child: ListView(
+              children: [
+                ListTile(
+                  title: Text('Item 1'),
+                ),
+                ListTile(
+                  title: Text('Item 2'),
+                ),
+                ListTile(
+                  title: Text('Item 3'),
+                ),
+                ListTile(
+                  title: Text('Item 4'),
+                ),
+                ListTile(
+                  title: Text('Item 5'),
+                ),
+              ],
             ),
           ),
-          bottomNavigationBar: NavigationBar(
-            selectedIndex: controller.selectedNav.value,
-            onDestinationSelected: (int index) {
+          // bottomNavigationBar: NavigationBar(
+          //   selectedIndex: controller.selectedNav.value,
+          //   onDestinationSelected: (int index) {
+          //     controller.selectedNav.value = index;
+          //   },
+          //   labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+          //   destinations: const [
+          //     NavigationDestination(
+          //       icon: Icon(Icons.favorite_border),
+          //       selectedIcon: Icon(Icons.favorite),
+          //       label: 'First',
+          //     ),
+          //     NavigationDestination(
+          //       icon: Icon(Icons.bookmark_border_outlined),
+          //       selectedIcon: Icon(Icons.bookmark),
+          //       label: 'Second',
+          //     ),
+          //     NavigationDestination(
+          //       icon: Icon(Icons.star_border),
+          //       selectedIcon: Icon(Icons.star),
+          //       label: '',
+          //     ),
+          //   ],
+          // ),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: controller.selectedNav.value,
+            onTap: (int index) {
               controller.selectedNav.value = index;
             },
-            labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
-            destinations: const [
-              NavigationDestination(
-                icon: Icon(Icons.favorite_border),
-                selectedIcon: Icon(Icons.favorite),
-                label: 'First',
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
               ),
-              NavigationDestination(
-                icon: Icon(Icons.bookmark_border_outlined),
-                selectedIcon: Icon(Icons.bookmark),
-                label: 'Second',
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: 'Search',
               ),
-              NavigationDestination(
-                icon: Icon(Icons.star_border),
-                selectedIcon: Icon(Icons.star),
-                label: '',
+              BottomNavigationBarItem(
+                icon: Icon(Icons.settings),
+                label: 'Settings',
               ),
             ],
           ),
