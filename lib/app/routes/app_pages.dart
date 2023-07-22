@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, constant_identifier_names
 
-import 'package:flutter/animation.dart';
+import 'package:base_getx_flutter/app/modules/version/binding/version_binding.dart';
+import 'package:base_getx_flutter/app/modules/version/view/version_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/first/binding/first_binding.dart';
@@ -15,8 +16,6 @@ import '../modules/second/binding/second_binding.dart';
 import '../modules/second/view/second_view.dart';
 import '../modules/splash/binding/splash_binding.dart';
 import '../modules/splash/view/splash_view.dart';
-import '../modules/theme/binding/theme_binding.dart';
-import '../modules/theme/view/theme_view.dart';
 import '../modules/third/binding/third_binding.dart';
 import '../modules/third/view/third_view.dart';
 
@@ -29,22 +28,22 @@ class AppPages {
 
   static final routes = [
     GetPage(
-      title: '스플래시',
+      title: '스플래시 화면',
       name: INITIAL,
       page: () => const SplashView(),
       binding: SplashBinding(),
-      transition: Transition.fadeIn,
+      transition: Transition.cupertino,
       transitionDuration: const Duration(milliseconds: 800),
-      curve: Curves.easeIn,
+      // curve: Curves.easeIn,
       popGesture: false,
     ),
     GetPage(
-      title: '테마',
-      name: Routes.THEME,
-      page: () => const ThemeView(),
-      binding: ThemeBinding(),
-      transition: Transition.native,
-      // transitionDuration: const Duration(milliseconds: 800),
+      title: '버전 업데이트 화면',
+      name: Routes.VERSION,
+      page: () => const VersionView(),
+      binding: VersionBinding(),
+      transition: Transition.cupertino,
+      transitionDuration: const Duration(milliseconds: 800),
       // curve: Curves.easeIn,
       popGesture: false,
     ),
@@ -53,9 +52,9 @@ class AppPages {
       name: Routes.PERMISSION,
       page: () => const PermissionView(),
       binding: PermissionBinding(),
-      transition: Transition.native,
+      transition: Transition.cupertino,
       transitionDuration: const Duration(milliseconds: 800),
-      curve: Curves.easeIn,
+      // curve: Curves.easeIn,
       popGesture: false,
     ),
     GetPage(
@@ -63,8 +62,8 @@ class AppPages {
       name: Routes.LAYOUT,
       page: () => const LayoutView(),
       binding: LayoutBinding(),
-      transition: Transition.native,
-      // transitionDuration: const Duration(milliseconds: 800),
+      transition: Transition.cupertino,
+      transitionDuration: const Duration(milliseconds: 800),
       // curve: Curves.easeIn,
       popGesture: false,
     ),
@@ -73,8 +72,8 @@ class AppPages {
       name: Routes.FIRST,
       page: () => const FirstView(),
       binding: FirstBinding(),
-      transition: Transition.native,
-      // transitionDuration: const Duration(milliseconds: 800),
+      transition: Transition.cupertino,
+      transitionDuration: const Duration(milliseconds: 800),
       // curve: Curves.easeIn,
       popGesture: false,
     ),
@@ -83,8 +82,8 @@ class AppPages {
       name: Routes.SECOND,
       page: () => const SecondView(),
       binding: SecondBinding(),
-      transition: Transition.native,
-      // transitionDuration: const Duration(milliseconds: 800),
+      transition: Transition.cupertino,
+      transitionDuration: const Duration(milliseconds: 800),
       // curve: Curves.easeIn,
       popGesture: false,
     ),
@@ -93,8 +92,8 @@ class AppPages {
       name: Routes.THIRD,
       page: () => const ThirdView(),
       binding: ThirdBinding(),
-      transition: Transition.native,
-      // transitionDuration: const Duration(milliseconds: 800),
+      transition: Transition.cupertino,
+      transitionDuration: const Duration(milliseconds: 800),
       // curve: Curves.easeIn,
       popGesture: false,
     ),
@@ -103,8 +102,8 @@ class AppPages {
       name: Routes.FOURTH,
       page: () => const FourthView(),
       binding: FourthBinding(),
-      transition: Transition.native,
-      // transitionDuration: const Duration(milliseconds: 800),
+      transition: Transition.cupertino,
+      transitionDuration: const Duration(milliseconds: 800),
       // curve: Curves.easeIn,
       popGesture: false,
     ),

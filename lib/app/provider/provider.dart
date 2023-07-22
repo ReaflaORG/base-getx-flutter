@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-import '../data/fake_user_data.dart';
 import '../models/base_response_model.dart';
 import '../service/auth_service.dart';
 
@@ -85,24 +84,6 @@ class Provider with DioMixin implements Dio {
       return BaseResponseModel.fromJson(
         statusCode: response.statusCode!,
         data: response.data,
-      );
-    } on DioException catch (e) {
-      throw Exception(e);
-    }
-  }
-}
-
-/// FAKE 프로바이더
-class FakeProvider with DioMixin implements Dio {
-  static Future<BaseResponseModel> dio({
-    required String method,
-    required String url,
-    dynamic requestModel,
-  }) async {
-    try {
-      return BaseResponseModel.fromJson(
-        statusCode: 200,
-        data: fakeUserDatas,
       );
     } on DioException catch (e) {
       throw Exception(e);

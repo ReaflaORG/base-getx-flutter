@@ -5,11 +5,11 @@ part of 'app_pages.dart';
 abstract class Routes {
   Routes._();
 
-  /// 스플래시
+  /// 스플래시 화면
   static const SPLASH = _Paths.SPLASH;
 
-  /// 테마
-  static const THEME = _Paths.THEME;
+  /// 버전 업데이트
+  static const VERSION = _Paths.VERSION;
 
   /// 권한 동의 안내 화면
   static const PERMISSION = _Paths.PERMISSION;
@@ -33,11 +33,11 @@ abstract class Routes {
 abstract class _Paths {
   _Paths._();
 
-  /// 스플래시
+  /// 스플래시 화면
   static const SPLASH = '/splash';
 
-  /// 테마
-  static const THEME = '/theme';
+  /// 버전 업데이트 화면
+  static const VERSION = '/version';
 
   /// 권한 동의 안내 화면
   static const PERMISSION = '/permission';

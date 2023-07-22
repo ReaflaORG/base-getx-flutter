@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../../service/global_service.dart';
 import '../../../service/permission_service.dart';
 
@@ -16,60 +17,15 @@ class SplashController extends GetxController {
 
   // 처리 상태
   RxBool isLoader = false.obs;
+
   // 애니메이션 투명도 (0.0 ~ 1.0)
   Rx<double> AnimatedOpacity = 0.0.obs;
+
   // 애니메이션 지연 시간
   Rx<Duration> AnimatedDuration = const Duration(milliseconds: 1500).obs;
+
   // 애니메이션 효과
   Rx<Cubic> AnimatedCurves = Curves.easeIn.obs;
-
-  Rx<TextEditingController> iconController = TextEditingController().obs;
-  Rx<String> selectedValue = "USA".obs;
-  Rx<bool> isChecked = false.obs;
-  Rx<double> slide = 0.0.obs;
-  Rx<bool> gender = false.obs;
-  Rx<SearchController> searchController = SearchController().obs;
-  Rx<TimeOfDay> selectedTime = TimeOfDay.now().obs;
-  Rx<int> selectedNav = 0.obs;
-
-  Future<void> handleRefresh() async {
-    isChecked.value = !isChecked.value;
-    // 새로고침 작업 수행
-    await Future.delayed(const Duration(seconds: 10));
-
-    // 새로고침 작업 완료
-    isChecked.value = !isChecked.value;
-  }
-
-  Future<void> selectTime(BuildContext context) async {
-    final TimeOfDay? pickedTime = await showTimePicker(
-      context: context,
-      initialTime: TimeOfDay.now(),
-      cancelText: '취소',
-      confirmText: '확인',
-      helpText: '시간 선택',
-      // builder: (BuildContext context, Widget? child) {
-      //   return Theme(
-      //     data: ThemeData.light(
-      //       useMaterial3: true,
-      //     ).copyWith(
-      //       colorScheme: ColorScheme.light(
-      //         primary: Colors.black,
-      //         onPrimary: Colors.white,
-      //         surface: Colors.white,
-      //         onSurface: Colors.black,
-      //       ),
-      //       dialogBackgroundColor: Colors.white,
-      //     ),
-      //     child: child!,
-      //   );
-      // },
-    );
-
-    if (pickedTime != null && pickedTime != selectedTime) {
-      selectedTime.value = pickedTime;
-    }
-  }
 
   // Function ▼
 
@@ -79,8 +35,8 @@ class SplashController extends GetxController {
   }) async {
     // 앱 버전 체크
     if (!await GlobalService.to.handleAppVersionCheck()) {
-      // 처리 상태 변경
-      isLoader.value = true;
+      Get.offAllNamed(Routes.VERSION);
+
       return;
     }
 
@@ -96,14 +52,14 @@ class SplashController extends GetxController {
       if (GetStorage().read('initialize_permission') == null) {
         if (PermissionService.to.permissionList.isNotEmpty) {
           // 권한을 허용할 리스트가 있는 경우
-          Get.offAllNamed('/permission');
+          Get.offAllNamed(Routes.PERMISSION);
         } else {
           // 권한을 허용할 리스트가 없는 경우
-          Get.offAllNamed('/permission');
+          Get.offAllNamed(Routes.PERMISSION);
         }
       } else {
         // 이미 권한을 허용한 경우
-        Get.offAllNamed('/permission');
+        Get.offAllNamed(Routes.PERMISSION);
       }
     });
   }
@@ -120,23 +76,6 @@ class SplashController extends GetxController {
       AnimatedCurves.value = Curves.easeOut;
       AnimatedOpacity.value = 0.0;
     });
-  }
-
-  void showBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        return const SizedBox(
-          height: 200,
-          child: Center(
-            child: Text(
-              'This is a bottom sheet',
-              style: TextStyle(fontSize: 24),
-            ),
-          ),
-        );
-      },
-    );
   }
 
   @override

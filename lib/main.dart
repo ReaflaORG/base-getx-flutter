@@ -250,7 +250,7 @@ class GetMaterialAppWidget extends GetMaterialApp {
       fallbackLocale: fallbackLocale,
       themeMode: GlobalService.to.themeMode.value,
       theme: theme(context: context),
-      darkTheme: darkTheme(context: context),
+      // darkTheme: darkTheme(context: context),
     );
   }
 }

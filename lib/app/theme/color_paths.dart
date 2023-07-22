@@ -8,11 +8,6 @@ import '../utils/color_hex_convert.dart';
 class ColorPath {
   // Primary ▼
 
-  /// #2F7ABA
-  ///
-  /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/2F7ABA.jpg)
-  static final PrimaryDarkColor = Color('2F7ABA');
-
   /// #468CC0
   ///
   /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/468CC0.jpg)
@@ -27,6 +22,11 @@ class ColorPath {
   static final PrimaryColor700 = Color('3569A1');
   static final PrimaryColor800 = Color('2C5792');
   static final PrimaryColor900 = Color('234481');
+
+  /// #2F7ABA
+  ///
+  /// ![](https://flutter.s3.ap-northeast-2.amazonaws.com/color/2F7ABA.jpg)
+  static final PrimaryDarkColor = Color('2F7ABA');
 
   /// #E3F2FD
   ///
