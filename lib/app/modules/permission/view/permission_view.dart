@@ -36,7 +36,7 @@ class PermissionView extends GetView<PermissionController> {
                     width: 36.w,
                     height: 38.67.w,
                     decoration: BoxDecoration(
-                      color: ColorPath.GreyLightColor,
+                      color: ColorPath.GreyColor200,
                       borderRadius: BorderRadius.all(
                         Radius.circular(5.r),
                       ),
@@ -49,7 +49,7 @@ class PermissionView extends GetView<PermissionController> {
                         width: 28.w,
                         height: 22.67.w,
                         child: Image.asset(
-                          'assets/images/logo/logo_black.png',
+                          'assets/images/logo/logo_black.webp',
                           // fit: BoxFit.contain,
                         ),
                       ),
@@ -62,15 +62,13 @@ class PermissionView extends GetView<PermissionController> {
                     children: [
                       Text(
                         '앱 접근권한 안내',
-                        style: TextPath.Heading3F16W600.copyWith(
-                          height: 1.20.w,
-                        ),
+                        style: TextPath.TextF16W600,
                       ),
                       SizedBox(height: 2.w),
                       Text(
                         '${dotenv.env['APP_KO_NAME']} 앱 이용 시 다음 권한들을 사용하오니. 허용해 주시기 바랍니다.',
                         style: TextPath.TextF12W500.copyWith(
-                          color: ColorPath.TextGrey1,
+                          color: ColorPath.GreyColor600,
                           height: 1.15.w,
                           overflow: TextOverflow.visible,
                         ),
@@ -102,7 +100,7 @@ class PermissionView extends GetView<PermissionController> {
             child: Text(
               '동의하고 계속하기',
               style: TextPath.TextF14W600.copyWith(
-                color: ColorPath.TextWhite,
+                color: Colors.white,
               ),
             ),
           ),
@@ -127,7 +125,7 @@ class RequiredPermissionsWidget extends GetView<PermissionController> {
               Text(
                 '필수 접근 권한',
                 style: TextPath.TextF14W600.copyWith(
-                  color: ColorPath.TextGrey1,
+                  color: ColorPath.GreyColor600,
                 ),
               ),
               SizedBox(height: 25.w),
@@ -162,7 +160,7 @@ class OptionPermissionsWidget extends GetView<PermissionController> {
               Text(
                 '선택 접근 권한',
                 style: TextPath.TextF14W600.copyWith(
-                  color: ColorPath.TextGrey1,
+                  color: ColorPath.GreyColor600,
                 ),
               ),
               SizedBox(height: 25.w),
@@ -210,7 +208,7 @@ class PermissionContentWidget extends StatelessWidget {
             width: 36.w,
             height: 36.w,
             decoration: BoxDecoration(
-              color: ColorPath.Background1HECEFF1,
+              color: ColorPath.GreyColor200,
               shape: BoxShape.circle,
             ),
             child: permissionList[index].isType
@@ -233,7 +231,7 @@ class PermissionContentWidget extends StatelessWidget {
               Text(
                 permissionList[index].description,
                 style: TextPath.TextF12W400.copyWith(
-                  color: ColorPath.TextGrey1,
+                  color: ColorPath.GreyColor600,
                 ),
               ),
             ],

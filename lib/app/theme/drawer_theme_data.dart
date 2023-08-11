@@ -26,7 +26,7 @@ DrawerThemeData drawerThemeData() => DrawerThemeData(
       scrimColor: Colors.transparent,
       shadowColor: Colors.transparent,
       surfaceTintColor: Colors.transparent,
-      backgroundColor: ColorPath.Border,
+      backgroundColor: ColorPath.BorderColor,
       shape: RoundedRectangleBorder(
         borderRadius: const BorderRadius.only(
           topRight: Radius.circular(15),

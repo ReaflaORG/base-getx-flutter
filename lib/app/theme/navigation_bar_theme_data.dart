@@ -43,7 +43,7 @@ NavigationBarThemeData navigationBarThemeData() => NavigationBarThemeData(
       // ),
       labelTextStyle: MaterialStateProperty.all(
         TextPath.TextF12W400.copyWith(
-          color: ColorPath.TextGrey1,
+          color: ColorPath.GreyColor600,
         ),
       ),
       iconTheme: MaterialStateProperty.all(

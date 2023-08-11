@@ -24,7 +24,7 @@ class GlobalEmptyWidget extends StatelessWidget {
     text ??= Text(
       '내용이 없습니다',
       style: TextStyle(
-        color: ColorPath.Gray333Color,
+        color: ColorPath.GreyColor300,
         fontWeight: FontWeight.w500,
         fontSize: 16.sp,
       ),

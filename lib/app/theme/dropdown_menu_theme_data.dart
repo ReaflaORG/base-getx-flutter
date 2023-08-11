@@ -33,24 +33,24 @@ DropdownMenuThemeData dropdownMenuThemeData() => DropdownMenuThemeData(
           horizontal: 16,
           vertical: 14,
         ).r,
-        fillColor: ColorPath.Border,
+        fillColor: ColorPath.BorderColor,
         labelStyle: TextPath.TextF16W500.copyWith(
-          color: ColorPath.TextGrey2,
+          color: ColorPath.GreyColor700,
         ),
         hintStyle: TextPath.TextF16W500.copyWith(
-          color: ColorPath.TextGrey2,
+          color: ColorPath.GreyColor700,
         ),
         helperStyle: TextPath.TextF16W500.copyWith(
-          color: ColorPath.TextGrey2,
+          color: ColorPath.GreyColor700,
         ),
         prefixStyle: TextPath.TextF16W500.copyWith(
-          color: ColorPath.TextGrey2,
+          color: ColorPath.GreyColor700,
         ),
         suffixStyle: TextPath.TextF16W500.copyWith(
-          color: ColorPath.TextGrey2,
+          color: ColorPath.GreyColor700,
         ),
         counterStyle: TextPath.TextF16W500.copyWith(
-          color: ColorPath.TextGrey2,
+          color: ColorPath.GreyColor700,
         ),
         floatingLabelStyle: TextPath.TextF16W500.copyWith(
           color: ColorPath.PrimaryColor,
@@ -58,14 +58,14 @@ DropdownMenuThemeData dropdownMenuThemeData() => DropdownMenuThemeData(
         errorStyle: TextPath.TextF16W500.copyWith(
           color: ColorPath.ErrorColor.withOpacity(0.7),
         ),
-        iconColor: ColorPath.TextGrey2,
-        prefixIconColor: ColorPath.TextGrey2,
-        suffixIconColor: ColorPath.TextGrey2,
+        iconColor: ColorPath.GreyColor700,
+        prefixIconColor: ColorPath.GreyColor700,
+        suffixIconColor: ColorPath.GreyColor700,
         hoverColor: ColorPath.PrimaryColor,
         focusColor: ColorPath.PrimaryColor,
         // border: UnderlineInputBorder(
         //   borderSide: BorderSide(
-        //     color: ColorPath.Border,
+        //     color: ColorPath.BorderColor,
         //     width: 2.w,
         //   ),
         // ),
@@ -79,7 +79,7 @@ DropdownMenuThemeData dropdownMenuThemeData() => DropdownMenuThemeData(
         // ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: ColorPath.Border,
+            color: ColorPath.BorderColor,
             width: 2.w,
           ),
         ),
@@ -91,7 +91,7 @@ DropdownMenuThemeData dropdownMenuThemeData() => DropdownMenuThemeData(
         ),
         disabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: ColorPath.Border,
+            color: ColorPath.BorderColor,
             width: 2.w,
           ),
         ),

@@ -68,10 +68,10 @@ import 'color_paths.dart';
 SliderThemeData sliderThemeData() => SliderThemeData(
       trackHeight: 4.h,
       activeTrackColor: ColorPath.PrimaryColor,
-      inactiveTrackColor: ColorPath.Border,
+      inactiveTrackColor: ColorPath.BorderColor,
       secondaryActiveTrackColor: ColorPath.PrimaryColor,
       activeTickMarkColor: ColorPath.PrimaryColor,
-      inactiveTickMarkColor: ColorPath.Border,
+      inactiveTickMarkColor: ColorPath.BorderColor,
       thumbColor: ColorPath.PrimaryColor,
       overlappingShapeStrokeColor: ColorPath.PrimaryColor,
       // overlayColor: ColorPath.PrimaryColor.withOpacity(0.12),

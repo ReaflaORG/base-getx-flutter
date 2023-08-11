@@ -20,5 +20,5 @@ ProgressIndicatorThemeData progressIndicatorThemeData() =>
       linearTrackColor: ColorPath.GreyColor,
       linearMinHeight: 4.0.w,
       circularTrackColor: ColorPath.GreyColor,
-      refreshBackgroundColor: ColorPath.Border,
+      refreshBackgroundColor: ColorPath.BorderColor,
     );

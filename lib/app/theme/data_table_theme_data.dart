@@ -34,7 +34,7 @@ import 'package:flutter/material.dart';
 /// [dataRowCursor] - 데이터 행에 대한 마우스 커서를 지정하는 MaterialStateProperty<MouseCursor?>입니다. 상태에 따라 다른 커서를 적용할 수 있습니다.
 DataTableThemeData dataTableThemeData() => DataTableThemeData(
       // decoration: BoxDecoration(
-      // color: ColorPath.Border,
+      // color: ColorPath.BorderColor,
       // border: Border.all(
       //   color: ColorPath.GreyColor,
       //   width: 1.0.w,

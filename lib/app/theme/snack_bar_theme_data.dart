@@ -44,7 +44,7 @@ SnackBarThemeData snackBarThemeData() => SnackBarThemeData(
       actionTextColor: Colors.white,
       actionBackgroundColor: Colors.transparent,
       closeIconColor: ColorPath.BlackColor,
-      disabledActionTextColor: ColorPath.TextGrey2,
+      disabledActionTextColor: ColorPath.GreyColor700,
       disabledActionBackgroundColor: Colors.transparent,
       contentTextStyle: TextPath.TextF14W400.copyWith(
         color: Colors.white,

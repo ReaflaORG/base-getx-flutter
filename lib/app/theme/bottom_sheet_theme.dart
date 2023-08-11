@@ -39,7 +39,7 @@ BottomSheetThemeData bottomSheetThemeData() {
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(15).r,
     ),
-    dragHandleColor: ColorPath.Border,
+    dragHandleColor: ColorPath.BorderColor,
     dragHandleSize: Size(50.w, 4.5.w),
     showDragHandle: true,
   );

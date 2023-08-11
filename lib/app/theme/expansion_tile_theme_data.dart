@@ -34,8 +34,8 @@ ExpansionTileThemeData expansionTileThemeData() => ExpansionTileThemeData(
       childrenPadding: const EdgeInsets.symmetric(horizontal: 16).r,
       textColor: ColorPath.BlackColor,
       collapsedTextColor: ColorPath.BlackColor,
-      iconColor: ColorPath.TextGrey1,
-      collapsedIconColor: ColorPath.TextGrey1,
+      iconColor: ColorPath.GreyColor600,
+      collapsedIconColor: ColorPath.GreyColor600,
       backgroundColor: Colors.white,
       collapsedBackgroundColor: Colors.white,
       shape: RoundedRectangleBorder(

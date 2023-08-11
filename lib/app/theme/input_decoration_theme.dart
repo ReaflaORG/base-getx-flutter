@@ -80,24 +80,24 @@ InputDecorationTheme inputDecorationTheme() {
     //         vertical: 14,
     //         )
     //     .r,
-    fillColor: ColorPath.Border,
+    fillColor: ColorPath.BorderColor,
     labelStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.TextGrey2,
+      color: ColorPath.GreyColor700,
     ),
     hintStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.TextGrey2,
+      color: ColorPath.GreyColor700,
     ),
     helperStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.TextGrey2,
+      color: ColorPath.GreyColor700,
     ),
     prefixStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.TextGrey2,
+      color: ColorPath.GreyColor700,
     ),
     suffixStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.TextGrey2,
+      color: ColorPath.GreyColor700,
     ),
     counterStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.TextGrey2,
+      color: ColorPath.GreyColor700,
     ),
     floatingLabelStyle: TextPath.TextF16W500.copyWith(
       color: ColorPath.PrimaryColor,
@@ -105,14 +105,14 @@ InputDecorationTheme inputDecorationTheme() {
     errorStyle: TextPath.TextF16W500.copyWith(
       color: ColorPath.ErrorColor.withOpacity(0.7),
     ),
-    iconColor: ColorPath.TextGrey2,
-    prefixIconColor: ColorPath.TextGrey2,
-    suffixIconColor: ColorPath.TextGrey2,
+    iconColor: ColorPath.GreyColor700,
+    prefixIconColor: ColorPath.GreyColor700,
+    suffixIconColor: ColorPath.GreyColor700,
     hoverColor: ColorPath.PrimaryColor,
     focusColor: ColorPath.PrimaryColor,
     // border: UnderlineInputBorder(
     //   borderSide: BorderSide(
-    //     color: ColorPath.Border,
+    //     color: ColorPath.BorderColor,
     //     width: 2.w,
     //   ),
     // ),
@@ -126,7 +126,7 @@ InputDecorationTheme inputDecorationTheme() {
     // ),
     enabledBorder: UnderlineInputBorder(
       borderSide: BorderSide(
-        color: ColorPath.Border,
+        color: ColorPath.BorderColor,
         width: 2.w,
       ),
     ),
@@ -139,7 +139,7 @@ InputDecorationTheme inputDecorationTheme() {
     ),
     disabledBorder: UnderlineInputBorder(
       borderSide: BorderSide(
-        color: ColorPath.Border,
+        color: ColorPath.BorderColor,
         width: 2.w,
       ),
     ),

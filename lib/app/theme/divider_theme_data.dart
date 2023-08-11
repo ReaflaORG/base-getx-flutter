@@ -16,7 +16,7 @@ import 'color_paths.dart';
 /// [double?] endIndent: 구분선의 끝 위치에서의 간격입니다.
 
 DividerThemeData dividerThemeData() => DividerThemeData(
-      color: ColorPath.Border,
+      color: ColorPath.BorderColor,
       indent: 0,
       endIndent: 0,
       thickness: 2.0.w,

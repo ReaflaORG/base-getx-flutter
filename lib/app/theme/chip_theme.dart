@@ -59,14 +59,14 @@ ChipThemeData chipThemeData() {
     deleteIconColor: ColorPath.PrimaryColor,
     backgroundColor: Colors.white,
     labelStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.TextGrey1,
+      color: ColorPath.GreyColor600,
     ),
     iconTheme: IconThemeData(
       color: ColorPath.PrimaryColor,
       size: 20.sp,
     ),
     side: BorderSide(
-      color: ColorPath.Border,
+      color: ColorPath.BorderColor,
       width: 1,
     ),
     shape: RoundedRectangleBorder(

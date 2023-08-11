@@ -31,7 +31,7 @@ SearchViewThemeData searchViewThemeData() => SearchViewThemeData(
       // ),
       backgroundColor: Colors.white,
       surfaceTintColor: Colors.white,
-      dividerColor: ColorPath.Border,
+      dividerColor: ColorPath.BorderColor,
       side: BorderSide(
         color: ColorPath.GreyColor,
         width: 1.0.w,

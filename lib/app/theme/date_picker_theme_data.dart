@@ -83,7 +83,7 @@ DatePickerThemeData datePickerThemeData() => DatePickerThemeData(
       //   ColorPath.BlackColor,
       // ),
       // dayBackgroundColor: MaterialStateProperty.all(
-      //   ColorPath.TextWhite,
+      //   Colors.white,
       // ),
       dayOverlayColor: MaterialStateProperty.all(
         ColorPath.PrimaryColor.withOpacity(0.1),
@@ -99,7 +99,7 @@ DatePickerThemeData datePickerThemeData() => DatePickerThemeData(
         width: 1.5.w,
       ),
       yearStyle: TextPath.TextF16W600.copyWith(
-        color: ColorPath.TextGrey2,
+        color: ColorPath.GreyColor700,
       ),
       // yearForegroundColor: MaterialStateProperty.all(
       //   ColorPath.BlackColor,

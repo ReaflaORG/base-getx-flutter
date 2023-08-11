@@ -71,7 +71,7 @@ TimePickerThemeData timePickerThemeData() => TimePickerThemeData(
       // dialHandColor: ColorPath.BlackColor,
       // dialTextColor: ColorPath.BlackColor,
       dialTextStyle: TextPath.TextF16W400,
-      entryModeIconColor: ColorPath.TextGrey1,
+      entryModeIconColor: ColorPath.GreyColor600,
       helpTextStyle: TextPath.TextF16W500,
       // hourMinuteColor: ColorPath.PrimaryColor,
       hourMinuteShape: RoundedRectangleBorder(

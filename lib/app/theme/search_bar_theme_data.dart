@@ -57,7 +57,7 @@ SearchBarThemeData searchBarThemeData() => SearchBarThemeData(
       ),
       hintStyle: MaterialStateProperty.all<TextStyle>(
         TextPath.TextF16W500.copyWith(
-          color: ColorPath.TextGrey2,
+          color: ColorPath.GreyColor700,
         ),
       ),
       side: MaterialStateProperty.all<BorderSide>(

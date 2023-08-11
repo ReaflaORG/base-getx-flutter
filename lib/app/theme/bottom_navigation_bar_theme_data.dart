@@ -50,11 +50,11 @@ BottomNavigationBarThemeData bottomNavigationBarThemeData() =>
         size: 24.sp,
       ),
       unselectedIconTheme: IconThemeData(
-        color: ColorPath.TextGrey2,
+        color: ColorPath.GreyColor700,
         size: 24.sp,
       ),
       selectedItemColor: ColorPath.PrimaryColor,
-      unselectedItemColor: ColorPath.TextGrey2,
+      unselectedItemColor: ColorPath.GreyColor700,
       selectedLabelStyle: TextPath.TextF12W500,
       unselectedLabelStyle: TextPath.TextF12W500,
       landscapeLayout: BottomNavigationBarLandscapeLayout.centered,

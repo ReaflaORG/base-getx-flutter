@@ -33,7 +33,7 @@ DialogTheme dialogThemeData() => DialogTheme(
       surfaceTintColor: Colors.white,
       titleTextStyle: TextPath.TextF18W600,
       contentTextStyle: TextPath.TextF16W400.copyWith(
-        color: ColorPath.TextGrey1,
+        color: ColorPath.GreyColor600,
       ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15).r,

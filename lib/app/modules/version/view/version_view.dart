@@ -26,14 +26,14 @@ class VersionView extends GetView<VersionController> {
                 color: Colors.white,
                 child: Text(
                   '앱 업데이트',
-                  style: TextPath.Heading1.copyWith(),
+                  style: TextPath.TextF24Bold,
                 ),
               ),
               SizedBox(height: 10.h),
               Text(
                 "${dotenv.env["APP_KO_NAME"]}을 원활하게 이용하기 위해서 최신 버전으로 업데이트할 것을 권장합니다.\n이전 버전은 지원되지 않으니, 업데이트를 진행해야 계속할 수 있습니다.",
                 style: TextPath.TextF14W400.copyWith(
-                  color: ColorPath.TextGrey1,
+                  color: ColorPath.GreyColor600,
                 ),
               ),
             ],

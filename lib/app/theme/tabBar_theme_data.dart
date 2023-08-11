@@ -33,13 +33,13 @@ TabBarTheme tabBarThemeData() => TabBarTheme(
       labelColor: ColorPath.PrimaryColor,
       // F16W600으로 할지 고민중
       labelStyle: TextPath.TextF16W500,
-      unselectedLabelColor: ColorPath.TextGrey2,
+      unselectedLabelColor: ColorPath.GreyColor700,
       // F16W600으로 할지 고민중
       unselectedLabelStyle: TextPath.TextF16W500,
       // overlayColor: MaterialStateProperty.all<Color>(
       //   ColorPath.PrimaryColor.withOpacity(0.1),
       // ),
-      dividerColor: ColorPath.Border,
+      dividerColor: ColorPath.BorderColor,
       indicatorColor: ColorPath.PrimaryColor,
       indicatorSize: TabBarIndicatorSize.tab,
       indicator: BoxDecoration(
