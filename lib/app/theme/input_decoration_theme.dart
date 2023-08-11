@@ -75,29 +75,28 @@ InputDecorationTheme inputDecorationTheme() {
     isDense: false,
     isCollapsed: false,
     // alignLabelWithHint: false,
-    // contentPadding: const EdgeInsets.symmetric(
-    //         horizontal: 16,
-    //         vertical: 14,
-    //         )
-    //     .r,
+    contentPadding: const EdgeInsets.symmetric(
+      horizontal: 16,
+      vertical: 14,
+    ).r,
     fillColor: ColorPath.BorderColor,
     labelStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor700,
+      color: ColorPath.GreyColor300,
     ),
     hintStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor700,
+      color: ColorPath.GreyColor300,
     ),
     helperStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor700,
+      color: ColorPath.GreyColor300,
     ),
     prefixStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor700,
+      color: ColorPath.GreyColor300,
     ),
     suffixStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor700,
+      color: ColorPath.GreyColor300,
     ),
     counterStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor700,
+      color: ColorPath.GreyColor300,
     ),
     floatingLabelStyle: TextPath.TextF16W500.copyWith(
       color: ColorPath.PrimaryColor,
@@ -105,9 +104,9 @@ InputDecorationTheme inputDecorationTheme() {
     errorStyle: TextPath.TextF16W500.copyWith(
       color: ColorPath.ErrorColor.withOpacity(0.7),
     ),
-    iconColor: ColorPath.GreyColor700,
-    prefixIconColor: ColorPath.GreyColor700,
-    suffixIconColor: ColorPath.GreyColor700,
+    iconColor: ColorPath.GreyColor400,
+    prefixIconColor: ColorPath.GreyColor400,
+    suffixIconColor: ColorPath.GreyColor400,
     hoverColor: ColorPath.PrimaryColor,
     focusColor: ColorPath.PrimaryColor,
     // border: UnderlineInputBorder(
@@ -127,32 +126,32 @@ InputDecorationTheme inputDecorationTheme() {
     enabledBorder: UnderlineInputBorder(
       borderSide: BorderSide(
         color: ColorPath.BorderColor,
-        width: 2.w,
+        width: 1.w,
       ),
     ),
     // * UnderlineInputBorder의 경우 SearchBar 위젯에도 영향이 간다.
     focusedBorder: UnderlineInputBorder(
       borderSide: BorderSide(
         color: ColorPath.PrimaryColor,
-        width: 2.w,
+        width: 1.w,
       ),
     ),
     disabledBorder: UnderlineInputBorder(
       borderSide: BorderSide(
-        color: ColorPath.BorderColor,
-        width: 2.w,
+        color: ColorPath.GreyColor200,
+        width: 1.w,
       ),
     ),
     errorBorder: UnderlineInputBorder(
       borderSide: BorderSide(
         color: ColorPath.ErrorColor.withOpacity(0.7),
-        width: 2.w,
+        width: 1.w,
       ),
     ),
     focusedErrorBorder: UnderlineInputBorder(
       borderSide: BorderSide(
         color: ColorPath.ErrorColor,
-        width: 2.w,
+        width: 1.w,
       ),
     ),
   );
