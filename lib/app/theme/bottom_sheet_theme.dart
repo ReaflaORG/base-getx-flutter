@@ -37,10 +37,10 @@ BottomSheetThemeData bottomSheetThemeData() {
     modalBackgroundColor: Colors.white,
     // modalBarrierColor: Colors.black.withOpacity(0.3),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(20.w),
-        topRight: Radius.circular(20.w),
-      ),
+      borderRadius: const BorderRadius.only(
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ).r,
     ),
     dragHandleColor: ColorPath.BorderColor,
     dragHandleSize: Size(50.w, 4.5.w),
