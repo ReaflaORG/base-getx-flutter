@@ -70,6 +70,7 @@ ThemeData theme({
     ThemeData(
       useMaterial3: true,
       fontFamily: FontFamily,
+      splashColor: ColorPath.PrimaryColor.withOpacity(0.1),
       colorScheme: lightColorScheme(),
       appBarTheme: appBarThemeData(),
       textTheme: textThemeData(),

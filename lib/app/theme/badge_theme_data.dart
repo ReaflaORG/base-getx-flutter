@@ -1,6 +1,7 @@
 import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'color_paths.dart';
 
 /// TooltipThemeData ▼
 ///
@@ -21,12 +22,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 /// [Offset?] offset: 툴팁의 위치를 이동시키는 오프셋입니다.
 BadgeThemeData badgeThemeData() {
   return BadgeThemeData(
-    smallSize: 7.sp,
-    largeSize: 9.sp,
+    // smallSize: 7.sp,
+    // largeSize: 9.sp,
     textColor: Colors.white,
     textStyle: TextPath.TextF12W500.copyWith(
       color: Colors.white,
     ),
-    backgroundColor: Colors.red,
+    backgroundColor: ColorPath.ErrorColor,
   );
 }

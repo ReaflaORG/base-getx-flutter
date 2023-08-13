@@ -81,6 +81,7 @@ class Provider with DioMixin implements Dio {
         // Logger().d(response.statusCode);
         // // Logger().d(response.data);
       }
+
       return BaseResponseModel.fromJson(
         statusCode: response.statusCode!,
         data: response.data,

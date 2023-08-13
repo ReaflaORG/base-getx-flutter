@@ -1,6 +1,5 @@
 import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
 
@@ -39,24 +38,18 @@ import 'color_paths.dart';
 /// [MaterialStateProperty<MouseCursor?>?] mouseCursor: 마우스 커서를 지정합니다.
 BottomNavigationBarThemeData bottomNavigationBarThemeData() =>
     BottomNavigationBarThemeData(
-      elevation: 0.0,
+      elevation: 10,
       showSelectedLabels: true,
       showUnselectedLabels: true,
       // enableFeedback: true,
       type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.white,
-      selectedIconTheme: IconThemeData(
-        color: ColorPath.PrimaryColor,
-        size: 24.sp,
-      ),
-      unselectedIconTheme: IconThemeData(
-        color: ColorPath.GreyColor700,
-        size: 24.sp,
-      ),
+      selectedIconTheme: const IconThemeData(),
+      unselectedIconTheme: const IconThemeData(),
       selectedItemColor: ColorPath.PrimaryColor,
-      unselectedItemColor: ColorPath.GreyColor700,
-      selectedLabelStyle: TextPath.TextF12W500,
-      unselectedLabelStyle: TextPath.TextF12W500,
+      unselectedItemColor: ColorPath.GreyColor500,
+      selectedLabelStyle: TextPath.TextF12Bold,
+      unselectedLabelStyle: TextPath.TextF12Bold,
       landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
       mouseCursor: MaterialStateProperty.all<MouseCursor>(
         SystemMouseCursors.click,

@@ -2,21 +2,21 @@
 class BaseResponseModel {
   /// [statusCode] 응답 코드
   ///
+  /// [data] 응답 데이터
+  ///
   /// [message] 응답 메시지
   ///
-  /// [status] 응답 상태
-  ///
-  /// [data] 응답 데이터
+  /// [error] 응답 에러
   BaseResponseModel({
     required this.statusCode,
     required this.message,
-    required this.status,
+    required this.error,
     this.data,
   });
 
   int statusCode;
+  String? error;
   String? message;
-  String? status;
   dynamic data;
 
   factory BaseResponseModel.fromJson({
@@ -26,17 +26,17 @@ class BaseResponseModel {
     return BaseResponseModel(
       statusCode: statusCode,
       message: data['message'],
-      status: data['status'],
+      error: data['error'],
       data: data['data'],
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'message': message,
-      'status': status,
-      'data': data,
       'statusCode': statusCode,
+      'data': data,
+      'message': message,
+      'error': error,
     };
   }
 }

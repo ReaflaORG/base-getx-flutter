@@ -28,8 +28,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class TextPath {
   static const Color blackColor = Color(0xFF000000);
   static const String fontFamily = FontFamily;
-  static const double textLetterSpacing = 1.0;
-  static const double textWordSpacing = 1.0;
+  static const double textLetterSpacing = -0.25;
+  static const double textWordSpacing = 0.0;
 
   static TextStyle getTextStyle(double fontSize, FontWeight fontWeight) {
     return TextStyle(

@@ -8,8 +8,6 @@ import 'color_paths.dart';
 ///
 /// [bool?] dense: 밀집된 체크박스를 사용할지 여부를 결정하는 값입니다.
 ///
-/// [ShapeBorder?] shape: 체크박스의 모양을 정의하는 모양(border)입니다.
-///
 /// [ListTileStyle?] style: 체크박스와 관련된 ListTile의 스타일입니다.
 ///
 /// [Color?] selectedColor: 선택된 체크박스의 색상입니다.
@@ -48,11 +46,11 @@ ListTileThemeData listTileThemeData() => ListTileThemeData(
       horizontalTitleGap: 16.w,
       minVerticalPadding: 8.w,
       // minLeadingWidth: 20.w,
-      // tileColor: ColorPath.BorderColor,
-      selectedTileColor: ColorPath.PrimaryColor,
+      tileColor: Colors.transparent,
       selectedColor: Colors.white,
-      iconColor: ColorPath.GreyColor600,
-      textColor: ColorPath.GreyColor600,
+      selectedTileColor: ColorPath.PrimaryColor,
+      iconColor: ColorPath.GreyColor400,
+      textColor: ColorPath.BlackColor,
       titleTextStyle: TextPath.TextF16W500,
       subtitleTextStyle: TextPath.TextF14W400,
       // leadingAndTrailingTextStyle: TextStyle(
@@ -62,7 +60,7 @@ ListTileThemeData listTileThemeData() => ListTileThemeData(
       // ),
       contentPadding: const EdgeInsets.symmetric(
         horizontal: 16,
-        vertical: 8,
+        vertical: 0,
       ).r,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16).r,
@@ -70,7 +68,7 @@ ListTileThemeData listTileThemeData() => ListTileThemeData(
       mouseCursor: MaterialStateProperty.all<MouseCursor>(
         SystemMouseCursors.click,
       ),
-      style: ListTileStyle.drawer,
+      style: ListTileStyle.list,
       visualDensity: VisualDensity.standard,
       // titleAlignment: ListTileTitleAlignment.,
     );

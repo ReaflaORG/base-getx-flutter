@@ -1,5 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:base_getx_flutter/app/global_widgets/global_indicator.dart';
+import 'package:base_getx_flutter/app/service/loading_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -13,7 +15,7 @@ Future<dynamic> GlobalWillPopScopeDialogWidget({String? type}) =>
     Get.bottomSheet(
       Container(
         padding: const EdgeInsets.all(10),
-        height: 160.h,
+        height: 160.w,
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
@@ -38,13 +40,13 @@ Future<dynamic> GlobalWillPopScopeDialogWidget({String? type}) =>
                 ],
               ),
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 20.w),
             Row(
               children: [
                 Expanded(
                   flex: 1,
                   child: SizedBox(
-                    height: 50.h,
+                    height: 50.w,
                     child: ElevatedButton(
                       onPressed: () {
                         Get.back();
@@ -75,7 +77,7 @@ Future<dynamic> GlobalWillPopScopeDialogWidget({String? type}) =>
                 Expanded(
                   flex: 1,
                   child: SizedBox(
-                    height: 50.h,
+                    height: 50.w,
                     child: ElevatedButton(
                       child: const Text(
                         '계속진행',
@@ -131,7 +133,7 @@ Future<dynamic> GlobalPermissionModalBottomSheetWidget({
                       shrinkWrap: true,
                       children: [
                         SizedBox(
-                          height: 150.h,
+                          height: 150.w,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -145,13 +147,13 @@ Future<dynamic> GlobalPermissionModalBottomSheetWidget({
                                   decoration: TextDecoration.none,
                                 ),
                               ),
-                              SizedBox(height: 10.h),
+                              SizedBox(height: 10.w),
                               Text(
                                 "${dotenv.env["APP_KO_NAME"]}을 이용하려면\r\n아래의 권한을 허용해 주세요",
                                 style: TextStyle(
                                   color: Colors.grey.shade600,
                                   fontSize: 14.sp,
-                                  height: 1.h,
+                                  height: 1.w,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
@@ -204,7 +206,7 @@ Future<dynamic> GlobalPermissionModalBottomSheetWidget({
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 20.h),
+                                SizedBox(height: 20.w),
                                 Divider(
                                   height: 1,
                                   color: Colors.grey.shade400,
@@ -213,7 +215,7 @@ Future<dynamic> GlobalPermissionModalBottomSheetWidget({
                             ),
                           ),
                         ),
-                        SizedBox(height: 20.h),
+                        SizedBox(height: 20.w),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -247,10 +249,10 @@ Future<dynamic> GlobalPermissionModalBottomSheetWidget({
                       ],
                     ),
                   ),
-                  SizedBox(height: 40.h),
+                  SizedBox(height: 40.w),
                   SizedBox(
                     width: Get.width,
-                    height: 60.h,
+                    height: 60.w,
                     child: ElevatedButton(
                       onPressed: () => controller.handlePermissionOnPressed(),
                       style: ButtonStyle(
@@ -289,6 +291,69 @@ Future<dynamic> GlobalPermissionModalBottomSheetWidget({
           const RouteSettings(name: 'PermissionModalBottomSheetWidget'),
     );
 
+/// 컨펌 다이어로그 위젯
+///
+/// [context] 컨텍스트
+///
+/// [title] 타이틀
+///
+/// [content] 내용
+///
+/// [cancelLabel] 취소 버튼 텍스트
+///
+/// [okLabel] 확인 버튼 텍스트
+///
+/// [cancelOnPressed] 취소 버튼 콜백
+///
+/// [okOnPressed] 확인 버튼 콜백
+Future<dynamic> GlobalConfirmDialogWidget(
+  BuildContext context, {
+  required String title,
+  required String content,
+  String? cancelLabel = '취소',
+  dynamic okLabel = '확인',
+  void Function()? cancelOnPressed,
+  void Function()? okOnPressed,
+}) async {
+  return showDialog(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(title),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: [
+              Text(content),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              if (cancelOnPressed == null) {
+                Get.back();
+                return;
+              }
+
+              cancelOnPressed();
+            },
+            child: Text(cancelLabel!),
+          ),
+          Obx(
+            () => TextButton(
+              onPressed: okOnPressed,
+              child: LoadingService.to.isLoading.value
+                  ? const GlobalCircularProgressIndicatorWidget()
+                  : okLabel(okLabel!),
+            ),
+          ),
+        ],
+      );
+    },
+  );
+}
+
 /// 앱 업데이트 모달
 ///
 /// [cancelOnPressed] : 취소 함수
@@ -306,7 +371,7 @@ Future<dynamic> GlobalAppVersionUpgradeModalWidget({
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(height: 10.h),
+              SizedBox(height: 10.w),
               SizedBox(
                 width: Get.width,
                 child: Text(
@@ -314,7 +379,7 @@ Future<dynamic> GlobalAppVersionUpgradeModalWidget({
                   textAlign: TextAlign.left,
                 ),
               ),
-              SizedBox(height: 10.h),
+              SizedBox(height: 10.w),
             ],
           ),
           actions: [
@@ -380,9 +445,9 @@ class GlobalDialog {
                   width: Get.width,
                   decoration: BoxDecoration(
                     color: Colors.grey.shade200,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(5.r),
-                    ),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(5),
+                    ).r,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,

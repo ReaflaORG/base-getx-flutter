@@ -32,9 +32,9 @@ class GlobalDividerWidget extends Container {
     ),
     double? indent = 0,
     double? endIndent = 0,
-    double? thickness = 1.5,
+    double? thickness = 0,
     double? height = 1,
-    Color? color = const Color(0XFFF2F2F2),
+    Color? color = const Color(0XFFE0E0E0),
   }) {
     return GlobalDividerWidget(
       margin: margin,
