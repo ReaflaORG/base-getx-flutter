@@ -4,7 +4,7 @@ publish_to: "REAFLA"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.0.6 <4.0.0"
+  sdk: ">=3.1.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -13,7 +13,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.5
   intl: ^0.18.0
   get: ^4.6.5
   get_storage: ^2.1.1
@@ -54,23 +54,23 @@ flutter:
   fonts:
     - family: Pretendard
       fonts:
-        - asset: assets/fonts/pretendard/Pretendard-Thin.otf
+        - asset: assets/fonts/pretendard/Pretendard-Thin.ttf
           weight: 100
-        - asset: assets/fonts/pretendard/Pretendard-ExtraLight.otf
+        - asset: assets/fonts/pretendard/Pretendard-ExtraLight.ttf
           weight: 200
-        - asset: assets/fonts/pretendard/Pretendard-Light.otf
+        - asset: assets/fonts/pretendard/Pretendard-Light.ttf
           weight: 300
-        - asset: assets/fonts/pretendard/Pretendard-Regular.otf
+        - asset: assets/fonts/pretendard/Pretendard-Regular.ttf
           weight: 400
-        - asset: assets/fonts/pretendard/Pretendard-Medium.otf
+        - asset: assets/fonts/pretendard/Pretendard-Medium.ttf
           weight: 500
-        - asset: assets/fonts/pretendard/Pretendard-SemiBold.otf
+        - asset: assets/fonts/pretendard/Pretendard-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/pretendard/Pretendard-Bold.otf
+        - asset: assets/fonts/pretendard/Pretendard-Bold.ttf
           weight: 700
-        - asset: assets/fonts/pretendard/Pretendard-ExtraBold.otf
+        - asset: assets/fonts/pretendard/Pretendard-ExtraBold.ttf
           weight: 800
-        - asset: assets/fonts/pretendard/Pretendard-Black.otf
+        - asset: assets/fonts/pretendard/Pretendard-Black.ttf
           weight: 900
 
   assets:

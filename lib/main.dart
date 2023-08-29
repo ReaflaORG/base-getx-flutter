@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,7 +13,6 @@ import 'package:timeago/timeago.dart' as timeago;
 
 import 'app/routes/app_pages.dart';
 import 'app/service/global_service.dart';
-import 'app/service/in_app_purchase_service.dart';
 import 'app/service/permission_service.dart';
 import 'app/theme/theme.dart';
 import 'app/utils/http_overrides.dart';
@@ -24,25 +24,19 @@ void main() async {
 }
 
 Future<void> initialize() async {
+  // Http 초기화 (디버그 모드일 경우)
+  if (kDebugMode) {
+    HttpOverrides.global = MyHttpOverrides();
+  }
+
   /// Widget Binding 초기화
   WidgetsFlutterBinding.ensureInitialized();
   WidgetsBinding.instance.addPostFrameCallback((_) {
     SchedulerBinding.instance.scheduleWarmUpFrame();
   });
 
-  // Http 초기화 (디버그 모드일 경우)
-  if (kDebugMode) {
-    HttpOverrides.global = MyHttpOverrides();
-  }
-
-  /// .env 초기화
-  await dotenv.load();
-
-  /// Get Storage 초기화
-  await GetStorage.init();
-
-  /// Timeago 언어 초기화
-  timeago.setLocaleMessages('ko', timeago.KoMessages());
+  /// 키보드 감추기
+  SystemChannels.textInput.invokeMethod('TextInput.hide');
 
   /// 디바이스 가로모드 방지
   SystemChome.setSystemChromeDeviceOrientation(
@@ -52,11 +46,20 @@ Future<void> initialize() async {
   // 상단 상태 표시줄 색상 설정
   SystemChome.setSystemChromeStatusBarColor();
 
-  // 파이어베이스 초기화
+  /// .env 초기화
+  await dotenv.load();
+
+  /// Get Storage 초기화
+  await GetStorage.init();
+
+  /// 파이어베이스 초기화
   // await Firebase.initializeApp();
 
-  // 카카오 초기화
+  /// 카카오 초기화
   // KakaoSdk.init(nativeAppKey: dotenv.env['APP_KAKAO_NATIVE_APP_KEY']);
+
+  /// Timeago 언어 초기화
+  timeago.setLocaleMessages('ko', timeago.KoMessages());
 
   // 인증 서비스 초기화
   // Get.put(AuthService(), permanent: true);
@@ -74,7 +77,7 @@ Future<void> initialize() async {
   // Get.put(FirebaseCloudMessagingService(), permanent: true);
 
   // 인앱 결제 서비스 초기화
-  Get.put(InAppPurchaseService(), permanent: true);
+  // Get.put(InAppPurchaseService(), permanent: true);
 
   // 스크롤 서비스 초기화
   // Get.put(ScrollService(), permanent: true);
@@ -248,6 +251,9 @@ class GetMaterialAppWidget extends GetMaterialApp {
       ],
       supportedLocales: supportedLocales,
       fallbackLocale: fallbackLocale,
+      navigatorObservers: [
+        GetObserver(),
+      ],
       themeMode: GlobalService.to.themeMode.value,
       theme: theme(context: context),
       // darkTheme: darkTheme(context: context),
