@@ -1,5 +1,6 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
+
+import 'text_paths.dart';
 
 /// Text Theme ▼
 ///
@@ -32,20 +33,23 @@ import 'package:flutter/material.dart';
 /// [TextStyle?] labelMedium: 중형 레이블 스타일입니다.
 ///
 /// [TextStyle?] labelSmall: 소형 레이블 스타일입니다.
-TextTheme textThemeData() => TextTheme(
-      displayLarge: TextPath.TextF16W600,
-      displayMedium: TextPath.TextF16W500,
-      displaySmall: TextPath.TextF16W400,
-      headlineLarge: TextPath.TextF16W600,
-      headlineMedium: TextPath.TextF16W500,
-      headlineSmall: TextPath.TextF16W400,
-      titleLarge: TextPath.TextF16W600,
-      titleMedium: TextPath.TextF16W500,
-      titleSmall: TextPath.TextF16W400,
-      bodyLarge: TextPath.TextF16W600,
-      bodyMedium: TextPath.TextF16W500,
-      bodySmall: TextPath.TextF16W400,
-      labelLarge: TextPath.TextF16W600,
-      labelMedium: TextPath.TextF16W500,
-      labelSmall: TextPath.TextF16W400,
-    );
+TextTheme textThemeData() {
+  /// [주의할점 `flutter_screenutil`의 경우 `static`을 쓰게 되면, `screenutil`보다 먼저 호출되어 텍스트 사이즈를 불러오지 못한다.]
+  return TextTheme(
+    displayLarge: TextPath().F16W600,
+    displayMedium: TextPath().F14W500,
+    displaySmall: TextPath().F12W400,
+    headlineLarge: TextPath().F16W600,
+    headlineMedium: TextPath().F14W500,
+    headlineSmall: TextPath().F12W400,
+    titleLarge: TextPath().F16W600,
+    titleMedium: TextPath().F14W500,
+    titleSmall: TextPath().F12W400,
+    bodyLarge: TextPath().F16W600,
+    bodyMedium: TextPath().F14W500,
+    bodySmall: TextPath().F12W400,
+    labelLarge: TextPath().F16W600,
+    labelMedium: TextPath().F14W500,
+    labelSmall: TextPath().F12W400,
+  );
+}

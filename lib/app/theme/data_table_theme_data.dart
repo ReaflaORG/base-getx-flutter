@@ -1,5 +1,6 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
+
+import 'text_paths.dart';
 
 /// DataTableThemeData ▼
 ///
@@ -32,35 +33,37 @@ import 'package:flutter/material.dart';
 /// [headingCellCursor] - 헤딩 셀에 대한 마우스 커서를 지정하는 MaterialStateProperty<MouseCursor?>입니다. 상태에 따라 다른 커서를 적용할 수 있습니다.
 ///
 /// [dataRowCursor] - 데이터 행에 대한 마우스 커서를 지정하는 MaterialStateProperty<MouseCursor?>입니다. 상태에 따라 다른 커서를 적용할 수 있습니다.
-DataTableThemeData dataTableThemeData() => DataTableThemeData(
-      // decoration: BoxDecoration(
-      // color: ColorPath.BorderColor,
-      // border: Border.all(
-      //   color: ColorPath.GreyColor,
-      //   width: 1.0.w,
-      // ),
-      // borderRadius: BorderRadius.zero,
-      // backgroundBlendMode: BlendMode.difference,
-      // ),
-      dataRowColor: MaterialStateProperty.all<Color?>(
-        Colors.white,
-      ),
-      // dataRowMinHeight: 48.0,
-      // dataRowMaxHeight: 48.0,
-      dataTextStyle: TextPath.TextF14W500,
-      headingRowColor: MaterialStateProperty.all<Color?>(
-        Colors.white,
-      ),
-      // headingRowHeight: 48.0,
-      headingTextStyle: TextPath.TextF14W500,
-      // horizontalMargin: 0.0,
-      // columnSpacing: 0.0,
-      dividerThickness: 1.0,
-      // checkboxHorizontalMargin: 0.0,
-      // headingCellCursor: MaterialStateProperty.all<MouseCursor?>(
-      //   SystemMouseCursors.click,
-      // ),
-      // dataRowCursor: MaterialStateProperty.all<MouseCursor?>(
-      //   SystemMouseCursors.click,
-      // ),
-    );
+DataTableThemeData dataTableThemeData() {
+  return DataTableThemeData(
+    // decoration: BoxDecoration(
+    // color: ColorPath.BorderColor,
+    // border: Border.all(
+    //   color: ColorPath.GreyColor,
+    //   width: 1.0.w,
+    // ),
+    // borderRadius: BorderRadius.zero,
+    // backgroundBlendMode: BlendMode.difference,
+    // ),
+    dataRowColor: MaterialStateProperty.all<Color?>(
+      Colors.white,
+    ),
+    // dataRowMinHeight: 48.0,
+    // dataRowMaxHeight: 48.0,
+    dataTextStyle: TextPath().F14W500,
+    headingRowColor: MaterialStateProperty.all<Color?>(
+      Colors.white,
+    ),
+    // headingRowHeight: 48.0,
+    headingTextStyle: TextPath().F14W500,
+    // horizontalMargin: 0.0,
+    // columnSpacing: 0.0,
+    dividerThickness: 1.0,
+    // checkboxHorizontalMargin: 0.0,
+    // headingCellCursor: MaterialStateProperty.all<MouseCursor?>(
+    //   SystemMouseCursors.click,
+    // ),
+    // dataRowCursor: MaterialStateProperty.all<MouseCursor?>(
+    //   SystemMouseCursors.click,
+    // ),
+  );
+}

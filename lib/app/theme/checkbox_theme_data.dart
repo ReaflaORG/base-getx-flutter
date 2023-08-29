@@ -22,21 +22,23 @@ import 'color_paths.dart';
 /// [OutlinedBorder?] shape: 체크박스의 외곽선 모양을 정의하는 프로퍼티입니다.
 ///
 /// [BorderSide?] side: 체크박스의 외곽선을 정의하는 프로퍼티입니다.
-CheckboxThemeData checkboxThemeData() => CheckboxThemeData(
-      fillColor: MaterialStateProperty.all<Color?>(ColorPath.PrimaryColor),
-      checkColor: MaterialStateProperty.all<Color?>(Colors.white),
-      overlayColor: MaterialStateProperty.all<Color?>(
-        ColorPath.PrimaryColor.withOpacity(0.1),
-      ),
-      mouseCursor: MaterialStateProperty.all<MouseCursor?>(MouseCursor.defer),
-      // splashRadius: 0.0,
-      materialTapTargetSize: MaterialTapTargetSize.padded,
-      // visualDensity: VisualDensity.compact,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4.0).r,
-      ),
-      side: BorderSide(
-        color: const Color(0xFFD1D5DB),
-        width: 1.5.w,
-      ),
-    );
+CheckboxThemeData checkboxThemeData() {
+  return CheckboxThemeData(
+    fillColor: MaterialStateProperty.all<Color?>(ColorPath.PrimaryColor),
+    checkColor: MaterialStateProperty.all<Color?>(Colors.white),
+    overlayColor: MaterialStateProperty.all<Color?>(
+      ColorPath.PrimaryColor.withOpacity(0.1),
+    ),
+    mouseCursor: MaterialStateProperty.all<MouseCursor?>(MouseCursor.defer),
+    // splashRadius: 0.0,
+    materialTapTargetSize: MaterialTapTargetSize.padded,
+    // visualDensity: VisualDensity.compact,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(4.0).r,
+    ),
+    side: BorderSide(
+      color: const Color(0xFFD1D5DB),
+      width: 1.5.w,
+    ),
+  );
+}

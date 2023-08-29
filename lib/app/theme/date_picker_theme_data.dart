@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// DatePickerThemeData ▼
 ///
@@ -69,65 +69,67 @@ import 'color_paths.dart';
 /// [Color?] rangeSelectionBackgroundColor: DatePicker 범위 선택의 배경색입니다.
 ///
 /// [MaterialStateProperty<Color?>?] rangeSelectionOverlayColor: DatePicker 범위 선택의 오버레이 색상입니다.
-DatePickerThemeData datePickerThemeData() => DatePickerThemeData(
-      elevation: 0,
-      surfaceTintColor: Colors.white,
-      backgroundColor: Colors.white,
-      headerBackgroundColor: Colors.white,
-      headerForegroundColor: ColorPath.BlackColor,
-      headerHeadlineStyle: TextPath.TextF16W600,
-      headerHelpStyle: TextPath.TextF16W600,
-      weekdayStyle: TextPath.TextF16W600,
-      dayStyle: TextPath.TextF16W600,
-      // dayForegroundColor: MaterialStateProperty.all(
-      //   ColorPath.BlackColor,
-      // ),
-      // dayBackgroundColor: MaterialStateProperty.all(
-      //   Colors.white,
-      // ),
-      dayOverlayColor: MaterialStateProperty.all(
-        ColorPath.PrimaryColor.withOpacity(0.1),
-      ),
-      // todayForegroundColor: MaterialStateProperty.all(
-      //   ColorPath.PrimaryColor,
-      // ),
-      // todayBackgroundColor: MaterialStateProperty.all(
-      //   Colors.white,
-      // ),
-      todayBorder: BorderSide(
-        color: ColorPath.PrimaryColor,
-        width: 1.5.w,
-      ),
-      yearStyle: TextPath.TextF16W600.copyWith(
-        color: ColorPath.GreyColor700,
-      ),
-      // yearForegroundColor: MaterialStateProperty.all(
-      //   ColorPath.BlackColor,
-      // ),
-      // yearBackgroundColor: MaterialStateProperty.all(
-      //   ColorPath.PrimaryColor,
-      // ),
-      yearOverlayColor: MaterialStateProperty.all(
-        ColorPath.PrimaryColor.withOpacity(0.1),
-      ),
-      rangePickerBackgroundColor: Colors.white,
-      rangePickerElevation: 0,
-      // rangePickerShadowColor
-      rangePickerSurfaceTintColor: ColorPath.PrimaryColor,
-      rangePickerShape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16).r,
-      ),
-      rangePickerHeaderBackgroundColor: Colors.white,
-      rangePickerHeaderForegroundColor: ColorPath.BlackColor,
-      rangePickerHeaderHeadlineStyle: TextPath.TextF16W600.copyWith(
-        color: ColorPath.PrimaryColor,
-      ),
-      rangePickerHeaderHelpStyle: TextPath.TextF16W600,
-      rangeSelectionBackgroundColor: ColorPath.PrimaryColor.withOpacity(0.1),
-      rangeSelectionOverlayColor: MaterialStateProperty.all(
-        ColorPath.PrimaryColor.withOpacity(0.1),
-      ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16).r,
-      ),
-    );
+DatePickerThemeData datePickerThemeData() {
+  return DatePickerThemeData(
+    elevation: 0,
+    surfaceTintColor: Colors.white,
+    backgroundColor: Colors.white,
+    headerBackgroundColor: Colors.white,
+    headerForegroundColor: ColorPath.BlackColor,
+    headerHeadlineStyle: TextPath().F16W600,
+    headerHelpStyle: TextPath().F16W600,
+    weekdayStyle: TextPath().F16W600,
+    dayStyle: TextPath().F16W600,
+    // dayForegroundColor: MaterialStateProperty.all(
+    //   ColorPath.BlackColor,
+    // ),
+    // dayBackgroundColor: MaterialStateProperty.all(
+    //   Colors.white,
+    // ),
+    dayOverlayColor: MaterialStateProperty.all(
+      ColorPath.PrimaryColor.withOpacity(0.1),
+    ),
+    // todayForegroundColor: MaterialStateProperty.all(
+    //   ColorPath.PrimaryColor,
+    // ),
+    // todayBackgroundColor: MaterialStateProperty.all(
+    //   Colors.white,
+    // ),
+    todayBorder: BorderSide(
+      color: ColorPath.PrimaryColor,
+      width: 1.5.w,
+    ),
+    yearStyle: TextPath().F16W600.copyWith(
+          color: ColorPath.GreyColor700,
+        ),
+    // yearForegroundColor: MaterialStateProperty.all(
+    //   ColorPath.BlackColor,
+    // ),
+    // yearBackgroundColor: MaterialStateProperty.all(
+    //   ColorPath.PrimaryColor,
+    // ),
+    yearOverlayColor: MaterialStateProperty.all(
+      ColorPath.PrimaryColor.withOpacity(0.1),
+    ),
+    rangePickerBackgroundColor: Colors.white,
+    rangePickerElevation: 0,
+    // rangePickerShadowColor
+    rangePickerSurfaceTintColor: ColorPath.PrimaryColor,
+    rangePickerShape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(16).r,
+    ),
+    rangePickerHeaderBackgroundColor: Colors.white,
+    rangePickerHeaderForegroundColor: ColorPath.BlackColor,
+    rangePickerHeaderHeadlineStyle: TextPath().F16W600.copyWith(
+          color: ColorPath.PrimaryColor,
+        ),
+    rangePickerHeaderHelpStyle: TextPath().F16W600,
+    rangeSelectionBackgroundColor: ColorPath.PrimaryColor.withOpacity(0.1),
+    rangeSelectionOverlayColor: MaterialStateProperty.all(
+      ColorPath.PrimaryColor.withOpacity(0.1),
+    ),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(16).r,
+    ),
+  );
+}

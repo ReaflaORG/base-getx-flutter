@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// ButtonThemeData ▼
 ///
@@ -37,7 +37,7 @@ import 'color_paths.dart';
 /// [MaterialTapTargetSize?] materialTapTargetSize: 버튼의 탭 대상 크기입니다.
 ButtonThemeData buttonThemeData() {
   return ButtonThemeData(
-    padding: const EdgeInsets.all(15).r,
+    padding: const EdgeInsets.all(15).w,
     height: 53.w,
     disabledColor: ColorPath.PrimaryColor.withOpacity(0.3),
     shape: RoundedRectangleBorder(
@@ -52,7 +52,7 @@ ButtonBarThemeData buttonBarThemeData() {
     alignment: MainAxisAlignment.center,
     mainAxisSize: MainAxisSize.max,
     buttonTextTheme: ButtonTextTheme.primary,
-    buttonPadding: const EdgeInsets.all(8.0).r,
+    buttonPadding: const EdgeInsets.all(8.0).w,
     buttonMinWidth: 0,
     buttonHeight: 53.w,
     layoutBehavior: ButtonBarLayoutBehavior.padded,
@@ -113,7 +113,7 @@ ButtonBarThemeData buttonBarThemeData() {
 ElevatedButtonThemeData elevatedButtonThemeData() {
   return ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      padding: const EdgeInsets.all(15).r,
+      padding: const EdgeInsets.all(15).w,
       minimumSize: Size(53.w, 53.w),
       foregroundColor: Colors.white,
       backgroundColor: ColorPath.PrimaryColor,
@@ -134,7 +134,7 @@ ElevatedButtonThemeData elevatedButtonThemeData() {
 OutlinedButtonThemeData outlinedButtonThemeData() {
   return OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-      padding: const EdgeInsets.all(15).r,
+      padding: const EdgeInsets.all(15).w,
       minimumSize: Size(53.w, 53.w),
       foregroundColor: ColorPath.PrimaryColor,
       backgroundColor: Colors.white,
@@ -159,7 +159,7 @@ OutlinedButtonThemeData outlinedButtonThemeData() {
 FilledButtonThemeData filledButtonThemeData() {
   return FilledButtonThemeData(
     style: FilledButton.styleFrom(
-      padding: const EdgeInsets.all(15).r,
+      padding: const EdgeInsets.all(15).w,
       minimumSize: Size(53.w, 53.w),
       foregroundColor: Colors.white,
       // backgroundColor: Colors.white,
@@ -180,7 +180,7 @@ FilledButtonThemeData filledButtonThemeData() {
 TextButtonThemeData textButtonThemeData() {
   return TextButtonThemeData(
     style: TextButton.styleFrom(
-      // padding: const EdgeInsets.all(15).r,
+      // padding: const EdgeInsets.all(15).w,
       // minimumSize: Size(53.w, 53.w),
       foregroundColor: ColorPath.PrimaryColor,
       // backgroundColor: Colors.white,
@@ -201,7 +201,7 @@ TextButtonThemeData textButtonThemeData() {
 IconButtonThemeData iconButtonThemeData() {
   return IconButtonThemeData(
     style: IconButton.styleFrom(
-      // padding: const EdgeInsets.all(15).r,
+      // padding: const EdgeInsets.all(15).w,
       // minimumSize: Size(53.w, 53.w),
       foregroundColor: ColorPath.PrimaryColor,
       // backgroundColor: Colors.white,
@@ -223,7 +223,7 @@ SegmentedButtonThemeData segmentedButtonThemeData() {
   return SegmentedButtonThemeData(
     style: ButtonStyle(
       padding: MaterialStateProperty.all(
-        const EdgeInsets.all(15).r,
+        const EdgeInsets.all(15).w,
       ),
       minimumSize: MaterialStateProperty.all(
         Size(53.w, 53.w),
@@ -302,7 +302,7 @@ MenuButtonThemeData menuButtonThemeData() {
   return MenuButtonThemeData(
       style: ButtonStyle(
     padding: MaterialStateProperty.all(
-      const EdgeInsets.all(15).r,
+      const EdgeInsets.all(15).w,
     ),
     minimumSize: MaterialStateProperty.all(
       Size(53.w, 53.w),
@@ -337,11 +337,11 @@ PopupMenuThemeData popupMenuThemeData() {
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10).r,
     ),
-    textStyle: TextPath.TextF14W500.copyWith(
-      color: ColorPath.BlackColor,
-    ),
+    textStyle: TextPath().F14W500.copyWith(
+          color: ColorPath.BlackColor,
+        ),
     labelTextStyle: MaterialStateProperty.all(
-      TextPath.TextF14W500,
+      TextPath().F14W500,
     ),
   );
 }

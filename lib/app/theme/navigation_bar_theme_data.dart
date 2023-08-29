@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// NavigationBarThemeData ▼
 ///
@@ -29,28 +29,30 @@ import 'color_paths.dart';
 /// [MaterialStateProperty<IconThemeData?>?] iconTheme: 네비게이션 바 항목의 아이콘 테마를 지정합니다.
 ///
 /// [NavigationDestinationLabelBehavior?] labelBehavior: 네비게이션 바 항목의 라벨 표시 동작을 지정합니다.
-NavigationBarThemeData navigationBarThemeData() => NavigationBarThemeData(
-      elevation: 0,
-      // height: 56.w,
-      backgroundColor: Colors.white,
-      // shadowColor: Colors.transparent,
-      // surfaceTintColor: ColorPath.PrimaryColor,
-      indicatorColor: ColorPath.PrimaryColor.withOpacity(0.1),
-      // indicatorShape: const RoundedRectangleBorder(
-      //   borderRadius: BorderRadius.vertical(
-      //     top: Radius.circular(8),
-      //   ),
-      // ),
-      labelTextStyle: MaterialStateProperty.all(
-        TextPath.TextF12W400.copyWith(
-          color: ColorPath.GreyColor600,
-        ),
+NavigationBarThemeData navigationBarThemeData() {
+  return NavigationBarThemeData(
+    elevation: 0,
+    // height: 56.w,
+    backgroundColor: Colors.white,
+    // shadowColor: Colors.transparent,
+    // surfaceTintColor: ColorPath.PrimaryColor,
+    indicatorColor: ColorPath.PrimaryColor.withOpacity(0.1),
+    // indicatorShape: const RoundedRectangleBorder(
+    //   borderRadius: BorderRadius.vertical(
+    //     top: Radius.circular(8).r,
+    //   ),
+    // ),
+    labelTextStyle: MaterialStateProperty.all(
+      TextPath().F12W400.copyWith(
+            color: ColorPath.GreyColor600,
+          ),
+    ),
+    iconTheme: MaterialStateProperty.all(
+      IconThemeData(
+        size: 24.sp,
+        color: ColorPath.BlackColor,
       ),
-      iconTheme: MaterialStateProperty.all(
-        IconThemeData(
-          size: 24.sp,
-          color: ColorPath.BlackColor,
-        ),
-      ),
-      labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-    );
+    ),
+    labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+  );
+}

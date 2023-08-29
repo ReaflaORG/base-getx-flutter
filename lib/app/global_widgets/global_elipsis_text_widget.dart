@@ -112,7 +112,7 @@ class _GlobalEllipsisTextWidgetState extends State<GlobalEllipsisTextWidget>
             textDirection: TextDirection.ltr,
             text: TextSpan(
               text: widget.text,
-              style: widget.textStyle ?? TextPath.TextF14W500.copyWith(),
+              style: widget.textStyle ?? TextPath().F14W500.copyWith(),
             ),
           );
 

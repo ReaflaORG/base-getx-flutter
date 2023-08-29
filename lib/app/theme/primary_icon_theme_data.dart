@@ -17,4 +17,6 @@ import 'package:flutter/material.dart';
 /// [double?] opacity: 아이콘의 투명도(opacity)를 설정합니다. 값이 1.0이면 완전히 불투명하고, 0.0이면 완전히 투명한 상태입니다.
 ///
 /// [List<Shadow>?] shadows: 아이콘에 적용할 그림자(Shadow) 목록입니다. 그림자는 아이콘의 시각적인 효과를 강조하는 데 사용됩니다.
-IconThemeData primaryIconThemeData() => const IconThemeData();
+IconThemeData primaryIconThemeData() {
+  return const IconThemeData();
+}

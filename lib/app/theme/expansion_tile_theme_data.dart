@@ -28,20 +28,22 @@ import 'color_paths.dart';
 /// [ShapeBorder?] collapsedShape: 축소된 상태의 확장 타일의 모양(shape)을 지정합니다.
 ///
 /// [Clip?] clipBehavior: 확장 타일의 클리핑(잘라내기) 동작을 지정합니다.
-ExpansionTileThemeData expansionTileThemeData() => ExpansionTileThemeData(
-      expandedAlignment: Alignment.centerLeft,
-      tilePadding: const EdgeInsets.symmetric(horizontal: 16).r,
-      childrenPadding: const EdgeInsets.symmetric(horizontal: 16).r,
-      textColor: ColorPath.BlackColor,
-      collapsedTextColor: ColorPath.BlackColor,
-      iconColor: ColorPath.GreyColor600,
-      collapsedIconColor: ColorPath.GreyColor600,
-      backgroundColor: Colors.white,
-      collapsedBackgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8).r,
-      ),
-      collapsedShape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8).r,
-      ),
-    );
+ExpansionTileThemeData expansionTileThemeData() {
+  return ExpansionTileThemeData(
+    expandedAlignment: Alignment.centerLeft,
+    tilePadding: const EdgeInsets.symmetric(horizontal: 16).w,
+    childrenPadding: const EdgeInsets.symmetric(horizontal: 16).w,
+    textColor: ColorPath.BlackColor,
+    collapsedTextColor: ColorPath.BlackColor,
+    iconColor: ColorPath.GreyColor600,
+    collapsedIconColor: ColorPath.GreyColor600,
+    backgroundColor: Colors.white,
+    collapsedBackgroundColor: Colors.white,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8).r,
+    ),
+    collapsedShape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8).r,
+    ),
+  );
+}

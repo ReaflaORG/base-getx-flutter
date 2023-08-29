@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// InputDecoration ▼
 ///
@@ -78,32 +78,32 @@ InputDecorationTheme inputDecorationTheme() {
     contentPadding: const EdgeInsets.symmetric(
       horizontal: 16,
       vertical: 14,
-    ).r,
+    ).w,
     fillColor: ColorPath.BorderColor,
-    labelStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor300,
-    ),
-    hintStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor300,
-    ),
-    helperStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor300,
-    ),
-    prefixStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor300,
-    ),
-    suffixStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor300,
-    ),
-    counterStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor300,
-    ),
-    floatingLabelStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.PrimaryColor,
-    ),
-    errorStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.ErrorColor.withOpacity(0.7),
-    ),
+    labelStyle: TextPath().F16W500.copyWith(
+          color: ColorPath.GreyColor300,
+        ),
+    hintStyle: TextPath().F16W500.copyWith(
+          color: ColorPath.GreyColor300,
+        ),
+    helperStyle: TextPath().F16W500.copyWith(
+          color: ColorPath.GreyColor300,
+        ),
+    prefixStyle: TextPath().F16W500.copyWith(
+          color: ColorPath.GreyColor300,
+        ),
+    suffixStyle: TextPath().F16W500.copyWith(
+          color: ColorPath.GreyColor300,
+        ),
+    counterStyle: TextPath().F16W500.copyWith(
+          color: ColorPath.GreyColor300,
+        ),
+    floatingLabelStyle: TextPath().F16W500.copyWith(
+          color: ColorPath.PrimaryColor,
+        ),
+    errorStyle: TextPath().F16W500.copyWith(
+          color: ColorPath.ErrorColor.withOpacity(0.7),
+        ),
     iconColor: ColorPath.GreyColor400,
     prefixIconColor: ColorPath.GreyColor400,
     suffixIconColor: ColorPath.GreyColor400,

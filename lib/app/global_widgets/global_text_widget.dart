@@ -41,9 +41,9 @@ class GlobalTextWidget extends Text {
     return GlobalTextWidget(
       data,
       style: style ??
-          TextPath.TextF14W500.copyWith(
-            color: ColorPath.ErrorColor,
-          ),
+          TextPath().F14W500.copyWith(
+                color: ColorPath.ErrorColor,
+              ),
     );
   }
 }

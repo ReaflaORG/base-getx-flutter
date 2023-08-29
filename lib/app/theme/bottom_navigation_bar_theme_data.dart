@@ -1,7 +1,7 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// BottomNavigationBarThemeData ▼
 ///
@@ -36,22 +36,23 @@ import 'color_paths.dart';
 /// [BottomNavigationBarLandscapeLayout?] landscapeLayout: 가로 방향 레이아웃을 지정합니다.
 ///
 /// [MaterialStateProperty<MouseCursor?>?] mouseCursor: 마우스 커서를 지정합니다.
-BottomNavigationBarThemeData bottomNavigationBarThemeData() =>
-    BottomNavigationBarThemeData(
-      elevation: 10,
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
-      // enableFeedback: true,
-      type: BottomNavigationBarType.fixed,
-      backgroundColor: Colors.white,
-      selectedIconTheme: const IconThemeData(),
-      unselectedIconTheme: const IconThemeData(),
-      selectedItemColor: ColorPath.PrimaryColor,
-      unselectedItemColor: ColorPath.GreyColor500,
-      selectedLabelStyle: TextPath.TextF12Bold,
-      unselectedLabelStyle: TextPath.TextF12Bold,
-      landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
-      mouseCursor: MaterialStateProperty.all<MouseCursor>(
-        SystemMouseCursors.click,
-      ),
-    );
+BottomNavigationBarThemeData bottomNavigationBarThemeData() {
+  return BottomNavigationBarThemeData(
+    elevation: 10,
+    showSelectedLabels: true,
+    showUnselectedLabels: true,
+    // enableFeedback: true,
+    type: BottomNavigationBarType.fixed,
+    backgroundColor: Colors.white,
+    selectedIconTheme: const IconThemeData(),
+    unselectedIconTheme: const IconThemeData(),
+    selectedItemColor: ColorPath.PrimaryColor,
+    unselectedItemColor: ColorPath.GreyColor500,
+    selectedLabelStyle: TextPath().F12Bold,
+    unselectedLabelStyle: TextPath().F12Bold,
+    landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
+    mouseCursor: MaterialStateProperty.all<MouseCursor>(
+      SystemMouseCursors.click,
+    ),
+  );
+}

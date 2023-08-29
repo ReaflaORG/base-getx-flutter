@@ -62,16 +62,16 @@ class PermissionView extends GetView<PermissionController> {
                     children: [
                       Text(
                         '앱 접근권한 안내',
-                        style: TextPath.TextF16W600,
+                        style: TextPath().F16W600,
                       ),
                       SizedBox(height: 2.w),
                       Text(
                         '${dotenv.env['APP_KO_NAME']} 앱 이용 시 다음 권한들을 사용하오니. 허용해 주시기 바랍니다.',
-                        style: TextPath.TextF12W500.copyWith(
-                          color: ColorPath.GreyColor600,
-                          height: 1.15.w,
-                          overflow: TextOverflow.visible,
-                        ),
+                        style: TextPath().F12W500.copyWith(
+                              color: ColorPath.GreyColor600,
+                              height: 1.15.w,
+                              overflow: TextOverflow.visible,
+                            ),
                       ),
                     ],
                   ),
@@ -99,9 +99,9 @@ class PermissionView extends GetView<PermissionController> {
             ),
             child: Text(
               '동의하고 계속하기',
-              style: TextPath.TextF14W600.copyWith(
-                color: Colors.white,
-              ),
+              style: TextPath().F14W600.copyWith(
+                    color: Colors.white,
+                  ),
             ),
           ),
         ),
@@ -124,9 +124,9 @@ class RequiredPermissionsWidget extends GetView<PermissionController> {
             children: [
               Text(
                 '필수 접근 권한',
-                style: TextPath.TextF14W600.copyWith(
-                  color: ColorPath.GreyColor600,
-                ),
+                style: TextPath().F14W600.copyWith(
+                      color: ColorPath.GreyColor600,
+                    ),
               ),
               SizedBox(height: 25.w),
               ListView.builder(
@@ -159,9 +159,9 @@ class OptionPermissionsWidget extends GetView<PermissionController> {
             children: [
               Text(
                 '선택 접근 권한',
-                style: TextPath.TextF14W600.copyWith(
-                  color: ColorPath.GreyColor600,
-                ),
+                style: TextPath().F14W600.copyWith(
+                      color: ColorPath.GreyColor600,
+                    ),
               ),
               SizedBox(height: 25.w),
               ListView.builder(
@@ -226,13 +226,13 @@ class PermissionContentWidget extends StatelessWidget {
             children: [
               Text(
                 permissionList[index].title,
-                style: TextPath.TextF14W500,
+                style: TextPath().F14W500,
               ),
               Text(
                 permissionList[index].description,
-                style: TextPath.TextF12W400.copyWith(
-                  color: ColorPath.GreyColor600,
-                ),
+                style: TextPath().F12W400.copyWith(
+                      color: ColorPath.GreyColor600,
+                    ),
               ),
             ],
           ),

@@ -128,7 +128,7 @@ class ScreenUtilWidget extends ScreenUtilInit {
   ///
   /// [builder] Widget Function(BuildContext, Widget?) : 빌더
   factory ScreenUtilWidget.init({
-    Size designSize = const Size(360, 640),
+    Size designSize = const Size(360, 690),
     bool allowFontScaling = true,
     bool minTextAdapt = true,
     bool splitScreenMode = true,

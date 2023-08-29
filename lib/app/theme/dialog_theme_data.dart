@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// DialogTheme ▼
 ///
@@ -25,17 +25,19 @@ import 'color_paths.dart';
 /// [TextStyle?] contentTextStyle: 내용 텍스트의 스타일입니다.
 ///
 /// [EdgeInsetsGeometry?] actionsPadding: 액션 버튼의 여백입니다.
-DialogTheme dialogThemeData() => DialogTheme(
-      alignment: Alignment.center,
-      actionsPadding: const EdgeInsets.all(15).r,
-      iconColor: ColorPath.BlackColor,
-      backgroundColor: Colors.white,
-      surfaceTintColor: Colors.white,
-      titleTextStyle: TextPath.TextF18W600,
-      contentTextStyle: TextPath.TextF16W400.copyWith(
-        color: ColorPath.GreyColor600,
-      ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15).r,
-      ),
-    );
+DialogTheme dialogThemeData() {
+  return DialogTheme(
+    alignment: Alignment.center,
+    actionsPadding: const EdgeInsets.all(15).w,
+    iconColor: ColorPath.BlackColor,
+    backgroundColor: Colors.white,
+    surfaceTintColor: Colors.white,
+    titleTextStyle: TextPath().F18W600,
+    contentTextStyle: TextPath().F16W400.copyWith(
+          color: ColorPath.GreyColor600,
+        ),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(15).r,
+    ),
+  );
+}

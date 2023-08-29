@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// MaterialBannerTheme ▼
 ///
@@ -21,14 +21,16 @@ import 'color_paths.dart';
 /// [EdgeInsetsGeometry?] padding: 배너의 여백입니다.
 ///
 /// [EdgeInsetsGeometry?] leadingPadding: 배너의 leading 위젯의 여백입니다.
-MaterialBannerThemeData materialBannerThemeData() => MaterialBannerThemeData(
-      elevation: 0,
-      padding: const EdgeInsets.symmetric(
-        vertical: 16,
-        horizontal: 16,
-      ).r,
-      // dividerColor: Colors.white,
-      backgroundColor: ColorPath.PrimaryColor.withOpacity(0.1),
-      surfaceTintColor: ColorPath.PrimaryColor,
-      contentTextStyle: TextPath.TextF16W500,
-    );
+MaterialBannerThemeData materialBannerThemeData() {
+  return MaterialBannerThemeData(
+    elevation: 0,
+    padding: const EdgeInsets.symmetric(
+      vertical: 16,
+      horizontal: 16,
+    ).w,
+    // dividerColor: Colors.white,
+    backgroundColor: ColorPath.PrimaryColor.withOpacity(0.1),
+    surfaceTintColor: ColorPath.PrimaryColor,
+    contentTextStyle: TextPath().F16W500,
+  );
+}

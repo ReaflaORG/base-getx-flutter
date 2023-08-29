@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// AppBarTheme ▼
 ///
@@ -37,23 +37,25 @@ import 'color_paths.dart';
 /// [TextStyle?] titleTextStyle: AppBar 제목의 텍스트 스타일입니다.
 ///
 /// [SystemUiOverlayStyle?] systemOverlayStyle: 시스템 오버레이 스타일입니다.
-AppBarTheme appBarThemeData() => AppBarTheme(
-      scrolledUnderElevation: 0,
-      elevation: 0,
-      // titleSpacing: 0,
-      color: Colors.white,
-      surfaceTintColor: Colors.white,
-      foregroundColor: Colors.white,
-      // backgroundColor: Colors.white,
-      toolbarHeight: 55.w,
-      iconTheme: IconThemeData(
-        color: ColorPath.BlackColor,
-        size: 22.sp,
-      ),
-      actionsIconTheme: IconThemeData(
-        color: ColorPath.BlackColor,
-        size: 22.sp,
-      ),
-      titleTextStyle: TextPath.TextF18W600,
-      toolbarTextStyle: TextPath.TextF18W500,
-    );
+AppBarTheme appBarThemeData() {
+  return AppBarTheme(
+    scrolledUnderElevation: 0,
+    elevation: 0,
+    // titleSpacing: 0,
+    color: Colors.white,
+    surfaceTintColor: Colors.white,
+    foregroundColor: Colors.white,
+    // backgroundColor: Colors.white,
+    toolbarHeight: 55.w,
+    iconTheme: IconThemeData(
+      color: ColorPath.BlackColor,
+      size: 22.sp,
+    ),
+    actionsIconTheme: IconThemeData(
+      color: ColorPath.BlackColor,
+      size: 22.sp,
+    ),
+    titleTextStyle: TextPath().F18W600,
+    toolbarTextStyle: TextPath().F18W500,
+  );
+}

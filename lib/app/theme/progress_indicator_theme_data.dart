@@ -14,11 +14,12 @@ import 'color_paths.dart';
 /// [Color?] circularTrackColor: 원형 진행 표시기의 트랙(바탕) 색상을 지정합니다.
 ///
 /// [Color?] refreshBackgroundColor: 새로고침 진행 표시기의 배경색을 지정합니다.
-ProgressIndicatorThemeData progressIndicatorThemeData() =>
-    ProgressIndicatorThemeData(
-      color: ColorPath.PrimaryColor,
-      linearTrackColor: ColorPath.GreyColor,
-      linearMinHeight: 4.0.w,
-      circularTrackColor: ColorPath.GreyColor,
-      refreshBackgroundColor: ColorPath.BorderColor,
-    );
+ProgressIndicatorThemeData progressIndicatorThemeData() {
+  return ProgressIndicatorThemeData(
+    color: ColorPath.PrimaryColor,
+    // linearTrackColor: ColorPath.GreyColor,
+    linearMinHeight: 4.0.w,
+    // circularTrackColor: ColorPath.GreyColor,
+    refreshBackgroundColor: Colors.white,
+  );
+}

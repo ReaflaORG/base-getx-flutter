@@ -1,6 +1,7 @@
-import 'package:base_getx_flutter/app/theme/color_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'color_paths.dart';
 
 /// BottomSheet ▼
 ///

@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// ListTileThemeData ▼
 ///
@@ -41,34 +41,36 @@ import 'color_paths.dart';
 /// [VisualDensity?] visualDensity: 시각적 밀도를 결정하는 값입니다.
 ///
 /// [ListTileTitleAlignment?] titleAlignment: 체크박스 타일의 제목 정렬을 결정하는 값입니다.
-ListTileThemeData listTileThemeData() => ListTileThemeData(
-      dense: false,
-      horizontalTitleGap: 16.w,
-      minVerticalPadding: 8.w,
-      // minLeadingWidth: 20.w,
-      tileColor: Colors.transparent,
-      selectedColor: Colors.white,
-      selectedTileColor: ColorPath.PrimaryColor,
-      iconColor: ColorPath.GreyColor400,
-      textColor: ColorPath.BlackColor,
-      titleTextStyle: TextPath.TextF16W500,
-      subtitleTextStyle: TextPath.TextF14W400,
-      // leadingAndTrailingTextStyle: TextStyle(
-      //   color: Colors.red,
-      //   fontSize: 14.sp,
-      //   fontWeight: FontWeight.w400,
-      // ),
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 0,
-      ).r,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16).r,
-      ),
-      mouseCursor: MaterialStateProperty.all<MouseCursor>(
-        SystemMouseCursors.click,
-      ),
-      style: ListTileStyle.list,
-      visualDensity: VisualDensity.standard,
-      // titleAlignment: ListTileTitleAlignment.,
-    );
+ListTileThemeData listTileThemeData() {
+  return ListTileThemeData(
+    dense: false,
+    horizontalTitleGap: 16.w,
+    minVerticalPadding: 8.w,
+    // minLeadingWidth: 20.w,
+    tileColor: Colors.transparent,
+    selectedColor: Colors.white,
+    selectedTileColor: ColorPath.PrimaryColor,
+    iconColor: ColorPath.GreyColor400,
+    textColor: ColorPath.BlackColor,
+    titleTextStyle: TextPath().F16W500,
+    subtitleTextStyle: TextPath().F14W400,
+    // leadingAndTrailingTextStyle: TextStyle(
+    //   color: Colors.red,
+    //   fontSize: 14.sp,
+    //   fontWeight: FontWeight.w400,
+    // ),
+    contentPadding: const EdgeInsets.symmetric(
+      horizontal: 16,
+      vertical: 0,
+    ).w,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(16).r,
+    ),
+    mouseCursor: MaterialStateProperty.all<MouseCursor>(
+      SystemMouseCursors.click,
+    ),
+    style: ListTileStyle.list,
+    visualDensity: VisualDensity.standard,
+    // titleAlignment: ListTileTitleAlignment.,
+  );
+}

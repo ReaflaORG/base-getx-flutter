@@ -30,28 +30,30 @@ import 'color_paths.dart';
 /// [bool?] isAlwaysShown: 스크롤바를 항상 표시하는 속성입니다.
 ///
 /// [bool?] showTrackOnHover: 스크롤바 트랙을 마우스 호버시에만 표시하는 속성입니다.
-ScrollbarThemeData scrollbarThemeData() => ScrollbarThemeData(
-      interactive: true,
-      thumbVisibility: MaterialStateProperty.all<bool>(
-        true,
-      ),
-      trackVisibility: MaterialStateProperty.all<bool>(
-        true,
-      ),
-      thumbColor: MaterialStateProperty.all<Color>(
-        ColorPath.PrimaryColor,
-      ),
-      trackColor: MaterialStateProperty.all<Color>(
-        ColorPath.PrimaryColor.withOpacity(0.2),
-      ),
-      trackBorderColor: MaterialStateProperty.all<Color>(
-        ColorPath.PrimaryColor.withOpacity(0.2),
-      ),
-      thickness: MaterialStateProperty.all<double>(
-        6.0.w,
-      ),
-      // crossAxisMargin: 2.0.w,
-      // mainAxisMargin: 8.0.w,
-      // minThumbLength: 24.0.w,
-      radius: const Radius.circular(16).r,
-    );
+ScrollbarThemeData scrollbarThemeData() {
+  return ScrollbarThemeData(
+    interactive: true,
+    thumbVisibility: MaterialStateProperty.all<bool>(
+      true,
+    ),
+    trackVisibility: MaterialStateProperty.all<bool>(
+      true,
+    ),
+    thumbColor: MaterialStateProperty.all<Color>(
+      ColorPath.PrimaryColor,
+    ),
+    trackColor: MaterialStateProperty.all<Color>(
+      ColorPath.PrimaryColor.withOpacity(0.2),
+    ),
+    trackBorderColor: MaterialStateProperty.all<Color>(
+      ColorPath.PrimaryColor.withOpacity(0.2),
+    ),
+    thickness: MaterialStateProperty.all<double>(
+      6.0.w,
+    ),
+    // crossAxisMargin: 2.0.w,
+    // mainAxisMargin: 8.0.w,
+    // minThumbLength: 24.0.w,
+    radius: const Radius.circular(16).r,
+  );
+}

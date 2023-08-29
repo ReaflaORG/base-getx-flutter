@@ -1,22 +1,6 @@
 // ignore_for_file: constant_identifier_names, non_constant_identifier_names, slash_for_doc_comments
 
-import 'package:base_getx_flutter/app/theme/divider_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/primary_icon_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/primary_text_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/progress_indicator_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/radio_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/scrollbar_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/search_bar_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/search_view_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/slider_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/snack_bar_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/switch_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/tabBar_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/text_selection_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/time_picker_theme_data.dart';
-import 'package:base_getx_flutter/app/theme/tooltip_theme_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'action_icon_theme_data.dart';
 import 'app_bar_theme_data.dart';
@@ -34,6 +18,7 @@ import 'color_scheme.dart';
 import 'data_table_theme_data.dart';
 import 'date_picker_theme_data.dart';
 import 'dialog_theme_data.dart';
+import 'divider_theme_data.dart';
 import 'drawer_theme_data.dart';
 import 'dropdown_menu_theme_data.dart';
 import 'expansion_tile_theme_data.dart';
@@ -41,25 +26,24 @@ import 'icon_theme_data.dart';
 import 'input_decoration_theme.dart';
 import 'list_tile_theme_data.dart';
 import 'navigation_bar_theme_data.dart';
+import 'primary_icon_theme_data.dart';
+import 'primary_text_theme_data.dart';
+import 'progress_indicator_theme_data.dart';
+import 'radio_theme_data.dart';
+import 'scrollbar_theme_data.dart';
+import 'search_bar_theme_data.dart';
+import 'search_view_theme_data.dart';
+import 'slider_theme_data.dart';
+import 'snack_bar_theme_data.dart';
+import 'switch_theme_data.dart';
+import 'tabbar_theme_data.dart';
+import 'text_selection_theme_data.dart';
 import 'text_themes.dart';
+import 'time_picker_theme_data.dart';
+import 'tooltip_theme_data.dart';
 
 /// Primary FontFamily ▼
 const FontFamily = 'Pretendard';
-
-/// 폰트 컬러
-const FontColor = 0XFF202632;
-
-/// Primary FontSize ▼
-double PrimaryFontSize = 16.sp;
-
-/// Secondary FontSize ▼
-double SecondaryFontSize = 14.sp;
-
-// Text Letter Spacing ▼
-double TextLetterSpacing = 0.25.sp;
-
-// Text Word Spacing ▼
-double TextWordSpacing = 1.0.sp;
 
 /// Main Theme ▼
 ///
@@ -70,6 +54,7 @@ ThemeData theme({
     ThemeData(
       useMaterial3: true,
       fontFamily: FontFamily,
+      scaffoldBackgroundColor: Colors.white,
       splashColor: ColorPath.PrimaryColor.withOpacity(0.1),
       colorScheme: lightColorScheme(),
       appBarTheme: appBarThemeData(),

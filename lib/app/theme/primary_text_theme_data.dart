@@ -57,4 +57,6 @@ import 'package:flutter/material.dart';
 /// [TextStyle?] button: 버튼 텍스트의 스타일을 지정합니다.
 ///
 /// [TextStyle?] overline: 오버라인 텍스트의 스타일을 지정합니다.
-TextTheme primaryTextThemeData() => const TextTheme();
+TextTheme primaryTextThemeData() {
+  return const TextTheme();
+}

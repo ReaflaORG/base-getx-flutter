@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// DatePickerThemeData ▼
 ///
@@ -49,48 +49,50 @@ import 'color_paths.dart';
 /// [EdgeInsetsGeometry?] padding: DatePicker 위젯의 여백을 지정하는 EdgeInsetsGeometry입니다.
 ///
 /// [ShapeBorder?] shape: DatePicker 위젯의 모양(shape)을 지정하는 ShapeBorder입니다.
-TimePickerThemeData timePickerThemeData() => TimePickerThemeData(
-      // elevation: 0.0,
-      // padding: const EdgeInsets.all(30).r,
-      backgroundColor: Colors.white,
-      // cancelButtonStyle: ButtonStyle(),
-      // confirmButtonStyle: ButtonStyle(),
-      dayPeriodBorderSide: BorderSide(
-        color: ColorPath.GreyColor,
-        width: 1.0.w,
+TimePickerThemeData timePickerThemeData() {
+  return TimePickerThemeData(
+    // elevation: 0.0,
+    // padding: const EdgeInsets.all(30).w,
+    backgroundColor: Colors.white,
+    // cancelButtonStyle: ButtonStyle(),
+    // confirmButtonStyle: ButtonStyle(),
+    dayPeriodBorderSide: BorderSide(
+      color: ColorPath.GreyColor,
+      width: 1.0.w,
+    ),
+    // dayPeriodColor: ColorPath.PrimaryColor.withOpacity(0.3),
+    dayPeriodShape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(
+        const Radius.circular(8.0).r,
       ),
-      // dayPeriodColor: ColorPath.PrimaryColor.withOpacity(0.3),
-      dayPeriodShape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          const Radius.circular(8.0).r,
+    ),
+    // dayPeriodTextColor: ColorPath.BlackColor,
+    dayPeriodTextStyle: TextPath().F16W400,
+    dialBackgroundColor: ColorPath.PrimaryColor.withOpacity(0.1),
+    // dialHandColor: ColorPath.BlackColor,
+    // dialTextColor: ColorPath.BlackColor,
+    dialTextStyle: TextPath().F16W400,
+    entryModeIconColor: ColorPath.GreyColor600,
+    helpTextStyle: TextPath().F16W500,
+    // hourMinuteColor: ColorPath.PrimaryColor,
+    hourMinuteShape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(
+        const Radius.circular(8.0).r,
+      ),
+    ),
+    // hourMinuteTextColor: ColorPath.BlackColor,
+    hourMinuteTextStyle: TextPath().F24W600.copyWith(
+          color: ColorPath.BlackColor,
+          fontSize: 34.sp,
+          fontWeight: FontWeight.w400,
         ),
+    inputDecorationTheme: const InputDecorationTheme(
+      focusedBorder: InputBorder.none,
+    ),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(
+        const Radius.circular(16).r,
       ),
-      // dayPeriodTextColor: ColorPath.BlackColor,
-      dayPeriodTextStyle: TextPath.TextF16W400,
-      dialBackgroundColor: ColorPath.PrimaryColor.withOpacity(0.1),
-      // dialHandColor: ColorPath.BlackColor,
-      // dialTextColor: ColorPath.BlackColor,
-      dialTextStyle: TextPath.TextF16W400,
-      entryModeIconColor: ColorPath.GreyColor600,
-      helpTextStyle: TextPath.TextF16W500,
-      // hourMinuteColor: ColorPath.PrimaryColor,
-      hourMinuteShape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          const Radius.circular(8.0).r,
-        ),
-      ),
-      // hourMinuteTextColor: ColorPath.BlackColor,
-      hourMinuteTextStyle: TextPath.TextF24W600.copyWith(
-        color: ColorPath.BlackColor,
-        fontSize: 34.sp,
-        fontWeight: FontWeight.w400,
-      ),
-      inputDecorationTheme: const InputDecorationTheme(
-        focusedBorder: InputBorder.none,
-      ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          const Radius.circular(16).r,
-        ),
-      ),
-    );
+    ),
+  );
+}

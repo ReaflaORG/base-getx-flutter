@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// SnackBarThemeData ▼
 ///
@@ -33,24 +33,26 @@ import 'color_paths.dart';
 /// [Color?] actionBackgroundColor: 액션 버튼의 배경 색상입니다.
 ///
 /// [Color?] disabledActionBackgroundColor: 비활성화된 액션 버튼의 배경 색상입니다.
-SnackBarThemeData snackBarThemeData() => SnackBarThemeData(
-      // elevation: 0,
-      // showCloseIcon: true,
-      actionOverflowThreshold: 1,
-      // insetPadding: const EdgeInsets.all(16).r,
-      // width: 1.sw,
-      backgroundColor: Colors.black.withOpacity(0.9),
-      // backgroundColor: ColorPath.PrimaryColor.withOpacity(0.8),
-      actionTextColor: Colors.white,
-      actionBackgroundColor: Colors.transparent,
-      closeIconColor: ColorPath.BlackColor,
-      disabledActionTextColor: ColorPath.GreyColor700,
-      disabledActionBackgroundColor: Colors.transparent,
-      contentTextStyle: TextPath.TextF14W400.copyWith(
-        color: Colors.white,
-      ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16).r,
-      ),
-      behavior: SnackBarBehavior.floating,
-    );
+SnackBarThemeData snackBarThemeData() {
+  return SnackBarThemeData(
+    // elevation: 0,
+    // showCloseIcon: true,
+    actionOverflowThreshold: 1,
+    // insetPadding: const EdgeInsets.all(16).w,
+    // width: 1.sw,
+    backgroundColor: Colors.black.withOpacity(0.9),
+    // backgroundColor: ColorPath.PrimaryColor.withOpacity(0.8),
+    actionTextColor: Colors.white,
+    actionBackgroundColor: Colors.transparent,
+    closeIconColor: ColorPath.BlackColor,
+    disabledActionTextColor: ColorPath.GreyColor700,
+    disabledActionBackgroundColor: Colors.transparent,
+    contentTextStyle: TextPath().F14W400.copyWith(
+          color: Colors.white,
+        ),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(16).r,
+    ),
+    behavior: SnackBarBehavior.floating,
+  );
+}

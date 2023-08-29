@@ -15,8 +15,10 @@ import 'package:flutter/material.dart';
 /// [Color?] shadowColor: BottomAppBar의 그림자 색상을 지정합니다.
 ///
 /// [EdgeInsetsGeometry?] padding: BottomAppBar의 여백을 지정하는 EdgeInsetsGeometry입니다.
-BottomAppBarTheme bottomAppBarThemeData() => BottomAppBarTheme(
-      elevation: 0.0,
-      // padding: const EdgeInsets.all(8).r,
-      color: Colors.white,
-    );
+BottomAppBarTheme bottomAppBarThemeData() {
+  return const BottomAppBarTheme(
+    elevation: 0.0,
+    // padding: const EdgeInsets.all(8).w,
+    color: Colors.white,
+  );
+}

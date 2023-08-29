@@ -70,6 +70,7 @@ android {
         targetSdkVersion flutterTargetSdkVersion.toInteger()
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -102,11 +103,6 @@ android {
         density {
             enable = false
         }
-    }
-
-    dexOptions {
-        // 덱스 처리시 할당 메모리
-        javaMaxHeapSize = "4g"
     }
 }
 

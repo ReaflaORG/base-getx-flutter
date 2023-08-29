@@ -80,9 +80,9 @@ class GlobalAppBarWidget extends StatelessWidget
             : null,
         title: Text(
           title,
-          style: TextPath.TextF18W600.copyWith(
-            color: ColorPath.GreyColor600,
-          ),
+          style: TextPath().F18W600.copyWith(
+                color: ColorPath.GreyColor600,
+              ),
           textAlign: TextAlign.left,
         ),
         actions: actions ?? [],

@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// SliderThemeData ▼
 ///
@@ -65,24 +65,26 @@ import 'color_paths.dart';
 /// [Thumb? Function(TextDirection, RangeValues, double, Size, Size, double)? thumbSelector: 썸(thumb) 선택기입니다.
 ///
 /// [MaterialStateProperty<MouseCursor?>?] mouseCursor: 마우스 커서입니다.
-SliderThemeData sliderThemeData() => SliderThemeData(
-      trackHeight: 4.h,
-      activeTrackColor: ColorPath.PrimaryColor,
-      inactiveTrackColor: ColorPath.BorderColor,
-      secondaryActiveTrackColor: ColorPath.PrimaryColor,
-      activeTickMarkColor: ColorPath.PrimaryColor,
-      inactiveTickMarkColor: ColorPath.BorderColor,
-      thumbColor: ColorPath.PrimaryColor,
-      overlappingShapeStrokeColor: ColorPath.PrimaryColor,
-      // overlayColor: ColorPath.PrimaryColor.withOpacity(0.12),
-      valueIndicatorTextStyle: TextPath.TextF16W500.copyWith(
-        color: Colors.white,
-      ),
-      valueIndicatorColor: ColorPath.PrimaryColor,
-      disabledActiveTickMarkColor: ColorPath.DisabledColor,
-      disabledInactiveTickMarkColor: ColorPath.DisabledColor,
-      disabledThumbColor: ColorPath.DisabledColor,
-      disabledActiveTrackColor: ColorPath.DisabledColor,
-      disabledInactiveTrackColor: ColorPath.DisabledColor,
-      disabledSecondaryActiveTrackColor: ColorPath.DisabledColor,
-    );
+SliderThemeData sliderThemeData() {
+  return SliderThemeData(
+    trackHeight: 4.w,
+    activeTrackColor: ColorPath.PrimaryColor,
+    inactiveTrackColor: ColorPath.BorderColor,
+    secondaryActiveTrackColor: ColorPath.PrimaryColor,
+    activeTickMarkColor: ColorPath.PrimaryColor,
+    inactiveTickMarkColor: ColorPath.BorderColor,
+    thumbColor: ColorPath.PrimaryColor,
+    overlappingShapeStrokeColor: ColorPath.PrimaryColor,
+    // overlayColor: ColorPath.PrimaryColor.withOpacity(0.12),
+    valueIndicatorTextStyle: TextPath().F16W500.copyWith(
+          color: Colors.white,
+        ),
+    valueIndicatorColor: ColorPath.PrimaryColor,
+    disabledActiveTickMarkColor: ColorPath.DisabledColor,
+    disabledInactiveTickMarkColor: ColorPath.DisabledColor,
+    disabledThumbColor: ColorPath.DisabledColor,
+    disabledActiveTrackColor: ColorPath.DisabledColor,
+    disabledInactiveTrackColor: ColorPath.DisabledColor,
+    disabledSecondaryActiveTrackColor: ColorPath.DisabledColor,
+  );
+}

@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// ChipTheme ▼
 ///
@@ -47,20 +47,23 @@ import 'color_paths.dart';
 /// [IconThemeData?] iconTheme: Icon의 테마 데이터입니다.
 ChipThemeData chipThemeData() {
   return ChipThemeData(
-    // padding: const EdgeInsets.symmetric(vertical: 7.5, horizontal: 15).r,
+    padding: const EdgeInsets.symmetric(
+      vertical: 6,
+      horizontal: 4,
+    ).w,
     selectedColor: ColorPath.PrimaryColor,
     surfaceTintColor: ColorPath.PrimaryColor.withOpacity(0.5),
     secondarySelectedColor: Colors.red,
-    secondaryLabelStyle: TextPath.TextF16W500.copyWith(
-      color: Colors.white,
-    ),
+    secondaryLabelStyle: TextPath().F16W500.copyWith(
+          color: Colors.white,
+        ),
     checkmarkColor: Colors.white,
     disabledColor: ColorPath.DisabledColor,
     deleteIconColor: ColorPath.PrimaryColor,
     backgroundColor: Colors.white,
-    labelStyle: TextPath.TextF16W500.copyWith(
-      color: ColorPath.GreyColor600,
-    ),
+    labelStyle: TextPath().F16W500.copyWith(
+          color: ColorPath.GreyColor600,
+        ),
     iconTheme: IconThemeData(
       color: ColorPath.PrimaryColor,
       size: 20.sp,

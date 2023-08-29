@@ -1,6 +1,7 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'text_paths.dart';
 
 /// TooltipThemeData ▼
 ///
@@ -29,28 +30,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 /// [TooltipTriggerMode?] triggerMode: ToolTip이 트리거되는 방식입니다.
 ///
 /// [bool?] enableFeedback: ToolTip의 피드백 활성화 여부를 지정합니다.
-TooltipThemeData tooltipThemeData() => TooltipThemeData(
-      preferBelow: false,
-      excludeFromSemantics: false,
-      margin: const EdgeInsets.symmetric(
-        horizontal: 16.0,
-        vertical: 8.0,
-      ).r,
-      // padding: const EdgeInsets.symmetric(
-      //   horizontal: 16.0,
-      //   vertical: 8.0,
-      // ).r,
-      // height: 32.0.w,
-      verticalOffset: 24.0.w,
-      decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.9),
-        borderRadius: BorderRadius.circular(8.0).r,
-      ),
-      textStyle: TextPath.TextF14W400.copyWith(
-        color: Colors.white,
-      ),
-      waitDuration: const Duration(milliseconds: 1000),
-      showDuration: const Duration(milliseconds: 4000),
-      textAlign: TextAlign.center,
-      // triggerMode: TooltipTriggerMode.tap,
-    );
+TooltipThemeData tooltipThemeData() {
+  return TooltipThemeData(
+    preferBelow: false,
+    excludeFromSemantics: false,
+    margin: const EdgeInsets.symmetric(
+      horizontal: 16.0,
+      vertical: 8.0,
+    ).w,
+    // padding: const EdgeInsets.symmetric(
+    //   horizontal: 16.0,
+    //   vertical: 8.0,
+    // ).w,
+    // height: 32.0.w,
+    verticalOffset: 24.0.w,
+    decoration: BoxDecoration(
+      color: Colors.black.withOpacity(0.9),
+      borderRadius: BorderRadius.circular(8.0).r,
+    ),
+    textStyle: TextPath().F14W400.copyWith(
+          color: Colors.white,
+        ),
+    waitDuration: const Duration(milliseconds: 1000),
+    showDuration: const Duration(milliseconds: 4000),
+    textAlign: TextAlign.center,
+    // triggerMode: TooltipTriggerMode.tap,
+  );
+}

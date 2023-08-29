@@ -20,23 +20,25 @@ import 'color_paths.dart';
 /// [ShapeBorder?] endShape: 드로어가 열릴 때의 끝 부분 모양입니다.
 ///
 /// [double?] width: 드로어의 너비입니다.
-DrawerThemeData drawerThemeData() => DrawerThemeData(
-      elevation: 0,
-      width: 320.w,
-      scrimColor: Colors.transparent,
-      shadowColor: Colors.transparent,
-      surfaceTintColor: Colors.transparent,
-      backgroundColor: ColorPath.BorderColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: const BorderRadius.only(
-          topRight: Radius.circular(15),
-          bottomRight: Radius.circular(15),
-        ).r,
-      ),
-      endShape: RoundedRectangleBorder(
-        borderRadius: const BorderRadius.only(
-          topRight: Radius.circular(15),
-          bottomRight: Radius.circular(15),
-        ).r,
-      ),
-    );
+DrawerThemeData drawerThemeData() {
+  return DrawerThemeData(
+    elevation: 0,
+    width: 320.w,
+    scrimColor: Colors.transparent,
+    shadowColor: Colors.transparent,
+    surfaceTintColor: Colors.transparent,
+    backgroundColor: ColorPath.BorderColor,
+    shape: RoundedRectangleBorder(
+      borderRadius: const BorderRadius.only(
+        topRight: Radius.circular(15),
+        bottomRight: Radius.circular(15),
+      ).r,
+    ),
+    endShape: RoundedRectangleBorder(
+      borderRadius: const BorderRadius.only(
+        topRight: Radius.circular(15),
+        bottomRight: Radius.circular(15),
+      ).r,
+    ),
+  );
+}

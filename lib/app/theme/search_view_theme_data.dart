@@ -1,8 +1,8 @@
-import 'package:base_getx_flutter/app/theme/text_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_paths.dart';
+import 'text_paths.dart';
 
 /// SearchViewThemeData ▼
 ///
@@ -23,22 +23,24 @@ import 'color_paths.dart';
 /// [TextStyle?] headerHintStyle: SearchView의 헤더 힌트(Header Hint) 텍스트의 스타일을 지정하는 TextStyle입니다. 힌트 텍스트는 검색 입력 필드에 초기 힌트로 표시됩니다.
 ///
 /// [Color?] dividerColor: SearchView의 구분선(divider) 색상을 지정합니다. 구분선은 주로 검색 결과 항목 사이에 표시되는 수평 선입니다.
-SearchViewThemeData searchViewThemeData() => SearchViewThemeData(
-      // elevation: 0.0,
-      // constraints: BoxConstraints(
-      //   minHeight: 48.0,
-      //   maxHeight: 48.0,
-      // ),
-      backgroundColor: Colors.white,
-      surfaceTintColor: Colors.white,
-      dividerColor: ColorPath.BorderColor,
-      side: BorderSide(
-        color: ColorPath.GreyColor,
-        width: 1.0.w,
-      ),
-      headerTextStyle: TextPath.TextF16W500,
-      headerHintStyle: TextPath.TextF16W500,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0).r,
-      ),
-    );
+SearchViewThemeData searchViewThemeData() {
+  return SearchViewThemeData(
+    // elevation: 0.0,
+    // constraints: BoxConstraints(
+    //   minHeight: 48.0,
+    //   maxHeight: 48.0,
+    // ),
+    backgroundColor: Colors.white,
+    surfaceTintColor: Colors.white,
+    dividerColor: ColorPath.BorderColor,
+    side: BorderSide(
+      color: ColorPath.GreyColor,
+      width: 1.0.w,
+    ),
+    headerTextStyle: TextPath().F16W500,
+    headerHintStyle: TextPath().F16W500,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8.0).r,
+    ),
+  );
+}
