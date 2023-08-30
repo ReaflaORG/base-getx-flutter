@@ -27,57 +27,59 @@ class PermissionView extends GetView<PermissionController> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    alignment: Alignment.center,
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 8,
-                      horizontal: 4,
-                    ),
-                    width: 36.w,
-                    height: 38.67.w,
-                    decoration: BoxDecoration(
-                      color: ColorPath.GreyColor200,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(5.r),
-                      ),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(5.r),
-                      ),
-                      child: SizedBox(
-                        width: 28.w,
-                        height: 22.67.w,
-                        child: Image.asset(
-                          'assets/images/logo/logo_black.webp',
-                          // fit: BoxFit.contain,
+                  // Container(
+                  //   alignment: Alignment.center,
+                  //   padding: const EdgeInsets.symmetric(
+                  //     vertical: 8,
+                  //     horizontal: 4,
+                  //   ),
+                  //   width: 36.w,
+                  //   height: 38.67.w,
+                  //   decoration: BoxDecoration(
+                  //     color: ColorPath.GreyColor200,
+                  //     borderRadius: BorderRadius.all(
+                  //       Radius.circular(5.r),
+                  //     ),
+                  //   ),
+                  //   child: ClipRRect(
+                  //     borderRadius: BorderRadius.all(
+                  //       Radius.circular(5.r),
+                  //     ),
+                  //     child: SizedBox(
+                  //       width: 28.w,
+                  //       height: 22.67.w,
+                  //       child: Image.asset(
+                  //         'assets/images/logo/logo_black.webp',
+                  //         // fit: BoxFit.contain,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  // SizedBox(width: 14.w),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '앱 접근권한 안내',
+                          style: TextPath().F16W600,
                         ),
-                      ),
+                        SizedBox(height: 2.w),
+                        Text(
+                          '${dotenv.env['APP_KO_NAME']} 앱 이용 시 다음 권한들을 사용하오니. 허용해 주시기 바랍니다.',
+                          style: TextPath().F12W500.copyWith(
+                                color: ColorPath.GreyColor600,
+                                height: 1.15.w,
+                                overflow: TextOverflow.visible,
+                              ),
+                        ),
+                      ],
                     ),
-                  ),
-                  SizedBox(width: 14.w),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '앱 접근권한 안내',
-                        style: TextPath().F16W600,
-                      ),
-                      SizedBox(height: 2.w),
-                      Text(
-                        '${dotenv.env['APP_KO_NAME']} 앱 이용 시 다음 권한들을 사용하오니. 허용해 주시기 바랍니다.',
-                        style: TextPath().F12W500.copyWith(
-                              color: ColorPath.GreyColor600,
-                              height: 1.15.w,
-                              overflow: TextOverflow.visible,
-                            ),
-                      ),
-                    ],
                   ),
                 ],
               ),
-              GlobalDividerWidget.basic(),
+              GlobalDividerWidget.horizontal(),
               const RequiredPermissionsWidget(),
               SizedBox(height: 25.w),
               const OptionPermissionsWidget(),
@@ -86,7 +88,7 @@ class PermissionView extends GetView<PermissionController> {
         ),
         bottomSheet: SizedBox(
           width: double.infinity,
-          height: 48.w,
+          height: 58.w,
           child: TextButton(
             onPressed: () {
               PermissionService.to.handlePermissionOnPressed();
@@ -99,7 +101,7 @@ class PermissionView extends GetView<PermissionController> {
             ),
             child: Text(
               '동의하고 계속하기',
-              style: TextPath().F14W600.copyWith(
+              style: TextPath().F16W600.copyWith(
                     color: Colors.white,
                   ),
             ),
@@ -230,7 +232,7 @@ class PermissionContentWidget extends StatelessWidget {
               ),
               Text(
                 permissionList[index].description,
-                style: TextPath().F12W400.copyWith(
+                style: TextPath().F12W500.copyWith(
                       color: ColorPath.GreyColor600,
                     ),
               ),

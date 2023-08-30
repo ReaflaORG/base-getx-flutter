@@ -6,7 +6,7 @@ import 'package:wakelock/wakelock.dart';
 class UtilsService extends GetxService {
   static UtilsService get to => Get.find();
 
-  // 회전 체크
+  /// 디바이스 회전 체크
   Rx<bool> isLandscape = false.obs;
 
   /// 세로 모드로 설정하는 함수입니다.

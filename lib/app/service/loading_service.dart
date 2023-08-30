@@ -4,8 +4,11 @@ import 'package:get/get.dart';
 class LoadingService extends GetxService {
   static LoadingService get to => Get.find();
 
-  // 로딩 체크
-  Rx<bool> isLoading = true.obs;
+  /// 로딩 체크
+  Rx<bool> isLoading = false.obs;
+
+  /// 버튼 로딩 체크
+  Rx<bool> isButtonLoading = false.obs;
 
   @override
   void onInit() {

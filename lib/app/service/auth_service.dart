@@ -10,12 +10,12 @@ import '../provider/provider.dart';
 class AuthService extends GetxService {
   static AuthService get to => Get.find();
 
-  // Data ▼
+  /// [Data] ▼
 
   /// 유저 데이터
   Rx<UserModel> userData = UserModel().obs;
 
-  // Variable ▼
+  /// [Variable] ▼
 
   /// 액세스 토큰
   Rx<dynamic> accessToken = GetStorage().read('access_token').obs;
@@ -23,7 +23,7 @@ class AuthService extends GetxService {
   /// 로그인 체크
   RxBool isLogin = false.obs;
 
-  // Function ▼
+  /// [Function] ▼
 
   /// 로그인 처리 핸들러
   Future<void> handleLogin({

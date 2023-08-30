@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:base_getx_flutter/app/service/config_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -12,7 +13,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 import 'app/routes/app_pages.dart';
-import 'app/service/global_service.dart';
+import 'app/service/check_service.dart';
 import 'app/service/permission_service.dart';
 import 'app/theme/theme.dart';
 import 'app/utils/http_overrides.dart';
@@ -64,14 +65,14 @@ Future<void> initialize() async {
   // 인증 서비스 초기화
   // Get.put(AuthService(), permanent: true);
 
-  /// 데이터 서비스 초기화
-  // Get.put(DataService(), permanent: true);
-
   /// 권한 서비스 초기화
   Get.put(PermissionService(), permanent: true);
 
-  // 글로벌 서비스 초기화
-  Get.put(GlobalService(), permanent: true);
+  // 체크 서비스 초기화
+  Get.put(CheckService(), permanent: true);
+
+  /// 데이터 서비스 초기화
+  // Get.put(DataService(), permanent: true);
 
   // 파이어베이스 클라우드 메시징 서비스 초기화
   // Get.put(FirebaseCloudMessagingService(), permanent: true);
@@ -254,7 +255,7 @@ class GetMaterialAppWidget extends GetMaterialApp {
       navigatorObservers: [
         GetObserver(),
       ],
-      themeMode: GlobalService.to.themeMode.value,
+      themeMode: ConfigService.to.themeMode.value,
       theme: theme(context: context),
       // darkTheme: darkTheme(context: context),
     );

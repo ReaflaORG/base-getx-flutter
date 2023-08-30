@@ -13,6 +13,8 @@ import 'package:logger/logger.dart';
 class FirebaseCloudMessagingService extends GetxService {
   static FirebaseCloudMessagingService get to => Get.find();
 
+  /// [Variable] ▼
+
   /// AndroidNotificationChannel
   /// id: 임의 ID
   /// name: 설정에 보일 채널명
@@ -43,9 +45,11 @@ class FirebaseCloudMessagingService extends GetxService {
 
   Rx<RemoteMessage> message = const RemoteMessage().obs;
 
-  @override
-  Future<void> onInit() async {
-    Future.wait([
+  /// [Function] ▼
+
+  /// 초기화
+  Future<void> handleInitialize() async {
+    await Future.wait([
       /// Android Notification Plugin
       () async {
         flutterLocalNotificationsPlugin
@@ -158,7 +162,10 @@ class FirebaseCloudMessagingService extends GetxService {
     // /// 백그라운드 상태에서 알림 메세지를 사용자가 눌렀을때
     // FirebaseMessaging.onMessageOpenedApp.listen((message) async =>
     //     await handleOnBackgroundMessageOpenedApp(message: message));
+  }
 
+  @override
+  Future<void> onInit() async {
     super.onInit();
   }
 }

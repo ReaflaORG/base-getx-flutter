@@ -97,6 +97,9 @@ class ColorPath {
 
   // Etc ▼
 
+  /// #ffffff
+  static final WhiteColor = Color('ffffff');
+
   /// #1A1E27
   static final BlackColor = Color('1A1E27');
 

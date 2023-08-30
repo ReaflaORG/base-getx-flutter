@@ -4,8 +4,6 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 
-import '../../../service/global_service.dart';
-
 class FirstController extends GetxController {
   static FirstController get to => Get.find();
 
@@ -16,9 +14,6 @@ class FirstController extends GetxController {
 
   @override
   void onReady() {
-    // 디바이스 사이즈 체크
-    GlobalService.to.handleScreenSize();
-
     super.onReady();
   }
 

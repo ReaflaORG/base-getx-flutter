@@ -3,20 +3,108 @@
     <!-- 인터넷 통신 권한 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- 위치 권한 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <!-- 알림 권한 -->
+    <uses-permission android:name="android.permission.NOTIFICATION" />
 
     <!-- 카메라 권한 -->
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <!-- 파일 쓰기 권한 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <!-- 파일 읽기 권한 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
-    <!-- 녹음 권한 -->
+    <!-- 사진 권한 -->
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+
+    <!-- 마이크(녹음) 권한 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- 주소록 권한 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- 미디어 및 위치 기반 권한 -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" /> -->
+
+    <!-- 알림 정책 액세스 권한 -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" /> -->
+
+    <!-- 활동 인식 권한 -->
+    <!-- <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" /> -->
+
+    <!-- 앱 추적 투명성 권한 -->
+    <!-- <uses-permission android:name="android.permission.REQUEST_TRACKING" /> -->
+
+    <!-- 오디오 권한 -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> -->
+
+    <!-- 블루투스 권한 -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH" /> -->
+
+    <!-- 블루투스 광고 권한 -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" /> -->
+
+    <!-- 블루투스 연결 권한 -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> -->
+
+    <!-- 블루투스 스캔 권한 -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH_SCAN" /> -->
+
+    <!-- 캘린더 권한 -->
+    <!-- <uses-permission android:name="android.permission.READ_CALENDAR" /> -->
+    <!-- <uses-permission android:name="android.permission.WRITE_CALENDAR" /> -->
+
+    <!-- 중요한 알림 권한 -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> -->
+
+    <!-- 배터리 최적화 무시 권한 -->
+    <!-- <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" /> -->
+
+    <!-- 위치 권한 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 항상 위치 권한 -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!-- 위치 사용 중일 때 위치 권한 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- 외부 저장소 관리 권한 -->
+    <!-- <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> -->
+
+    <!-- 미디어 라이브러리 권한 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- 근처 와이파이 장치 권한 -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> -->
+
+    <!-- 전화 권한 -->
+    <!-- <uses-permission android:name="android.permission.CALL_PHONE" /> -->
+
+    <!-- 사진 추가 권한 -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> -->
+
+    <!-- 알림 권한 -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> -->
+
+    <!-- 패키지 설치 요청 권한 -->
+    <!-- <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> -->
+
+    <!-- 정확한 알람 예약 권한 -->
+    <!-- <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" /> -->
+
+    <!-- 센서 권한 -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> -->
+
+    <!-- 항상 센서 권한 -->
+    <!-- <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> -->
+
+    <!-- SMS 권한 -->
+    <!-- <uses-permission android:name="android.permission.SEND_SMS" /> -->
+
+    <!-- 음성 권한 -->
+    <!-- <uses-permission android:name="android.permission.RECORD_AUDIO" /> -->
+
+    <!-- 저장소 권한 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 시스템 알림 창 권한 -->
+    <!-- <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> -->
 
     <application
         android:label="base_getx_flutter"

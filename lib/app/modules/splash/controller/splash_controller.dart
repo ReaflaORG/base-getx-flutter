@@ -7,34 +7,35 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import '../../../routes/app_pages.dart';
-import '../../../service/global_service.dart';
+import '../../../service/auth_service.dart';
+import '../../../service/check_service.dart';
 import '../../../service/permission_service.dart';
 
 class SplashController extends GetxController {
   static SplashController get to => Get.find();
 
-  // Variable ▼
+  /// [Variable] ▼
 
-  // 처리 상태
+  /// 처리 상태
   RxBool isLoader = false.obs;
 
-  // 애니메이션 투명도 (0.0 ~ 1.0)
+  /// 애니메이션 투명도 (0.0 ~ 1.0)
   Rx<double> AnimatedOpacity = 0.0.obs;
 
-  // 애니메이션 지연 시간
+  /// 애니메이션 지연 시간
   Rx<Duration> AnimatedDuration = const Duration(milliseconds: 1500).obs;
 
-  // 애니메이션 효과
+  /// 애니메이션 효과
   Rx<Cubic> AnimatedCurves = Curves.easeIn.obs;
 
-  // Function ▼
+  /// [Function] ▼
 
   /// 화면 이동 처리 핸들러
   Future<void> handleRoutePush({
     int milliseconds = 2000,
   }) async {
     // 앱 버전 체크
-    if (!await GlobalService.to.handleAppVersionCheck()) {
+    if (!await CheckService.to.handleAppVersionCheck()) {
       Get.offAllNamed(Routes.VERSION);
 
       return;
@@ -50,17 +51,21 @@ class SplashController extends GetxController {
 
       // 권한을 처음 체크하는 경우
       if (GetStorage().read('initialize_permission') == null) {
+        // 권한을 허용할 리스트가 있는 경우
         if (PermissionService.to.permissionList.isNotEmpty) {
-          // 권한을 허용할 리스트가 있는 경우
           Get.offAllNamed(Routes.PERMISSION);
-        } else {
-          // 권한을 허용할 리스트가 없는 경우
-          Get.offAllNamed(Routes.PERMISSION);
+          return;
         }
-      } else {
-        // 이미 권한을 허용한 경우
-        Get.offAllNamed(Routes.PERMISSION);
       }
+
+      // 로그인이 필요 없는 경우
+      if (AuthService.to.isLogin.value) {
+        Get.offAllNamed(Routes.LAYOUT);
+        return;
+      }
+
+      // 이미 권한을 허용했고, 로그인이 필요한 경우
+      // Get.offAllNamed(Routes.SIGNIN);
     });
   }
 
@@ -88,9 +93,6 @@ class SplashController extends GetxController {
 
   @override
   void onReady() {
-    // 디바이스 사이즈 체크
-    GlobalService.to.handleScreenSize();
-
     super.onReady();
   }
 

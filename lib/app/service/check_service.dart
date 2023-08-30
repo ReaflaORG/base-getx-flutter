@@ -6,18 +6,11 @@ import 'package:logger/logger.dart';
 
 import '../utils/app_version_check.dart';
 
-/// 전역 서비스
-class GlobalService extends GetxService {
-  static GlobalService get to => Get.find();
+/// 체크 서비스
+class CheckService extends GetxService {
+  static CheckService get to => Get.find();
 
   // Variable ▼
-
-  /// 테마 모드
-  ///
-  /// [ThemeMode.light] : 밝은 테마
-  ///
-  /// [ThemeMode.dark] : 어두운 테마
-  Rx<ThemeMode> themeMode = ThemeMode.light.obs;
 
   // Funcion ▼
 
@@ -63,6 +56,9 @@ errorMessage : ${value.errorMessage}''');
 
   @override
   Future<void> onReady() async {
+    // 다바이스 사이즈 체크
+    await handleScreenSize();
+
     super.onReady();
   }
 
